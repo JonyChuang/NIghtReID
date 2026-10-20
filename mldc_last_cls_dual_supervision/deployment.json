@@ -1,0 +1,206 @@
+{
+  "package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_dual_supervision_20261019",
+  "files": {
+    "config.yml": "affa8e47b4197a26c0d0cc1c9eae4b0fa864a470de09b91f1075dd289b27d128",
+    "evaluate.py": "a976571e363490a94f334d737f33ca5f65b4da82e58d3f327bf02501792adb99",
+    "model.py": "93bdeb11c3bc2046f07bf7099543238d1f81bc5c084d75b1df3f11d2af721fbc",
+    "optim.py": "50b4154f0c63b517abc9fd99d784991f0cae7879526cd651f21dc01ab2be0df5",
+    "processor.py": "9025edfea5194dcb5cb045a30e2f38e13af978fdeea96a56ae9cf2c4e7ff367a",
+    "README.md": "81844df2bad01d14a762f48d68b0712a8f97d1706633cebfd29274f3ac83e122",
+    "test.py": "8c2965db60efdcf90bbf834880883ab091748557493f50dd40978f57ce4aa78e",
+    "train.py": "59f74a68f5a31fbb4b6b5516bf69da6c72537d89bdd874fb99aec1d5bf63023f",
+    "verify.py": "98613614e95f939cefec4218f84483b96b0a3af5036183e03f49d0a6a6ac5a31",
+    "verify_legacy.py": "8956d2730814308a405553ccb285cd1bb6b6c8b2c183325785b9e45123318b9e",
+    "__init__.py": "3785568f4e1358acb698a5196b1fa5119b902dc1d9c59fb607e7b3dc3cfb54dd",
+    "nightreid_legacy/evaluate.py": "5a537b69179b617372d90f966c9f11db722b3c902c22413d03e2cfc203d39219",
+    "nightreid_legacy/model.py": "69eb9008362e08f06eb8edd3bee5ce1759e9f02512440fd10aecb278c074fca8",
+    "nightreid_legacy/__init__.py": "964de9b904fa46933553f944595f59c9f63fc92738130c5e00de5ee4ee3701f6"
+  },
+  "backbone_source": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_featenhancer_20261017/backbones/vit_pytorch_mldc.py",
+  "backbone_sha256": "e96114644e14c5bcdd3ef354edbf2ed0e9f8597e96cee405171f2b1638a44647",
+  "old_experiments_modified": false,
+  "training_started": false,
+  "verification_complete": true,
+  "historical_source_snapshot": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_dual_supervision_20261019/source_snapshots/nightreid_three_heads_20261019",
+  "preexisting_train_pids": [],
+  "legacy_backbone_sha256": "e96114644e14c5bcdd3ef354edbf2ed0e9f8597e96cee405171f2b1638a44647",
+  "verification": {
+    "variant": "mldc_fixed4_lastln_dual_supervision_unit_concat_v2_20261019",
+    "architecture": {
+      "variant": "mldc_fixed4_lastln_dual_supervision_unit_concat_v2_20261019",
+      "shared_backbone": true,
+      "global_layers": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "global_fusion": "fixed_equal",
+      "global_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "last_branch": "raw CLS12 -> pretrained trainable final affine LayerNorm",
+      "identity": "two independent 768D BNNecks/classifiers; no concatenation head",
+      "triplet": "batch-hard independently on raw fusion and last-LN",
+      "fusion_loss_weight": 0.7,
+      "last_loss_weight": 0.3,
+      "loss": "0.7*(ID_fusion+Triplet_fusion)+0.3*(ID_last+Triplet_last)",
+      "concatenation": "cat(L2(fusion),L2(last))/sqrt(2); fixed 50/50 cosine weights",
+      "retrieval": "BN-after; each source L2 then equal 1536D unit concat",
+      "descriptor_dim": 1536,
+      "neck_feat": "after",
+      "concat_head": false,
+      "concat_loss": false,
+      "single_branch_dim": 768,
+      "evaluate_branches": [
+        "fusion",
+        "last",
+        "concat"
+      ],
+      "joint_from_epoch": 1,
+      "active_backbone_frozen": false,
+      "patch_enhancement": false,
+      "spatial_partition": false
+    },
+    "config_roundtrip": true,
+    "original_SSL_loaded_and_key_parameters_equal": true,
+    "real_training_images": 4,
+    "real_training_identities": 2,
+    "num_classes": 300,
+    "single_shared_backbone_pass": true,
+    "fusion_exact_fixed_mean": true,
+    "last_exact_pretrained_affine_LayerNorm": true,
+    "concat_dim": 1536,
+    "source_wise_L2_before_concat": true,
+    "concat_cosine_exact_mean": true,
+    "concat_head_absent": true,
+    "before_and_after_readouts_verified": true,
+    "backward": {
+      "loss": 10.09811782836914,
+      "loss_at_last_weight05": 12.118451118469238,
+      "fusion_loss_weight": 0.7,
+      "last_loss_weight": 0.3,
+      "weighted_fusion_loss": 4.94733190536499,
+      "weighted_last_loss": 5.150785446166992,
+      "terms": {
+        "fusion_id": 5.706935882568359,
+        "fusion_triplet": 1.360681414604187,
+        "last_id": 5.693853855133057,
+        "last_triplet": 11.475430488586426
+      },
+      "gradient_norms": {
+        "base.patch_embed.": 198.22485851696123,
+        "base.blocks.0.": 94.9957046768269,
+        "base.blocks.11.": 24.044736493314534,
+        "base.norm.": 0.2779790961713314,
+        "bottleneck.": 0.00760730382436882,
+        "classifier.": 7.738866376634898,
+        "last_bottleneck.": 0.003276283121664982,
+        "last_classifier.": 3.2305449138920554
+      },
+      "concat_loss_absent": true,
+      "independent_heads_and_LN_paths": true,
+      "configured_weight_gradients_exact": true,
+      "all_active_gradients_finite": true,
+      "activation_recomputation_for_verification_only": true,
+      "memory": {
+        "anonymous_bytes": 2087272448,
+        "file_cache_bytes": 4003958784
+      }
+    },
+    "optimizer": {
+      "exact_optimizer_coverage": true,
+      "no_duplicate_parameters": true,
+      "start_lr": {
+        "backbone": [
+          4.000000000000001e-06
+        ],
+        "head": [
+          4.000000000000001e-06
+        ]
+      },
+      "epoch20_lr": {
+        "backbone": [
+          0.000373258670595374,
+          0.0007464637513522618
+        ],
+        "head": [
+          0.001866078993622925
+        ]
+      },
+      "final_lr": {
+        "backbone": [
+          8.000000000000001e-07
+        ],
+        "head": [
+          8.000000000000001e-07
+        ]
+      },
+      "optimizer_steps": 0
+    },
+    "checkpoint_strict_roundtrip": true,
+    "metric_contract": {
+      "chunked_metric_matches_explicit_1536D": true,
+      "same_identity_same_camera_exclusion": true,
+      "rejects_raw_concat_substitution": true,
+      "concat_cosine_exact_mean": true,
+      "independent_source_scale_invariance": true,
+      "each_source_half_energy": true,
+      "readouts": {
+        "before": {
+          "actual_descriptor_metric_matches_explicit": true,
+          "paired_contract": {
+            "concat_vs_fusion": {
+              "corrected": 1,
+              "broken": 0,
+              "net": 1
+            },
+            "concat_vs_last": {
+              "corrected": 0,
+              "broken": 0,
+              "net": 0
+            },
+            "single_branch_union": 2,
+            "either_branch_correct_concat_wrong": 0,
+            "both_branches_wrong_concat_correct": 0,
+            "fusion_only_correct": 0,
+            "last_only_correct": 1
+          }
+        },
+        "after": {
+          "actual_descriptor_metric_matches_explicit": true,
+          "paired_contract": {
+            "concat_vs_fusion": {
+              "corrected": 1,
+              "broken": 0,
+              "net": 1
+            },
+            "concat_vs_last": {
+              "corrected": 0,
+              "broken": 0,
+              "net": 0
+            },
+            "single_branch_union": 2,
+            "either_branch_correct_concat_wrong": 0,
+            "both_branches_wrong_concat_correct": 0,
+            "fusion_only_correct": 0,
+            "last_only_correct": 1
+          }
+        }
+      }
+    },
+    "optimizer_steps": 0,
+    "training_epochs": 0,
+    "training_started": false,
+    "full_gallery_evaluated": false,
+    "CUDA_initialized": false
+  },
+  "output_dir": "/root/log/transreid/night600/vit_base_ics_mldc_dual_20261019/dual_lastw03_unit_concat_after_v2_120",
+  "legacy_checkpoint_verification": {
+    "available": false,
+    "reason": "Epoch70 checkpoint/cache unavailable; archived model retained"
+  }
+}

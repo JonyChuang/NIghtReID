@@ -1,0 +1,69 @@
+MODEL:
+  DEVICE: 'cuda'
+  DEVICE_ID: ('0')
+  PRETRAIN_CHOICE: 'imagenet'
+  PRETRAIN_PATH: 'pretrain_model/vit_base_ics_cfs_lup.pth'
+  PRETRAIN_HW_RATIO: 2
+  NAME: 'transformer'
+  TRANSFORMER_TYPE: 'vit_base_patch16_224_TransReID'
+  STRIDE_SIZE: [16, 16]
+  STEM_CONV: True
+  USE_DCE: False
+  QNORM_PRIOR: False
+  QNORM_GUIDE: False
+  JPM: False
+  GEM_POOLING: False
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NO_MARGIN: True
+  GLOBAL_LAYERS: [9, 10, 11, 12]
+  GLOBAL_FUSION: 'fixed_equal'
+  FEATENHANCER_ENABLED: False
+  ENHANCEMENT_MODE: 'pfe_progressive'
+  PFE_ENABLED: False
+  PFE_LAYERS: [2, 4, 6, 8]
+  PFE_DIM: 192
+  PFE_KERNEL: 3
+  PFE_EXPANSION: 0.5
+  PFE_GAIN: 0.1
+INPUT:
+  SIZE_TRAIN: [256, 128]
+  SIZE_TEST: [256, 128]
+  PROB: 0.5
+  RE_PROB: 0.5
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+DATASETS:
+  NAMES: 'night600'
+  ROOT_DIR: 'data'
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 120
+  BASE_LR: 0.0004
+  MLDC_HEAD_LR_FACTOR: 5.0
+  SEED: 1234
+  WARMUP_EPOCHS: 20
+  WARMUP_METHOD: 'cosine'
+  IMS_PER_BATCH: 64
+  LARGE_FC_LR: False
+  CHECKPOINT_PERIOD: 120
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 10
+  WEIGHT_DECAY: 0.0001
+  WEIGHT_DECAY_BIAS: 0.0001
+  BIAS_LR_FACTOR: 2
+TEST:
+  EVAL: True
+  IMS_PER_BATCH: 64
+  RE_RANKING: False
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+  PFE_VISUALIZE: False
+  PFE_VIS_INDICES: [810, 1544, 11, 2059, 160, 24]
+OUTPUT_DIR: '/root/log/transreid/night600/mldc_feature_enhancement/progressive_enhancement_disabled'

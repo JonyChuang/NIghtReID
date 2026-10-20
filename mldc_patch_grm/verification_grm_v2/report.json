@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "training_started": false,
+  "optimizer_steps": 0,
+  "full_vit_loaded": false,
+  "real_checkpoint_loaded": false,
+  "scope": "Real new modules and wrapper; small substitute backbone and synthetic inputs",
+  "checks": {
+    "syntax_imports_and_actual_config_parse": true,
+    "local_feature_independent_of_cls_and_nonzero": true,
+    "warmup_exact_anchor_and_attention_probability": true,
+    "warmup_local_id_triplet_gradients_and_bn_isolation": true,
+    "joint_loss_and_gate_gradients_without_anchor_updates": true,
+    "initial_gate_and_compensation_norm_bound": true,
+    "optimizer_includes_future_gate_and_only_new_parameters": true,
+    "checkpoint_roundtrip_preserves_warmup_and_joint_inference": true,
+    "v1_patch_checkpoint_rejected": true,
+    "baseline_loader_retains_new_initialization_and_resets_stage": true,
+    "local_metric_gate_entropy_and_visualization_interfaces": true,
+    "entrypoint_import_and_help_no_training": true,
+    "initialization_checkpoint_unchanged": true
+  },
+  "trainable_parameter_count_small_backbone_test": 867521
+}

@@ -1,0 +1,29 @@
+{
+  "device": "cuda",
+  "optimizer_steps": 0,
+  "checks": {
+    "baseline_training_configuration": true,
+    "same_SSL_initialization_and_exact_global_LR_curve": true,
+    "BN_identity_raw_triplet_and_unchanged_retrieval_direction": true,
+    "real_PK_AMP_backward_all_active_modules_no_parameter_update": true,
+    "residual_identity_loss_reaches_backbone": true,
+    "deterministic_768D_output_full_state_and_old_checkpoint_rejection": true,
+    "full_joint_checkpoint_roundtrip_in_temporary_directory": true,
+    "current_MLDC_vs_final_evaluation_plot_and_fixed_pair_visualization": true
+  },
+  "training_scale_diagnostics": {
+    "global_feature_norm": 27.588153839111328,
+    "fusion_raw_norm": 27.724903106689453,
+    "fusion_neck_norm": 27.612972259521484,
+    "final_logit_std": 0.02806195430457592
+  },
+  "losses": {
+    "global_identity": 5.726050853729248,
+    "global_triplet": 1.2823253870010376,
+    "identity": 5.702239990234375,
+    "triplet": 6.256302833557129,
+    "reconstruction": 0.05055469274520874,
+    "residual_metric": 0.16304664313793182
+  },
+  "trainable_parameters": 110546254
+}

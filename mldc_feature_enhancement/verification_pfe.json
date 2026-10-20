@@ -1,0 +1,113 @@
+{
+  "architecture": {
+    "variant": "pfe_progressive_patch2468_mldc_fixed_equal_20261017",
+    "enhancer": "paper-based MSRFConv/PFEBlock in ViT, not the full detector",
+    "pfe_enabled": true,
+    "pfe_layers": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "dim": 192,
+    "kernel": 3,
+    "expansion": 0.5,
+    "gain": 0.1,
+    "grid": [
+      16,
+      8
+    ],
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "global_fusion": "fixed_equal",
+    "global_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "descriptor_dim": 768,
+    "spatial_partition": false,
+    "joint_from_epoch": 1,
+    "retrieval": "BN-after global; evaluator L2"
+  },
+  "config_roundtrip": true,
+  "arbitrary_grid_msrf": true,
+  "real_vit_descriptor_shape": [
+    4,
+    768
+  ],
+  "stage_maps_shape": [
+    2,
+    4,
+    16,
+    8
+  ],
+  "raw_input_unchanged": true,
+  "first_two_cls_unchanged": true,
+  "subsequent_cls_max_change": 2.956390380859375e-05,
+  "zero_increment_recovers_backbone_exactly": true,
+  "fixed_equal_global_exact": true,
+  "all_active_modules_trainable": true,
+  "all_pfe_parameters_finite_nonzero_gradient": true,
+  "gradient_norms": {
+    "pfe_adapters.2.norm.": 6.671494631905332e-06,
+    "pfe_adapters.2.down.": 0.0003141486877054763,
+    "pfe_adapters.2.block.msrf.generate.": 3.488703973327685e-05,
+    "pfe_adapters.2.block.msrf.reduce.": 2.1566423150954282e-05,
+    "pfe_adapters.2.block.msrf.height_attention.": 8.792866245916701e-06,
+    "pfe_adapters.2.block.msrf.width_attention.": 8.769110815597338e-06,
+    "pfe_adapters.2.block.msrf.aggregate.": 0.0007671155851665372,
+    "pfe_adapters.2.block.transform.": 0.0002764189592645031,
+    "pfe_adapters.2.up.": 0.008430555179321002,
+    "pfe_adapters.4.norm.": 2.599681496746777e-06,
+    "pfe_adapters.4.down.": 0.00011832470069152875,
+    "pfe_adapters.4.block.msrf.generate.": 1.3102970893334105e-05,
+    "pfe_adapters.4.block.msrf.reduce.": 7.482379628257902e-06,
+    "pfe_adapters.4.block.msrf.height_attention.": 2.373991183383526e-06,
+    "pfe_adapters.4.block.msrf.width_attention.": 2.391969183850435e-06,
+    "pfe_adapters.4.block.msrf.aggregate.": 0.0001982495017965111,
+    "pfe_adapters.4.block.transform.": 9.717632890357655e-05,
+    "pfe_adapters.4.up.": 0.0040272504476759445,
+    "pfe_adapters.6.norm.": 2.1921745496373883e-06,
+    "pfe_adapters.6.down.": 0.00010042997064178788,
+    "pfe_adapters.6.block.msrf.generate.": 1.1019849049371783e-05,
+    "pfe_adapters.6.block.msrf.reduce.": 6.505984564933253e-06,
+    "pfe_adapters.6.block.msrf.height_attention.": 2.1395029931544062e-06,
+    "pfe_adapters.6.block.msrf.width_attention.": 2.205351208604969e-06,
+    "pfe_adapters.6.block.msrf.aggregate.": 0.00017536236540753266,
+    "pfe_adapters.6.block.transform.": 6.970862907852163e-05,
+    "pfe_adapters.6.up.": 0.002307848594985368,
+    "pfe_adapters.8.norm.": 1.3609393572267513e-06,
+    "pfe_adapters.8.down.": 6.771941851514225e-05,
+    "pfe_adapters.8.block.msrf.generate.": 7.101482817059354e-06,
+    "pfe_adapters.8.block.msrf.reduce.": 4.02985495120408e-06,
+    "pfe_adapters.8.block.msrf.height_attention.": 1.2818549605783963e-06,
+    "pfe_adapters.8.block.msrf.width_attention.": 1.3339630582490373e-06,
+    "pfe_adapters.8.block.msrf.aggregate.": 0.00010710498583046457,
+    "pfe_adapters.8.block.transform.": 4.6714907882831116e-05,
+    "pfe_adapters.8.up.": 0.0015911322906316469,
+    "base.patch_embed.": 68.22845930045237,
+    "base.blocks.": 70.25817944137134,
+    "classifier.": 11.175677142013344
+  },
+  "initial_stage_correction_ratios": [
+    5.717309250030667e-06,
+    5.270960173220374e-06,
+    5.121502908878028e-06,
+    5.148171567270765e-06
+  ],
+  "pfe_parameters": 2759872,
+  "baseline_initialization_matches": true,
+  "evaluation_and_both_heatmap_renderers_checked": true,
+  "full_id_plus_triplet": true,
+  "optimizer_steps": 0,
+  "pretrained_loaded": false,
+  "real_dataset_evaluated": false,
+  "cuda_initialized": false,
+  "training_started": false
+}

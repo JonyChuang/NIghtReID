@@ -1,0 +1,77 @@
+{
+  "variant": "mldc_global_cnl_20261020",
+  "sources": [
+    {
+      "paper": "Shallow-Deep Collaborative Learning for Unsupervised Visible-Infrared Person Re-Identification",
+      "paper_url": "https://openaccess.thecvf.com/content/CVPR2024/papers/Yang_Shallow-Deep_Collaborative_Learning_for_Unsupervised_Visible-Infrared_Person_Re-Identification_CVPR_2024_paper.pdf",
+      "official_repository": "https://github.com/yangbincv/SDCL",
+      "retained": [
+        "Neighbor-based contrastive learning and detached instance memory"
+      ]
+    },
+    {
+      "paper": "ViT-CoMer",
+      "official_repository": "https://github.com/Traffic-X/ViT-CoMer",
+      "retained": [
+        "Historical CNN/MRFP code only; not instantiated in the current model"
+      ]
+    }
+  ],
+  "adaptations": [
+    "No CNN or shallow readout branch; one fused CLS descriptor",
+    "Fixed equal mean of raw CLS9-12, original BN head and L2 retrieval",
+    "Global ID+Triplet plus 0.1 times single-space supervised cross-camera neighbor loss",
+    "One training-image memory; same-ID cross-camera neighbor selection in the fused descriptor space",
+    "The original deep/shallow neighbor intersection is removed; this is a single-space adaptation, not original SDCL CNL",
+    "Unselected same-ID images are excluded from negatives; self excluded before neighbor threshold",
+    "Detached targets, duplicate image means, memory update only after successful AMP optimizer step",
+    "No CRA pseudo-label association, no extra pretraining or spatial body partition"
+  ],
+  "external_pretraining": false,
+  "spatial_body_partition": false,
+  "training_started_by_installation": false,
+  "legacy_injection": {
+    "paper": "ViT-CoMer: Vision Transformer with Convolutional Multi-scale Feature Interaction for Dense Predictions",
+    "paper_url": "https://arxiv.org/html/2403.07392v1",
+    "official_repository": "https://github.com/Traffic-X/ViT-CoMer",
+    "official_module_reference": "https://github.com/Traffic-X/ViT-CoMer/blob/main/detection/mmdet_custom/models/backbones/comer_modules.py",
+    "implementation": "Independent CoMer-inspired CPPI-Lite adaptation, not a reproduction of original CTI",
+    "retained_ideas": [
+      "Parallel CNN spatial pyramid",
+      "Channel-split 3x3/5x5 depthwise receptive fields",
+      "Intermediate convolutional feature injection"
+    ],
+    "adaptations": [
+      "One-way forward feature flow; all branches remain jointly differentiable",
+      "Fixed local 3x3 candidates at three scales replace deformable attention",
+      "Nonzero up projection, image-wide normalized residual direction, and independent positive learnable budgets initialized to 5% replace zero-initialized gamma",
+      "Budget uses softplus with no upper clamp and no weight decay; ID+Triplet determines its learned value",
+      "CNN/MRFP GroupNorm replaces original batch normalization",
+      "CNN and MRFP computed once, four independent CTI reads",
+      "Original ReID CLS retained and only patch tokens directly modified",
+      "CLS9-12 equal 768D readout replaces dense prediction heads"
+    ],
+    "parameters": {
+      "dim": 192,
+      "heads": 4,
+      "layers": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "initial_ratio": 0.05,
+      "budget_mode": "per-stage softplus, trainable, no upper limit",
+      "budget_weight_decay": 0,
+      "up_init_std": 0.01,
+      "new_module_lr_factor": 10
+    },
+    "external_pretraining": false,
+    "spatial_body_partition": false,
+    "training_started_by_installation": false
+  },
+  "legacy_cnl_variant": "cnn_sdcl_supervised_cnl_20261019",
+  "historical_checkpoint_compatibility": "Missing CNN_SD_QUERY in old dumps resolves to cls11; original architecture variant retained",
+  "legacy_fused_cnn_variant": "cnn_fused_cls_guided_no_cnl_20261019",
+  "control": "cppi_baseline.yml and cppi_no_cnl.yml are aliases of the matched single-descriptor CNL=0 control"
+}

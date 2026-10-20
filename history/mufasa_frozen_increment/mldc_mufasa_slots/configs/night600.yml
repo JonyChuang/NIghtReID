@@ -1,0 +1,73 @@
+MODEL:
+  NAME: transformer
+  DEVICE: cuda
+  DEVICE_ID: ('0')
+  TRANSFORMER_TYPE: vit_base_patch16_224_TransReID
+  STEM_CONV: True
+  STRIDE_SIZE: [16, 16]
+  METRIC_LOSS_TYPE: triplet
+  NO_MARGIN: True
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  ID_LOSS_WEIGHT: 1.0
+  TRIPLET_LOSS_WEIGHT: 1.0
+
+INPUT:
+  SIZE_TRAIN: [256, 128]
+  SIZE_TEST: [256, 128]
+  PROB: 0.5
+  RE_PROB: 0.5
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+
+DATASETS:
+  NAMES: night600
+  ROOT_DIR: data
+
+DATALOADER:
+  SAMPLER: softmax_triplet
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+SOLVER:
+  OPTIMIZER_NAME: Adam
+  BASE_LR: 0.0004
+  MAX_EPOCHS: 120
+  WARMUP_EPOCHS: 10
+  WARMUP_FACTOR: 0.01
+  WARMUP_METHOD: cosine
+  WEIGHT_DECAY: 0.0
+  WEIGHT_DECAY_BIAS: 0.0
+  BIAS_LR_FACTOR: 1
+  LARGE_FC_LR: False
+  IMS_PER_BATCH: 64
+  EVAL_PERIOD: 10
+  CHECKPOINT_PERIOD: 20
+  LOG_PERIOD: 50
+  SEED: 1234
+
+TEST:
+  IMS_PER_BATCH: 256
+  RE_RANKING: False
+  NECK_FEAT: after
+  FEAT_NORM: 'yes'
+
+MUFASA:
+  BASELINE: /root/log/transreid/night600/vit_base_ics_a3pfn_mldc/transformer_120.pth
+  LAYERS: [9, 10, 11, 12]
+  NUM_SLOTS: 4
+  SLOT_DIM: 256
+  ITERATIONS: 3
+  SA_HIDDEN: 1024
+  MATCH: True
+  FUSION: mfusion
+  RESIDUAL_SCALE: 0.1
+  RECON_WEIGHT: 0.1
+  DECODER_HIDDEN: 2048
+  VISUALIZE: True
+  VIS_PERIOD: 20
+  VIS_SAMPLES: 6
+  CPU_THREADS: 8
+
+OUTPUT_DIR: /root/log/transreid/night600/vit_base_ics_a3pfn_mldc_mufasa/frozen_increment_120

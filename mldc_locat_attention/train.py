@@ -1,0 +1,73 @@
+"""Run from the TransReID project root; importing this file never trains."""
+import argparse
+import json
+import os
+import random
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Night600 A3PFN MLDC experiment')
+    parser.add_argument('--config_file', default='mldc_locat_attention/variants/gaussian_attention_prr/config.yml')
+    parser.add_argument('opts', nargs=argparse.REMAINDER)
+    args = parser.parse_args()
+    import numpy as np
+    import torch
+    from config import cfg as base_cfg
+    from datasets import make_dataloader
+    from solver import make_optimizer, WarmupMultiStepLR
+    from solver.scheduler_factory import create_scheduler
+    from utils.logger import setup_logger
+    from mldc_locat_attention.model.make_model_locat import add_mldc_config, make_model, configure_head_learning_rates
+    from mldc_locat_attention.loss.make_loss_mldc import make_loss
+    from mldc_locat_attention.processor.processor_mldc import do_train
+
+    cfg = add_mldc_config(base_cfg.clone())
+    cfg.merge_from_file(args.config_file)
+    cfg.merge_from_list(args.opts)
+    cfg.freeze()
+    os.environ['CUDA_VISIBLE_DEVICES'] = cfg.MODEL.DEVICE_ID
+    if cfg.MODEL.DEVICE != 'cuda' or not torch.cuda.is_available():
+        raise RuntimeError('MLDC training requires a visible CUDA GPU')
+    seed = cfg.SOLVER.SEED
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = True
+    if not cfg.MODEL.PRETRAIN_PATH or not Path(cfg.MODEL.PRETRAIN_PATH).is_file():
+        raise FileNotFoundError('The matched SSL initialization is required: ' + cfg.MODEL.PRETRAIN_PATH)
+    if Path(cfg.OUTPUT_DIR).exists() and any(Path(cfg.OUTPUT_DIR).iterdir()):
+        raise FileExistsError('Use an empty output directory to preserve previous runs: ' + cfg.OUTPUT_DIR)
+    Path(cfg.OUTPUT_DIR).mkdir(parents=True, exist_ok=True)
+    logger = setup_logger('transreid', cfg.OUTPUT_DIR, if_train=True)
+    logger.info('Running with config:\n%s', cfg)
+    (Path(cfg.OUTPUT_DIR) / 'run_metadata.json').write_text(json.dumps({
+        'readout': cfg.MODEL.MLDC_READOUT, 'seed': int(cfg.SOLVER.SEED),
+        'locat_spec': {'gaug': cfg.MODEL.LOCAT_GAUG, 'prr': cfg.MODEL.LOCAT_PRR,
+                       'readout_norm': cfg.MODEL.LOCAT_READOUT_NORM},
+        'locat_source': 'https://github.com/sinahmr/LocAtViT/tree/f99aac4c3d0f417f205faf35742ca25ebcc30ea4',
+        'transfer': 'Fuse all 12 raw token sequences with unchanged MLDC weights, then LN/PRR; '
+                    'GAug inside each block. No extra data, teacher, or loss.',
+        'config': cfg.dump(), 'source': 'https://github.com/zhguoqing/A3PFN/blob/main/model/backbones/vit_pytorch.py',
+    }, indent=2), encoding='utf-8')
+    train_loader, _, val_loader, nq, nc, cameras, views = make_dataloader(cfg)
+    model = make_model(cfg, nc, cameras, views)
+    loss_fn, center = make_loss(cfg, nc)
+    optimizer, _ = make_optimizer(cfg, model, center)
+    configure_head_learning_rates(cfg, model, optimizer)
+    if cfg.SOLVER.WARMUP_METHOD == 'cosine':
+        scheduler = create_scheduler(cfg, optimizer)
+    else:
+        scheduler = WarmupMultiStepLR(optimizer, cfg.SOLVER.STEPS, cfg.SOLVER.GAMMA,
+                                     cfg.SOLVER.WARMUP_FACTOR, cfg.SOLVER.WARMUP_EPOCHS,
+                                     cfg.SOLVER.WARMUP_METHOD)
+    do_train(cfg, model, train_loader, val_loader, optimizer, scheduler, loss_fn, nq)
+
+
+if __name__ == '__main__':
+    main()

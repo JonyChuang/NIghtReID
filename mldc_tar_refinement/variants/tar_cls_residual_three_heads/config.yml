@@ -1,0 +1,85 @@
+MODEL:
+  PRETRAIN_PATH: pretrain_model/vit_base_ics_cfs_lup.pth
+  PRETRAIN_HW_RATIO: 2
+  METRIC_LOSS_TYPE: triplet
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NAME: transformer
+  NO_MARGIN: true
+  DEVICE_ID: ('0')
+  TRANSFORMER_TYPE: vit_base_patch16_224_TransReID
+  STRIDE_SIZE:
+  - 16
+  - 16
+  STEM_CONV: true
+  USE_DCE: false
+  QNORM_PRIOR: false
+  QNORM_GUIDE: false
+  JPM: false
+  GEM_POOLING: false
+  MLDC_READOUT: mldc
+  MLDC_TEMPERATURE: 0.9
+  PRETRAIN_CHOICE: imagenet
+  TAR_TOP_RATIO: 0.5
+  TAR_NORM_ALPHA: 2.0
+  TAR_TEMPERATURE: 0.8
+  TAR_BOTTLENECK: 256
+  TAR_KL_BETA: 0.05
+INPUT:
+  SIZE_TRAIN:
+  - 256
+  - 128
+  SIZE_TEST:
+  - 256
+  - 128
+  PROB: 0.5
+  RE_PROB: 0.5
+  PADDING: 10
+  PIXEL_MEAN:
+  - 0.5
+  - 0.5
+  - 0.5
+  PIXEL_STD:
+  - 0.5
+  - 0.5
+  - 0.5
+DATASETS:
+  NAMES: night600
+  ROOT_DIR: data
+DATALOADER:
+  SAMPLER: softmax_triplet
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+SOLVER:
+  OPTIMIZER_NAME: SGD
+  MAX_EPOCHS: 120
+  BASE_LR: 0.0004
+  MLDC_HEAD_LR_FACTOR: 5.0
+  WARMUP_EPOCHS: 20
+  WARMUP_METHOD: cosine
+  IMS_PER_BATCH: 64
+  LARGE_FC_LR: false
+  CHECKPOINT_PERIOD: 120
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 10
+  WEIGHT_DECAY: 1e-4
+  WEIGHT_DECAY_BIAS: 1e-4
+  BIAS_LR_FACTOR: 2
+  MOMENTUM: 0.9
+  SEED: 1234
+  TAR_HEAD_LR_FACTOR: 5.0
+  RESIDUAL_HEAD_LR_FACTOR: 5.0
+  TAR_REID_WEIGHT: 0.5
+  RESIDUAL_REID_WEIGHT: 1.0
+  TAR_KL_WEIGHT: 0.001
+TEST:
+  EVAL: true
+  IMS_PER_BATCH: 256
+  RE_RANKING: false
+  WEIGHT: ''
+  NECK_FEAT: after
+  FEAT_NORM: 'yes'
+  MLDC_VISUALIZE: true
+  MLDC_VIS_SAMPLES: 6
+  MLDC_VIS_PERIOD: 10
+OUTPUT_DIR: '/root/log/transreid/night600/mldc_tar_refinement/tar_cls_residual_three_heads'

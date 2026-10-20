@@ -1,0 +1,23 @@
+{
+  "variant": "mldc_global_cnl_20261020",
+  "package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_featenhancer_20261017",
+  "training_started": false,
+  "verification_passed": true,
+  "cppi_source_hashes": {
+    "cppi_model.py": "270f16cf8db45d708584caac3936ef984f2fbd673112647bb82c9b23f51b434b",
+    "cppi_modules.py": "e1b0de511cd17fe3dc26f54ac30e0187dcf45e5f7b51ddda4f4762ba2a54ba75",
+    "cppi_optim.py": "53f9dce937890e52302287e320afa3709839e6245a188dd7dd5ec27b01aa82f6",
+    "train_cppi.py": "3eb8cb9dcf8970b8c83d22293744872d448cfd8df48865871c41ec4c3ff3a2b6",
+    "test_cppi.py": "fd802a76d3a230eaadc7b74a27a8f1c228b6ffa6033f47a1c5af579534dfbcca",
+    "verify_cppi.py": "477633e0a06e4591c79eacf95e6caa878b91b8e95252ab21fb9aefa9566189b0",
+    "verify_global_cnl.py": "1e6e956aba0c9376f81e8fea92b56477672170c1f6f45b3c3641d01541bb267c",
+    "cnn_sdcl.py": "a0ef96e0e68e5294f2bb3c36baa8d0fcaff1e219f85ec5a2564c3c7214c3fe64",
+    "cnn_sdcl_processor.py": "c83449647237770ef8b9d61b1f964f7524d2bd5bebb6ffb4028f4fb8b48145d1",
+    "global_cnl.py": "e5573a2dec1a6ae103a6138ace7b28d0cc02aacf34672a65641b034f7c266da8",
+    "cppi.yml": "749caeebfb84f930023ba5863b9adda03d978c5ea4b99396677d06c446b15c1b",
+    "cppi_baseline.yml": "fcbc199aff4df02e51838df744cf79b82fdf9a0745015ea09f951b13c63ada3a",
+    "cppi_no_cnl.yml": "fcbc199aff4df02e51838df744cf79b82fdf9a0745015ea09f951b13c63ada3a",
+    "CPPI_README.md": "88137ffa6c019621d1544d61c1daf1fef89659ec0089a76b9001235599eda560",
+    "cppi_provenance.json": "29fd807afe44993cce422144482feb17c2bed0a62becaa8325b374fc5b688dd8"
+  }
+}

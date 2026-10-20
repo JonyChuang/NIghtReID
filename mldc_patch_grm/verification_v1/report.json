@@ -1,0 +1,49 @@
+{
+  "training_started": false,
+  "optimizer_steps": 0,
+  "device": "cpu",
+  "cuda_available": false,
+  "checks": {
+    "syntax_and_imports": true,
+    "baseline_epoch_and_trainable_scope": true,
+    "all_anchor_tensors_equal_original_checkpoint": true,
+    "zero_compensation_matches_original_descriptor_exactly": true,
+    "attention_shape_and_probability_conservation": true,
+    "optimizer_contains_only_patch_and_classifier": true,
+    "identity_triplet_backward_and_frozen_bn": true,
+    "query_key_value_layer_norm_and_null_receive_gradients": true,
+    "null_count_prior_can_abstain_and_tail_only_ablation": true,
+    "new_checkpoint_roundtrip_strict_loading": true,
+    "mismatched_attention_architecture_rejected": true,
+    "frozen_backbone_still_supports_input_attribution": true,
+    "entrypoint_imports_and_help_without_training": true,
+    "original_code_and_checkpoint_unchanged": true,
+    "synthetic_evaluator_records_and_attention_visualizations": true
+  },
+  "trainable_parameters": 842884,
+  "patch_parameters": 612484,
+  "initial_descriptor_max_abs_difference": 0.0,
+  "initial_null_mass_per_head": [
+    0.4889337122440338,
+    0.38208040595054626,
+    0.5441243648529053,
+    0.4993177652359009
+  ],
+  "loaded_cls_weights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.17028573155403137,
+    0.22700749337673187,
+    0.27075985074043274,
+    0.3319469690322876
+  ],
+  "finite_loss_without_update": 10.805295944213867,
+  "status": "passed",
+  "synthetic_interface_check": "Passed on random inputs; no real dataset metrics claimed"
+}

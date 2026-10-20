@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/zhguoqing/A3PFN",
+  "commit": "5f1457f4cd18ee6194771392c3665aec3d22df3c",
+  "file": "model/backbones/vit_pytorch7_0+FFT.py",
+  "blob": "5ef43f7e9c0c2521d927a4c476fe9bdba519c974",
+  "author_lpam_classes_modified": false,
+  "adaptations": [
+    "Use existing Night600 SSL stem backbone",
+    "Replace global MLDC with parameter-free CLS9-12 arithmetic mean",
+    "Preserve shared BN/head and mean-four-ID plus global Triplet",
+    "Report concatenated BN-after retrieval plus all individual readouts; concatenation is a Night600 adapter, not a claim about author default inference"
+  ]
+}

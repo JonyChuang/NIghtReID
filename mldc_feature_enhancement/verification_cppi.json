@@ -1,0 +1,65 @@
+{
+  "architecture": {
+    "variant": "mldc_global_cnl_20261020",
+    "cnn_enabled": false,
+    "shallow_enabled": false,
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "global_fusion": "fixed_equal",
+    "global_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "descriptor_dim": 768,
+    "patch_injection": false,
+    "spatial_partition": false,
+    "joint_from_epoch": 1,
+    "retrieval": "single BN-after fused CLS; L2 normalization"
+  },
+  "cnl_checks": {
+    "analytic_loss": 0.7135471105575562,
+    "positive_and_negative_gradient": true,
+    "identity_crosscamera_self_filter": true,
+    "unselected_same_id_not_negative": true,
+    "empty_and_no_negative_zero": true,
+    "fp32_under_autocast": true,
+    "one_bank_detached_targets": true,
+    "duplicate_image_mean_once": true,
+    "forward_does_not_update_memory": true,
+    "memory_roundtrip": true
+  },
+  "gradients": {
+    "base.patch_embed.": 44.16727504094675,
+    "base.blocks.": 17.031658920181705,
+    "bottleneck.": 0.012258904034263753,
+    "classifier.": 11.953449878142202
+  },
+  "losses": {
+    "global_id": 5.71449613571167,
+    "global_triplet": 0.49443328380584717,
+    "cnl": 0.0,
+    "total": 6.208929538726807
+  },
+  "original_ssl_loaded": true,
+  "real_training_images": true,
+  "cpu_bfloat16_backward": true,
+  "no_cnn_reader_or_shallow_parameters": true,
+  "descriptor_dim": 768,
+  "global_readout_evaluation": true,
+  "single_memory_bank": true,
+  "checkpoint_and_memory_roundtrip": true,
+  "matched_no_cnl_control": true,
+  "all_trainable_parameters_have_finite_gradients": true,
+  "optimizer_coverage_once": true,
+  "historical_cnn_configuration_preserved": true,
+  "indexed_loader_preserves_sampler": true,
+  "optimizer_steps": 0,
+  "training_loop_started": false,
+  "cuda_initialized": false
+}

@@ -1,0 +1,48 @@
+{
+  "package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_lpam_fft_v4_20261017",
+  "verified": true,
+  "verification": {
+    "global_mean_exact": true,
+    "global_gradient_each": 0.25,
+    "global_weights_trainable": false,
+    "active_backbone_trainable": true,
+    "full_vit_forward_shape": [
+      1,
+      3072
+    ],
+    "cls_pyramid_backward_passed": true,
+    "baseline_descriptor_dim": 768,
+    "fft_attention_vs_value_max_abs_difference": 0.0,
+    "fft_query_gradient_max": 0.0,
+    "fft_key_gradient_max": 0.0,
+    "value_gradient_norm": 0.5892990827560425,
+    "conclusion": "N=1 makes FFT attention equivalent to V projection with head scaling; it does not add spatial selection",
+    "pretrained_checkpoint_loaded": false,
+    "dataset_evaluated": false,
+    "optimizer_steps": 0
+  },
+  "matched_backbone_source": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_deep4_random/model/backbones/vit_pytorch_mldc.py",
+  "matched_backbone_copied_on_server": true,
+  "original_experiments_modified": false,
+  "global_equal_weights_fixed": true,
+  "files": [
+    "A3PFN_LICENSE.txt",
+    "config.yml",
+    "launch.py",
+    "lpam.py",
+    "model.py",
+    "processor.py",
+    "provenance.json",
+    "README.md",
+    "test.py",
+    "train.py",
+    "verify.py",
+    "__init__.py"
+  ],
+  "training_started": false,
+  "launch_status": {
+    "started": false,
+    "reason": "No visible CUDA GPU",
+    "package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_lpam_fft_v4_20261017"
+  }
+}

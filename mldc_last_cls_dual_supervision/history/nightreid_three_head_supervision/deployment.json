@@ -1,0 +1,200 @@
+{
+  "package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_dual_supervision_20261019",
+  "files": {
+    "config.yml": "78929063f8d43871ad19ff40ed92aeec5282d789e2592f56a2702ecee1b61787",
+    "evaluate.py": "5a537b69179b617372d90f966c9f11db722b3c902c22413d03e2cfc203d39219",
+    "model.py": "69eb9008362e08f06eb8edd3bee5ce1759e9f02512440fd10aecb278c074fca8",
+    "optim.py": "a571dc4ae4794c90a8fb16a242d1180cbce8bb530f43ae2bb4e82ad1715a66f6",
+    "processor.py": "e3b33b8d96b484e472f6bd71b74dc41eb9f9458dfb80ef5571333376c5c36b76",
+    "README.md": "86e33d0650bb5aa7085d9d11022ccbe97bb864e2f83527933a38a518fc0651a8",
+    "test.py": "7a7f9a3a551f3af69ae20f78671cfe92904181ae91143a4c160791ef3fc73cd0",
+    "train.py": "8ac9c4076e92fa4902e720eebe8f48ff75b7bb67e58ff791fdd3276efc5b7742",
+    "verify.py": "e1136ecfebe54f9844ca63746ca1be59265d12a7f2af22aa113bb2f53c35f6bc",
+    "__init__.py": "3785568f4e1358acb698a5196b1fa5119b902dc1d9c59fb607e7b3dc3cfb54dd"
+  },
+  "backbone_source": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_featenhancer_20261017/backbones/vit_pytorch_mldc.py",
+  "backbone_sha256": "e96114644e14c5bcdd3ef354edbf2ed0e9f8597e96cee405171f2b1638a44647",
+  "old_experiments_modified": false,
+  "training_started": false,
+  "verification_complete": true,
+  "verification": {
+    "variant": "mldc_fixed4_lastln_nightreid_three_heads_20261019",
+    "architecture": {
+      "variant": "mldc_fixed4_lastln_nightreid_three_heads_20261019",
+      "shared_backbone": true,
+      "global_layers": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "global_fusion": "fixed_equal",
+      "global_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "last_branch": "raw CLS12 -> pretrained trainable final affine LayerNorm",
+      "identity": "three independent BNNecks/classifiers, including a 1536D concatenation head",
+      "triplet": "batch-hard independently on raw fusion, last-LN and their raw concatenation",
+      "fusion_loss_weight": 0.7,
+      "last_loss_weight": 0.3,
+      "concat_loss_weight": 1.0,
+      "loss": "0.7*(ID_fusion+Triplet_fusion)+0.3*(ID_last+Triplet_last)+1*(ID_concat+Triplet_concat)",
+      "concatenation": "cat(raw fusion, last-LN), before branch BN and without branch-wise L2",
+      "retrieval": "BN-before; L2 each complete descriptor; concat has one global L2",
+      "descriptor_dim": 1536,
+      "neck_feat": "before",
+      "reference": "https://github.com/msm8976/NightReID",
+      "single_branch_dim": 768,
+      "evaluate_branches": [
+        "fusion",
+        "last",
+        "concat"
+      ],
+      "joint_from_epoch": 1,
+      "active_backbone_frozen": false,
+      "patch_enhancement": false,
+      "spatial_partition": false
+    },
+    "config_roundtrip": true,
+    "original_SSL_loaded_and_key_parameters_equal": true,
+    "real_training_images": 4,
+    "real_training_identities": 2,
+    "num_classes": 300,
+    "single_shared_backbone_pass": true,
+    "fusion_exact_fixed_mean": true,
+    "last_exact_pretrained_affine_LayerNorm": true,
+    "concat_dim": 1536,
+    "raw_concat_before_branch_BN": true,
+    "whole_descriptor_L2": true,
+    "independent_concat_BN_and_classifier": true,
+    "before_and_after_readouts_verified": true,
+    "backward": {
+      "loss": 20.05517578125,
+      "loss_at_last_weight05": 21.042314529418945,
+      "fusion_loss_weight": 0.7,
+      "last_loss_weight": 0.3,
+      "concat_loss_weight": 1.0,
+      "weighted_fusion_loss": 4.759765148162842,
+      "weighted_last_loss": 3.52060866355896,
+      "weighted_concat_loss": 11.774801254272461,
+      "terms": {
+        "fusion_id": 5.707677364349365,
+        "fusion_triplet": 1.0919873714447021,
+        "last_id": 5.678271293640137,
+        "last_triplet": 6.057090759277344,
+        "concat_id": 5.690428733825684,
+        "concat_triplet": 6.084372043609619
+      },
+      "gradient_norms": {
+        "base.patch_embed.": 1008.8222392634067,
+        "base.blocks.0.": 344.4718952255118,
+        "base.blocks.11.": 84.85756959982861,
+        "base.norm.": 0.7959999815399338,
+        "bottleneck.": 0.007753881974956987,
+        "classifier.": 7.825727571537728,
+        "last_bottleneck.": 0.0034924754002851953,
+        "last_classifier.": 3.3717989399474377,
+        "concat_bottleneck.": 0.01602479360416797,
+        "concat_classifier.": 15.851757426259606
+      },
+      "concat_loss_reaches_both_source_features": true,
+      "independent_heads_and_LN_paths": true,
+      "configured_weight_gradients_exact": true,
+      "all_active_gradients_finite": true,
+      "activation_recomputation_for_verification_only": true,
+      "memory": {
+        "anonymous_bytes": 1286320128,
+        "file_cache_bytes": 836870144
+      }
+    },
+    "optimizer": {
+      "exact_optimizer_coverage": true,
+      "no_duplicate_parameters": true,
+      "start_lr": {
+        "backbone": [
+          4.000000000000001e-06
+        ],
+        "head": [
+          4.000000000000001e-06
+        ]
+      },
+      "epoch20_lr": {
+        "backbone": [
+          0.000373258670595374,
+          0.0007464637513522618
+        ],
+        "head": [
+          0.001866078993622925
+        ]
+      },
+      "final_lr": {
+        "backbone": [
+          8.000000000000001e-07
+        ],
+        "head": [
+          8.000000000000001e-07
+        ]
+      },
+      "optimizer_steps": 0
+    },
+    "checkpoint_strict_roundtrip": true,
+    "metric_contract": {
+      "chunked_metric_matches_explicit_1536D": true,
+      "same_identity_same_camera_exclusion": true,
+      "rejects_mean_distance_substitution": true,
+      "norms_not_forced_to_equal_branch_cosines": true,
+      "nontrivial_independent_concat_BN": true,
+      "readouts": {
+        "before": {
+          "actual_descriptor_metric_matches_explicit": true,
+          "paired_contract": {
+            "concat_vs_fusion": {
+              "corrected": 1,
+              "broken": 0,
+              "net": 1
+            },
+            "concat_vs_last": {
+              "corrected": 0,
+              "broken": 0,
+              "net": 0
+            },
+            "single_branch_union": 2,
+            "either_branch_correct_concat_wrong": 0,
+            "both_branches_wrong_concat_correct": 0,
+            "fusion_only_correct": 0,
+            "last_only_correct": 1
+          }
+        },
+        "after": {
+          "actual_descriptor_metric_matches_explicit": true,
+          "paired_contract": {
+            "concat_vs_fusion": {
+              "corrected": 1,
+              "broken": 0,
+              "net": 1
+            },
+            "concat_vs_last": {
+              "corrected": 0,
+              "broken": 0,
+              "net": 0
+            },
+            "single_branch_union": 2,
+            "either_branch_correct_concat_wrong": 0,
+            "both_branches_wrong_concat_correct": 0,
+            "fusion_only_correct": 0,
+            "last_only_correct": 1
+          }
+        }
+      }
+    },
+    "optimizer_steps": 0,
+    "training_epochs": 0,
+    "training_started": false,
+    "full_gallery_evaluated": false,
+    "CUDA_initialized": false
+  },
+  "output_dir": "/root/log/transreid/night600/vit_base_ics_mldc_dual_20261019/nightreid_cat3_lastw03_catw10_before_120"
+}

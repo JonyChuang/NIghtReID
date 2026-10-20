@@ -1,0 +1,30 @@
+{
+  "experiment": "mldc_patch_direct_grm_v2_20261016",
+  "package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_patch_compensation_20261016",
+  "code_backup": "/root/TransReID-SSL-main/transreid_pytorch/_code_backups/mldc_patch_before_grm_v2_20261016_070501",
+  "old_output_preserved": "/root/log/transreid/night600/vit_base_ics_mldc_patch_compensation_20261016/stage1_frozen_anchor",
+  "new_output": "/root/log/transreid/night600/vit_base_ics_mldc_patch_compensation_20261016/stage2_patch_direct_grm",
+  "changed_files": [
+    "README.md",
+    "configs/Night600/vit_base_ics_mldc_patch_compensation.yml",
+    "loss/make_loss_mldc.py",
+    "model/make_model_mldc.py",
+    "model/patch_compensation.py",
+    "processor/processor_mldc.py",
+    "processor/visualization.py",
+    "test.py",
+    "train.py"
+  ],
+  "preserved_checkpoints": {
+    "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_patch_compensation_20261016/initialization/deep4_uniform_epoch120.pth": [
+      357625161,
+      1791980288158712354
+    ]
+  },
+  "training_started": false,
+  "verification_scope": "static and lightweight modules; full ViT not loaded",
+  "previous_output_exists_at_configured_path": false,
+  "previous_experiment_locations_found": [],
+  "verification_report": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_patch_compensation_20261016/verification_grm_v2/report.json",
+  "verification_passed": true
+}
