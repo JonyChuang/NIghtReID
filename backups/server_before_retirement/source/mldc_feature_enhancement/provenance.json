@@ -1,0 +1,31 @@
+{
+  "repository": "https://github.com/khurramHashmi/FeatEnHancer",
+  "commit": "33da74366d95ebb9b9a94ca85db99ea94f844308",
+  "path": "low-light-object-detection-detectron2/queryrcnn/featenhancer/feat_enhancer.py",
+  "source_url": "https://raw.githubusercontent.com/khurramHashmi/FeatEnHancer/33da74366d95ebb9b9a94ca85db99ea94f844308/low-light-object-detection-detectron2/queryrcnn/featenhancer/feat_enhancer.py",
+  "source_sha256": "081845f01c0059937eb14244ce439b98dd4e4f9c1153f565782b664656bdaaa1",
+  "adapted_sha256": "e0d26c167c27dc27d80763287d8e41ce48133fb5a138ee358f30fae001e5add9",
+  "adaptations": [
+    "Remove constructor .to('cuda'); use parent model device"
+  ],
+  "initialization": "Author detector Conv2d weight normal_(0,0.02); keep default biases",
+  "input": "Normalized 3-channel tensor, before backbone",
+  "license_source": "https://raw.githubusercontent.com/khurramHashmi/FeatEnHancer/33da74366d95ebb9b9a94ca85db99ea94f844308/LICENSE",
+  "training_started": false,
+  "active_scheme": "B: redesigned feature-space adaptation, not the original paper architecture",
+  "scheme_b": {
+    "implementation": "patch_enhancer.py",
+    "input": "Post-block patch tokens from ViT layers 4, 6, 8; normalized and projected to 192 channels",
+    "fen": "Shared seven-convolution concatenation topology on 16x8, 8x4 and 4x2 grids; signed feature output",
+    "safa": "Eight-group scale selection using pooled fine/middle queries and keys on the coarse grid",
+    "differences_from_original": [
+      "Feature-space normalization and projection replace the RGB input",
+      "Pool by 2 and 4 for small patch grids instead of RGB stride-4 and stride-8 pyramid",
+      "Bias-free replication-padded convolutions replace zero-padded RGB convolutions",
+      "Single signed feature residual replaces eight RGB tanh residual groups",
+      "CLS-conditioned cosine attention reads centered patch values; equal mean across depths",
+      "Add fixed-gain norm-matched compensation to the equal CLS9-12 mean before BNNeck"
+    ],
+    "training": "Joint end-to-end from epoch 1, final ID + Triplet; no frozen active backbone or region partition"
+  }
+}

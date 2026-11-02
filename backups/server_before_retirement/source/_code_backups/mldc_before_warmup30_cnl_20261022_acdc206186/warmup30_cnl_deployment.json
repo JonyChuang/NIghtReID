@@ -1,0 +1,74 @@
+{
+  "project": "/root/TransReID-SSL-main/transreid_pytorch",
+  "target": "/root/TransReID-SSL-main/transreid_pytorch/mldc_information_preservation",
+  "backup": "/root/TransReID-SSL-main/transreid_pytorch/_code_backups/mldc_before_warmup30_cnl_20261022_acdc206186",
+  "updated": [
+    "verification_shared_cnl_warmup30_local.json",
+    "train.py",
+    "CNL_WARMUP30_20261022.md",
+    "verify_cnl_warmup.py",
+    "cnl_schedule.py",
+    "README_UPLOAD.md",
+    "FUSED_CONSENSUS_CNL_20261022.md",
+    "configs/night600_shared_cnl_consensus_warmup30.yml",
+    "processor/processor_mldc.py",
+    "model/make_model_mldc.py"
+  ],
+  "existing_processes_retained": [
+    {
+      "pid": "769",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "51591",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "51654",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "51717",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "51780",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "51843",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "51906",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "51969",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    },
+    {
+      "pid": "52032",
+      "command": "python mldc_information_preservation/train.py --config_file mldc_information_preservation/configs/night600_shared_cnl_consensus.yml "
+    }
+  ],
+  "new_output": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_warmup30_120",
+  "training_started": false,
+  "optimizer_steps": 0,
+  "source_matches_local": true,
+  "source_hashes": {
+    "verification_shared_cnl_warmup30_local.json": "7947b6272fcd398e371b54b57762134ba730ddb00b6e97841e74d9321a6d575d",
+    "train.py": "771c8ec78dc35066dfbdff0c25b0f17df200c0a67210fd1159ad6b6a10b8e7a9",
+    "CNL_WARMUP30_20261022.md": "fe7b9e054d2d9af316db2117d901f30ef2896e073c85583b02cfca1b413ade22",
+    "verify_cnl_warmup.py": "31f915f0f2253191eb789905207b12b8c8c8928489ffe72efee6aba68e5da24c",
+    "cnl_schedule.py": "ac2533a09605fc45f248d5afde5d648f2af8e5fbeec90ac22ac3eb03eae8b1de",
+    "README_UPLOAD.md": "31598200da6f54bd12d7b4f742f3b320bd3fdd1935045adcefce25a3e1ed2495",
+    "FUSED_CONSENSUS_CNL_20261022.md": "7d63f967219bb46d3786344c31b5ddfcd5b14cbe932a40c9b1a91f4ac14e107f",
+    "configs/night600_shared_cnl_consensus_warmup30.yml": "681d518f5007e9568910c80c785a0ffbdcad1686e00a242943ba3110aa15fbf2",
+    "processor/processor_mldc.py": "b127c34d0db4d73d53f787b0e12fbd685365007b0ed9231b0afa1cf1567b2dfb",
+    "model/make_model_mldc.py": "332dd584c4fdca587a9541d212762f89f8b52d200373f133e0acc05fc4752fc3"
+  },
+  "verification_passed": true,
+  "server_unit_checks": 43,
+  "local_full_vit_forward_backward": true
+}

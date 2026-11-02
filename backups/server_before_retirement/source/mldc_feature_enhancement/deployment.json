@@ -1,0 +1,98 @@
+{
+  "package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_featenhancer_20261017",
+  "scheme": "B",
+  "verified": true,
+  "verification": {
+    "scheme": "B",
+    "architecture": {
+      "variant": "featenhancer_patch_mldc_deep4_fixed_equal_scheme_b_20261017",
+      "enhancer_enabled": true,
+      "enhancer": "adapted patch-space FEN/SAFA",
+      "patch_layers": [
+        4,
+        6,
+        8
+      ],
+      "patch_dim": 192,
+      "patch_gain": 0.1,
+      "patch_readout": "CLS-conditioned cosine attention, spatially centered values, equal depth mean",
+      "global_layers": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "global_fusion": "fixed_equal",
+      "global_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "descriptor_dim": 768,
+      "spatial_partition": false,
+      "joint_from_epoch": 1,
+      "retrieval": "BN-after compensated global; evaluator L2"
+    },
+    "config_roundtrip": true,
+    "raw_input_unchanged": true,
+    "descriptor_shape": [
+      2,
+      768
+    ],
+    "patch_shape": [
+      3,
+      2,
+      128,
+      768
+    ],
+    "collection_preserves_backbone_forward": true,
+    "fixed_equal_global_exact": true,
+    "constant_spatial_input_zero_compensation": true,
+    "nonuniform_attention_on_random_inputs": true,
+    "all_patch_parameters_have_finite_nonzero_gradients": true,
+    "gradient_norms": {
+      "patch_compensation.projections.": 3.0853087579779723,
+      "patch_compensation.enhancer.fen.": 0.009593312779800547,
+      "patch_compensation.enhancer.safa.query.": 0.0003183208696771262,
+      "patch_compensation.enhancer.safa.key.": 0.00030932530877739915,
+      "patch_compensation.enhancer.output.": 0.06410845076763833,
+      "patch_compensation.query.": 2.2073278677210277,
+      "patch_compensation.key.": 1.0799126662158576,
+      "patch_compensation.value.": 1.0636563460007633,
+      "patch_compensation.output.": 1.0637191061516156,
+      "base.patch_embed.": 23.956427014322593,
+      "base.blocks.": 22.58592418102662,
+      "classifier.": 19.505656669024084
+    },
+    "patch_module_parameters": 1812864,
+    "baseline_initialization_matches": true,
+    "full_id_plus_triplet": true,
+    "optimizer_steps": 0,
+    "pretrained_checkpoint_loaded": false,
+    "dataset_evaluated": false,
+    "training_started": false,
+    "legacy_scheme_a_checkpoint_compatible": true,
+    "evaluation_and_heatmap_interface_checked": true,
+    "interface_inputs": "random tensors only, not a performance measurement"
+  },
+  "source_snapshot_scheme_a": "/root/log/transreid/night600/vit_base_ics_featenhancer_mldc_20261017/deep4_fixed_equal_120/scheme_a_source_before_b.zip",
+  "old_results_preserved": true,
+  "training_started": false,
+  "files": [
+    "baseline.yml",
+    "config.yml",
+    "featenhancer.py",
+    "FEATENHANCER_LICENSE.txt",
+    "model.py",
+    "patch_enhancer.py",
+    "processor.py",
+    "provenance.json",
+    "README.md",
+    "test.py",
+    "train.py",
+    "verify.py",
+    "__init__.py"
+  ],
+  "backbone_optional_patch_collection": true
+}

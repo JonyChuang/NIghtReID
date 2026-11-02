@@ -1,0 +1,16 @@
+{
+  "repository": "https://github.com/zhguoqing/A3PFN",
+  "retrieved": "2026-10-09",
+  "files": {
+    "LICENSE": "524670cd75c083257a41bb73f75a62e8d869bf70",
+    "model/backbones/vit_pytorch.py": "8f52db78268440c0445873db6508576d71306b6d",
+    "model/make_model.py": "5c67757b6dc018193f667ae72c84546c3e838090",
+    "processor/processor.py": "622a01d8bccff071cb1ca0591dae13304581cd91"
+  },
+  "variant": "main/vit_pytorch.py, spatial-domain attention, residual ConvBlock; no FFT",
+  "adaptations": [
+    "Fix head-weight broadcasting to [B, heads, N, N].",
+    "Integrate the four branches into the Night600 SSL backbone.",
+    "Use concatenated four-branch descriptors for retrieval and separate branch diagnostics."
+  ]
+}

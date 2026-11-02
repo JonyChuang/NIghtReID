@@ -1,0 +1,62 @@
+{
+  "experiment": "mldc_boq_joint_v2_20261017",
+  "server_package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_joint_local_20261016",
+  "previous_code_backup": "/root/TransReID-SSL-main/transreid_pytorch/_code_backups/mldc_joint_before_boq_v2_20261017_052816",
+  "changed_files": [
+    "boq.py",
+    "BOQ_LICENSE.txt",
+    "config.yml",
+    "model.py",
+    "processor.py",
+    "README.md",
+    "test.py",
+    "train.py",
+    "verify_small.py"
+  ],
+  "verification": {
+    "cpu_fp32": {
+      "joint_gradients": true,
+      "bn_updates": true,
+      "multi_query_shape": true,
+      "checkpoint_roundtrip": true
+    },
+    "cpu_bfloat16": {
+      "joint_gradients": true,
+      "bn_updates": true,
+      "multi_query_shape": true,
+      "checkpoint_roundtrip": true
+    },
+    "cuda_float16": {
+      "joint_gradients": true,
+      "bn_updates": true,
+      "multi_query_shape": true,
+      "checkpoint_roundtrip": true
+    },
+    "query_residual_to_output_absent": true,
+    "differentiable_global_norm": true,
+    "scope": "Small substitute backbone only; full ViT is validated by the real training start",
+    "five_dimensional_attention_evaluation": true
+  },
+  "training_started": true,
+  "output_dir": "/root/log/transreid/night600/vit_base_ics_mldc_boq_20261017/middle468_q4_120",
+  "real_vit_verified": true,
+  "prior_trained_weights_modified": false,
+  "training_launch": {
+    "experiment": "mldc_boq_joint_v2_20261017",
+    "pid": 198,
+    "launched_at_utc": "2026-10-17T05:29:36.895745+00:00",
+    "command": [
+      "/root/miniconda3/envs/QREID/bin/python",
+      "-u",
+      "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_joint_local_20261016/train.py"
+    ],
+    "working_directory": "/root/TransReID-SSL-main/transreid_pytorch",
+    "output_dir": "/root/log/transreid/night600/vit_base_ics_mldc_boq_20261017/middle468_q4_120",
+    "console_log": "/root/log/transreid/night600/vit_base_ics_mldc_boq_20261017/middle468_q4_120.console.log",
+    "gpu": "NVIDIA GeForce RTX 4090 D",
+    "free_gpu_gib_before_launch": 23.17,
+    "shared_memory_free_mib": 51200,
+    "training_mode": "joint_from_epoch_1"
+  },
+  "real_data_optimizer_update_verified": true
+}

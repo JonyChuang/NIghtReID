@@ -1,0 +1,84 @@
+MODEL:
+  CONVPASS_ENABLED: True
+  CONVPASS_LAYERS: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+  CONVPASS_FREEZE_BACKBONE: True
+  CONVPASS_DIM: 8
+  CONVPASS_SCALE: 0.1
+  PRETRAIN_CHOICE: 'imagenet'
+  PRETRAIN_PATH: 'pretrain_model/vit_base_ics_cfs_lup.pth'
+  PRETRAIN_HW_RATIO: 2
+  METRIC_LOSS_TYPE: 'triplet'
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NAME: 'transformer'
+  NO_MARGIN: True
+  DEVICE_ID: ('0')
+  TRANSFORMER_TYPE: 'vit_base_patch16_224_TransReID'
+  STRIDE_SIZE: [16, 16]
+  STEM_CONV: True
+  SIE_CAMERA: False
+  SIE_VIEW: False
+  USE_DCE: False
+  QNORM_PRIOR: False
+  QNORM_GUIDE: False
+  JPM: False
+  GEM_POOLING: False
+  MLDC_READOUT: 'mldc'
+  MLDC_TEMPERATURE: 0.9
+  MLDC_LAYERS: [9, 10, 11, 12]
+  MLDC_INIT: 'uniform'
+  MLDC_TRAIN_FEATURE: 'mldc'
+
+INPUT:
+  SIZE_TRAIN: [256, 128]
+  SIZE_TEST: [256, 128]
+  PROB: 0.5
+  RE_PROB: 0.5
+  PADDING: 10
+  PIXEL_MEAN: [0.5, 0.5, 0.5]
+  PIXEL_STD: [0.5, 0.5, 0.5]
+
+DATASETS:
+  NAMES: ('nightreid')
+  ROOT_DIR: ('data')
+
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 120
+  BASE_LR: 0.0004
+  MLDC_HEAD_LR_FACTOR: 5.0
+  MLDC_WEIGHT_LR_FACTOR: 1.0
+  CNL_WEIGHT: 0.1
+  CNL_GAMMA: 0.9
+  CNL_TEMPERATURE: 0.05
+  CNL_MOMENTUM: 0.2
+  SEED: 1234
+  WARMUP_EPOCHS: 20
+  WARMUP_METHOD: 'cosine'
+  IMS_PER_BATCH: 64
+  LARGE_FC_LR: False
+  CHECKPOINT_PERIOD: 120
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 10
+  WEIGHT_DECAY: 1e-4
+  WEIGHT_DECAY_BIAS: 1e-4
+  BIAS_LR_FACTOR: 2
+
+TEST:
+  EVAL: True
+  IMS_PER_BATCH: 256
+  RE_RANKING: False
+  WEIGHT: ''
+  NECK_FEAT: 'after'
+  MLDC_RETRIEVAL: 'mldc'
+  FEAT_NORM: 'yes'
+  MLDC_VISUALIZE: False
+  MLDC_VIS_SAMPLES: 6
+  MLDC_VIS_PERIOD: 10
+
+OUTPUT_DIR: '/root/log/transreid/nightreid/mldc_convpass_cnl/convpass_all_frozen_dim8_s01_gamma090_seed1234_matched_schedule_120'

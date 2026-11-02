@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "optimizer_steps": 0,
+  "training_launched": false,
+  "real_training_images": [
+    "0001R1C001.jpg",
+    "0001R2C007.jpg",
+    "0014R1C001.jpg",
+    "0014R2C006.jpg"
+  ],
+  "initial_baseline_max_abs_error": 0.0,
+  "p12_source_exact": true,
+  "attention_shape": [
+    4,
+    3,
+    8,
+    128
+  ],
+  "shared_layer_calls": [
+    2,
+    2,
+    2
+  ],
+  "layers_have_independent_parameters": true,
+  "per_layer_per_head_kl_verified": true,
+  "kl_teacher_target_detached": true,
+  "prototype_query_has_identity_gradient": true,
+  "warmup_without_teacher": true,
+  "duplicate_image_counts_verified": true,
+  "forward_does_not_write_memory": true,
+  "amp_skip_does_not_write_either_memory": true,
+  "successful_step_updates_both_memories": true,
+  "final_bn_updated_once": true,
+  "cnl_uses_exact_final_bn_descriptor": true,
+  "gradient_norms": {
+    "spatial_projection": 19.989132023444956,
+    "student_query": 0.00535921229914886,
+    "prototype_query": 4.484212732868297,
+    "layers.0": 17.77571402841123,
+    "layers.1": 6.275701886215377,
+    "layers.2": 6.520118382444073,
+    "embedding": 9.786377770784412,
+    "residual_projection": 2.3734783518165377
+  },
+  "global_output_gradient_norm": 0.01486953254789114,
+  "patch_output_gradient_norm": 0.09763871878385544,
+  "low_precision_finite": true,
+  "checkpoint_roundtrip_exact": true,
+  "inference_export_retains_student": true,
+  "inference_rejects_prototype_memory": true,
+  "pad_parameters": 3094528,
+  "verification_note": "Real-image gradients with frozen backbone; encoder-output connectivity checked separately. Memory commits are isolated fixtures, not optimizer training."
+}

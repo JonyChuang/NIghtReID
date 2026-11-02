@@ -1,0 +1,173 @@
+{
+  "all_passed": true,
+  "seed": 1234,
+  "dataset": "nightreid",
+  "device": "cpu",
+  "optimizer_steps": 0,
+  "full_training_started": false,
+  "training_output_created": false,
+  "retrieval_performance_measured": false,
+  "official_classes_ast_identical": true,
+  "official_nonzero_forward_exact": true,
+  "original_parameter_initialization_exact": true,
+  "caller_rng_preserved": true,
+  "initial_all12_cls_and_descriptor_exact": true,
+  "initial_max_absolute_difference": 0.0,
+  "bypass_outputs": {
+    "1/adapter_attn": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    },
+    "1/adapter_mlp": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    },
+    "2/adapter_attn": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    },
+    "2/adapter_mlp": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    },
+    "3/adapter_attn": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    },
+    "3/adapter_mlp": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    },
+    "4/adapter_attn": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    },
+    "4/adapter_mlp": {
+      "shape": [
+        2,
+        129,
+        768
+      ],
+      "max_absolute": 0.0
+    }
+  },
+  "original_ln_mlp_biases_retained": true,
+  "adapter_parameters": 109184,
+  "total_parameters": 89649580,
+  "frozen_trainable_parameters": 493956,
+  "optimizer_coverage_exact": true,
+  "frozen_backbone_no_grad": true,
+  "frozen_backbone_bn_buffers_unchanged": true,
+  "up_projection_gradients": {
+    "1/adapter_attn": 0.08468875288963318,
+    "1/adapter_mlp": 0.3125946521759033,
+    "2/adapter_attn": 0.09249672293663025,
+    "2/adapter_mlp": 0.18793737888336182,
+    "3/adapter_attn": 0.13244019448757172,
+    "3/adapter_mlp": 0.2345149964094162,
+    "4/adapter_attn": 0.13654884696006775,
+    "4/adapter_mlp": 0.1654186099767685
+  },
+  "down_conv_zero_first_gradient_expected": true,
+  "activated_fixture_all_gradients_nonzero": true,
+  "model_parameters_not_updated": true,
+  "cnl_memory_not_updated": true,
+  "loss_terms": {
+    "identity": 6.217005729675293,
+    "triplet": 0.32233935594558716,
+    "cnl": 0.0
+  },
+  "cnl_stats": {
+    "anchors": 4,
+    "active_anchors": 0,
+    "empty_positive_sets": 4,
+    "anchors_with_crosscam_positive": 4,
+    "selected_positives": 0,
+    "available_positives": 4,
+    "candidate_images": 4,
+    "memory_images": 0
+  },
+  "strict_checkpoint_roundtrip_exact": true,
+  "joint_initial_output_exact": true,
+  "all12_initial_output_exact": true,
+  "trained_baseline_insertion_exact": true,
+  "original_checkpoint_unchanged": true,
+  "config_variants": [
+    "convpass_first4_frozen_nightreid",
+    "convpass_first4_joint_nightreid",
+    "convpass_all_frozen_nightreid",
+    "baseline_nightreid"
+  ],
+  "architecture": {
+    "variant": "convpass_mldc_cnl_20261026",
+    "convpass_enabled": true,
+    "convpass_layers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "freeze_backbone": true,
+    "convpass_dim": 8,
+    "convpass_scale": 0.1,
+    "convpass_sites": [
+      "attention_parallel",
+      "ffn_parallel"
+    ],
+    "convpass_init": "official_zero_up",
+    "convpass_cls": "separate_1x1_image",
+    "convpass_dropout": 0.1,
+    "original_ln_ffn_cls": "retained",
+    "frozen_stem_bn_stats": true,
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "mldc_temperature": 0.9,
+    "descriptor_dim": 768,
+    "patch_grid": [
+      16,
+      8
+    ],
+    "dataset": "nightreid",
+    "seed": 1234
+  },
+  "dataset_protocol": {
+    "train_ids": 500,
+    "train_images": 15514,
+    "query_images": 1394,
+    "gallery_images": 26111
+  },
+  "gpu_batch64_validated": false,
+  "seconds": 25.600695565808564
+}

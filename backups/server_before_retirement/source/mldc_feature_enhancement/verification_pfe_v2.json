@@ -1,0 +1,185 @@
+{
+  "architecture": {
+    "variant": "pfe_v2_rms5pct_lr10_patch2468_fixed_equal_20261018",
+    "enhancer": "paper-based MSRFConv/PFEBlock in ViT, not the full detector",
+    "pfe_enabled": true,
+    "pfe_layers": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "dim": 192,
+    "kernel": 3,
+    "expansion": 0.5,
+    "target_ratio": 0.05,
+    "up_init_std": 0.01,
+    "grid": [
+      16,
+      8
+    ],
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "global_fusion": "fixed_equal",
+    "global_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "descriptor_dim": 768,
+    "spatial_partition": false,
+    "joint_from_epoch": 1,
+    "retrieval": "BN-after global; evaluator L2",
+    "residual_scale": "fixed image-wide RMS ratio, differentiable FP32; zero output stays zero",
+    "legacy_pfe_gain_used": false
+  },
+  "startup_effect": {
+    "images": 3,
+    "stage_ratio_mean": [
+      0.04999998211860657,
+      0.04999999329447746,
+      0.04999999329447746,
+      0.05000000074505806
+    ],
+    "descriptor_relative_change_mean": 0.041391633450984955,
+    "cls_relative_change_mean": [
+      0.03985946252942085,
+      0.04151114076375961,
+      0.04264824092388153,
+      0.0452178530395031
+    ],
+    "cls_attention_abs_change_mean": 0.00016250504995696247,
+    "note": "On/off within the same network; not a retrieval accuracy measurement"
+  },
+  "schedule": {
+    "0": {
+      "backbone": [
+        4.000000000000001e-06,
+        8.000000000000001e-06
+      ],
+      "pfe": [
+        4e-05,
+        8e-05
+      ],
+      "head": [
+        2e-05
+      ]
+    },
+    "1": {
+      "backbone": [
+        2.3800000000000003e-05,
+        4.7600000000000005e-05
+      ],
+      "pfe": [
+        0.000238,
+        0.000476
+      ],
+      "head": [
+        0.000119
+      ]
+    },
+    "5": {
+      "backbone": [
+        0.00010300000000000001,
+        0.00020600000000000002
+      ],
+      "pfe": [
+        0.00103,
+        0.00206
+      ],
+      "head": [
+        0.000515
+      ]
+    },
+    "20": {
+      "backbone": [
+        0.000373258670595374,
+        0.000746517341190748
+      ],
+      "pfe": [
+        0.00373258670595374,
+        0.00746517341190748
+      ],
+      "head": [
+        0.00186629335297687
+      ]
+    },
+    "80": {
+      "backbone": [
+        0.00010060000000000005,
+        0.0002012000000000001
+      ],
+      "pfe": [
+        0.0010060000000000004,
+        0.0020120000000000008
+      ],
+      "head": [
+        0.0005030000000000002
+      ]
+    },
+    "119": {
+      "backbone": [
+        8.683979348787711e-07,
+        1.7367958697575422e-06
+      ],
+      "pfe": [
+        8.68397934878771e-06,
+        1.736795869757542e-05
+      ],
+      "head": [
+        4.341989674393855e-06
+      ]
+    },
+    "120": {
+      "backbone": [
+        8.000000000000001e-07,
+        1.6000000000000001e-06
+      ],
+      "pfe": [
+        8e-06,
+        1.6e-05
+      ],
+      "head": [
+        4e-06
+      ]
+    }
+  },
+  "gradients": {
+    "pfe_adapters.": 1.395726538339484,
+    "base.patch_embed.": 55.302849595779925,
+    "base.blocks.": 46.80016035540481,
+    "classifier.": 7.85813429881439
+  },
+  "isolated_cpu_step_relative_updates": {
+    ".down.": {
+      "relative_total": 7.566221311946971e-05,
+      "relative_direction": 7.56613206116475e-05
+    },
+    ".block.": {
+      "relative_total": 2.510787127286312e-05,
+      "relative_direction": 2.510531132454938e-05
+    },
+    ".up.": {
+      "relative_total": 0.0005671473824455256,
+      "relative_direction": 0.0005671472531178229
+    }
+  },
+  "real_ssl_loaded": true,
+  "samples": "8 augmented TRAIN images for backward, PK=2x4; 3 clean TRAIN images for initial effect; no query/gallery inference",
+  "full_id_plus_triplet": true,
+  "joint_backbone_trainable": true,
+  "all_pfe_gradients_finite_nonzero": true,
+  "fp32_normalization_under_cpu_amp": true,
+  "zero_output_recovers_input_exactly": true,
+  "config_roundtrip_and_checkpoint_strict_load": true,
+  "full_network_isolated_cpu_optimizer_steps": 1,
+  "experiment_started": false,
+  "cuda_initialized": false,
+  "figures_server": "/root/log/transreid/night600/vit_base_ics_featenhancer_mldc_20261017/pfe_v2_preflight_20261018",
+  "note": "Verification weights discarded. Initial effect is untrained and does not establish retrieval benefit."
+}

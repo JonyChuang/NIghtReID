@@ -1,0 +1,78 @@
+{
+  "seed": 1234,
+  "device": "cpu",
+  "optimizer_steps": 0,
+  "training_started": false,
+  "real_uploaded_ImageNet_weights": true,
+  "teacher_path": "/root/TransReID-SSL-main/transreid_pytorch/pretrain_model/convnext_tiny_1k_224_ema.pth",
+  "bytes": 114414741,
+  "cuda_available": false,
+  "cgroup_memory_before": {
+    "anon": 405319680,
+    "file": 1429852160,
+    "shmem": 0
+  },
+  "strict_state_items": 182,
+  "parameters": 28589128,
+  "all_teacher_weights_exactly_match_file": true,
+  "teacher_frozen": true,
+  "teacher_provenance": {
+    "architecture": "official ConvNeXt-T",
+    "source": "ImageNet-1K",
+    "weights_url": "https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth",
+    "checkpoint": "/root/TransReID-SSL-main/transreid_pytorch/pretrain_model/convnext_tiny_1k_224_ema.pth",
+    "loaded": true,
+    "nightreid_finetuned": false,
+    "frozen": true,
+    "stage": 3
+  },
+  "real_training_images": [
+    "0001R1C001.jpg",
+    "0014R2C006.jpg"
+  ],
+  "real_training_batch": 2,
+  "input_shape": [
+    2,
+    3,
+    256,
+    128
+  ],
+  "teacher_shape": [
+    2,
+    384,
+    16,
+    8
+  ],
+  "teacher_forward_finite": true,
+  "teacher_output_requires_grad": false,
+  "teacher_eval_enforced": true,
+  "student_probe_passed": true,
+  "student_initialized_from_original_SSL": true,
+  "student_pretrain": "pretrain_model/vit_base_ics_cfs_lup.pth",
+  "student_descriptor_shape": [
+    2,
+    768
+  ],
+  "kd_raw": 0.5867500901222229,
+  "kd_weighted": 0.05867500975728035,
+  "patch_statistics": {
+    "images": 2,
+    "patches": 128,
+    "ordered_pairs_per_image": 16256,
+    "teacher_relation_std": 0.03805629909038544,
+    "student_relation_std": 0.1799250841140747,
+    "relation_mae": 0.745230495929718
+  },
+  "KD_gradient_norms": {
+    "original_stem": 0.27162569761276245,
+    "first_ViT_block": 0.03842805698513985,
+    "last_ViT_block": 0.061881810426712036
+  },
+  "teacher_weights_unchanged": true,
+  "inference_teacher_calls": 0,
+  "full_batch64_GPU_preflight_completed": false,
+  "checkpoint_file_unchanged": true,
+  "elapsed_seconds": 12.774958219379187,
+  "all_available_checks_passed": true,
+  "scope": "Real ImageNet teacher + real augmented NightReID images + original SSL student. CPU batch2, selected KD gradients only, no optimizer steps or retrieval metrics. CUDA AMP/batch64 memory check remains pending when GPU is unavailable."
+}

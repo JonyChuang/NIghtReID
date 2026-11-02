@@ -1,0 +1,76 @@
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: ('night600')
+  ROOT_DIR: ('data')
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN:
+  - 0.5
+  - 0.5
+  - 0.5
+  PIXEL_STD:
+  - 0.5
+  - 0.5
+  - 0.5
+  PROB: 0.5
+  RE_PROB: 0.5
+  SIZE_TEST:
+  - 256
+  - 128
+  SIZE_TRAIN:
+  - 256
+  - 128
+MODEL:
+  DEVICE_ID: ('0')
+  GEM_POOLING: false
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  JPM: false
+  METRIC_LOSS_TYPE: triplet
+  MLDC_READOUT: mldc
+  MLDC_TEMPERATURE: 0.9
+  NAME: transformer
+  NO_MARGIN: true
+  PRETRAIN_HW_RATIO: 2
+  PRETRAIN_PATH: pretrain_model/vit_base_ics_cfs_lup.pth
+  QNORM_GUIDE: false
+  QNORM_PRIOR: false
+  STEM_CONV: true
+  STRIDE_SIZE:
+  - 16
+  - 16
+  TRANSFORMER_TYPE: vit_base_patch16_224_TransReID
+  USE_DCE: false
+  LOCAT_GAUG: false
+  LOCAT_PRR: true
+  LOCAT_READOUT_NORM: true
+OUTPUT_DIR: '/root/log/transreid/night600/mldc_locat_attention/patch_refinement_only'
+SOLVER:
+  BASE_LR: 0.0004
+  BIAS_LR_FACTOR: 2
+  CHECKPOINT_PERIOD: 120
+  EVAL_PERIOD: 10
+  IMS_PER_BATCH: 64
+  LARGE_FC_LR: false
+  LOG_PERIOD: 50
+  MAX_EPOCHS: 120
+  MLDC_HEAD_LR_FACTOR: 5.0
+  OPTIMIZER_NAME: SGD
+  WARMUP_EPOCHS: 20
+  WARMUP_METHOD: cosine
+  WEIGHT_DECAY: 1e-4
+  WEIGHT_DECAY_BIAS: 1e-4
+  SEED: 1234
+TEST:
+  EVAL: true
+  FEAT_NORM: 'yes'
+  IMS_PER_BATCH: 128
+  MLDC_VISUALIZE: true
+  MLDC_VIS_PERIOD: 10
+  MLDC_VIS_SAMPLES: 6
+  NECK_FEAT: after
+  RE_RANKING: false
+  WEIGHT: ''

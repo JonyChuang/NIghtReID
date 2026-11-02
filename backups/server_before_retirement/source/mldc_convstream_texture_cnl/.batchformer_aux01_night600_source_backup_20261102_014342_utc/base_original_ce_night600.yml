@@ -1,0 +1,139 @@
+MODEL:
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: pretrain_model/vit_base_ics_cfs_lup.pth
+  PRETRAIN_HW_RATIO: 2
+  METRIC_LOSS_TYPE: triplet
+  ID_LOSS_WEIGHT: 1.0
+  TRIPLET_LOSS_WEIGHT: 1.0
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NAME: transformer
+  NO_MARGIN: true
+  DEVICE_ID: ('0')
+  TRANSFORMER_TYPE: vit_base_patch16_224_TransReID
+  STRIDE_SIZE:
+  - 16
+  - 16
+  STEM_CONV: true
+  SIE_CAMERA: false
+  SIE_VIEW: false
+  USE_DCE: false
+  QNORM_PRIOR: false
+  QNORM_GUIDE: false
+  JPM: false
+  GEM_POOLING: false
+  MLDC_READOUT: mldc
+  MLDC_TEMPERATURE: 0.9
+  MLDC_LAYERS:
+  - 9
+  - 10
+  - 11
+  - 12
+  MLDC_INIT: uniform
+  MLDC_TRAIN_FEATURE: mldc
+  MLDC_WEIGHT_MODE: learnable
+INPUT:
+  SIZE_TRAIN:
+  - 256
+  - 128
+  SIZE_TEST:
+  - 256
+  - 128
+  PROB: 0.5
+  RE_PROB: 0.5
+  PADDING: 10
+  PIXEL_MEAN:
+  - 0.5
+  - 0.5
+  - 0.5
+  PIXEL_STD:
+  - 0.5
+  - 0.5
+  - 0.5
+DATASETS:
+  NAMES: night600
+  ROOT_DIR: ('data')
+DATALOADER:
+  SAMPLER: softmax_triplet
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+SOLVER:
+  OPTIMIZER_NAME: SGD
+  MAX_EPOCHS: 120
+  BASE_LR: 0.0004
+  MLDC_HEAD_LR_FACTOR: 5.0
+  MLDC_WEIGHT_LR_FACTOR: 1.0
+  CNL_WEIGHT: 0.1
+  CNL_GAMMA: 0.9
+  CNL_TEMPERATURE: 0.05
+  CNL_MOMENTUM: 0.2
+  SEED: 1234
+  WARMUP_EPOCHS: 20
+  WARMUP_METHOD: cosine
+  IMS_PER_BATCH: 64
+  LARGE_FC_LR: false
+  CHECKPOINT_PERIOD: 40
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 10
+  WEIGHT_DECAY: 1e-4
+  WEIGHT_DECAY_BIAS: 1e-4
+  BIAS_LR_FACTOR: 2
+  CNL_THRESHOLD_REFERENCE: all_nonself
+TEST:
+  EVAL: true
+  IMS_PER_BATCH: 256
+  RE_RANKING: false
+  WEIGHT: ''
+  NECK_FEAT: after
+  MLDC_RETRIEVAL: mldc
+  FEAT_NORM: 'yes'
+  MLDC_VISUALIZE: false
+  MLDC_VIS_SAMPLES: 6
+  MLDC_VIS_PERIOD: 10
+OUTPUT_DIR: /root/log/transreid/night600/mldc_convstream_texture_cnl/batchformer/from_ssl_seed1234_120
+PAD:
+  ENABLED: false
+  DIM: 256
+  HEADS: 8
+  LAYERS: 1
+  FEATURE_LAYERS:
+  - 9
+  - 10
+  - 11
+  - 12
+  KV_LAYERS:
+  - 9
+  - 10
+  - 11
+  - 12
+  PARTS: 1
+  USE_PROTOTYPE_QUERY: false
+  PROTO_WEIGHT: 0.0
+  ATT_WEIGHT: 0.0
+  PROTO_TEMPERATURE: 0.05
+  MOMENTUM: 0.5
+  MIN_IMAGES: 2
+  WARMUP_EPOCHS: 5
+  RAMP_EPOCHS: 0
+  LR_FACTOR: 5.0
+  UPDATE_MODE: adaptive
+  AMU_TEMPERATURE: 0.05
+  EMBED_NORM: batchnorm
+  PROTO_DIM: 768
+  STUDENT_FEATURE: refined_cls_mldc
+PEM:
+  ENABLED: false
+NFC:
+  ENABLED: false
+NFC_CENTER:
+  ENABLED: false
+  WEIGHT: 0.1
+  WARMUP_EPOCHS: 20
+  RAMP_EPOCHS: 5
+  LOSS: mean_shift
+BATCHFORMER:
+  ENABLED: true
+  HEADS: 4
+  DROPOUT: 0.5
+  SINGLE_CE_WEIGHT: 0.5
+  AUGMENTED_CE_WEIGHT: 0.5

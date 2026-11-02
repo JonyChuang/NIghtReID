@@ -1,0 +1,41 @@
+{
+  "all_passed": true,
+  "architecture": {
+    "variant": "featenhancer_input_learnable_cnl_20261022",
+    "enhancer_enabled": true,
+    "enhancer": "scheme-A FeatEnHancer on normalized RGB before backbone",
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "global_fusion": "learnable_softmax",
+    "uniform_initialization": true,
+    "descriptor_dim": 768,
+    "joint_from_epoch": 1,
+    "retrieval": "BN-after learned fusion; evaluator L2"
+  },
+  "enhancer_parameters": 139400,
+  "original_backbone_and_head_initialization_identical": true,
+  "identity_enhancer_matches_original_output": true,
+  "normalized_input_enhancer_called_before_backbone": true,
+  "cpu_full_vit_forward_backward": true,
+  "cnl_only_gradient_norms": {
+    "enhancer": 0.02475929632782936,
+    "fusion_logits": 0.018699683248996735,
+    "patch_embed": 3.9068055152893066
+  },
+  "all_active_parameter_gradients_finite": true,
+  "feature_dim": 768,
+  "loss_terms": {
+    "total": 1.6311975717544556,
+    "cnl": 0.37109947204589844,
+    "identity": 0.6942198276519775,
+    "triplet": 0.8998677730560303
+  },
+  "checkpoint_and_memory_restore": true,
+  "schedule_checked": true,
+  "optimizer_steps": 0,
+  "training_started": false
+}

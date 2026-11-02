@@ -1,0 +1,37 @@
+{
+  "project": "/root/TransReID-SSL-main/transreid_pytorch",
+  "target": "/root/TransReID-SSL-main/transreid_pytorch/mldc_information_preservation",
+  "backup": "/root/TransReID-SSL-main/transreid_pytorch/_code_backups/mldc_before_consensus_cnl_20261022_b461981b5d",
+  "updated": [
+    "shared_cnl.py",
+    "verify_shared_cnl.py",
+    "train.py",
+    "verify_consensus_cnl.py",
+    "verification_shared_cnl_consensus_local.json",
+    "README_UPLOAD.md",
+    "FUSED_CONSENSUS_CNL_20261022.md",
+    "configs/night600_shared_cnl_consensus.yml",
+    "processor/processor_mldc.py",
+    "model/make_model_mldc.py"
+  ],
+  "existing_processes_retained": [],
+  "new_output": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_120",
+  "training_started": false,
+  "optimizer_steps": 0,
+  "source_matches_local": true,
+  "source_hashes": {
+    "shared_cnl.py": "7caa9a1fc210b307e497885a71e3a035ce19d86c0f252ab6320a62d8497deb39",
+    "verify_shared_cnl.py": "ae142b67491e76c4d540abb65867e758f1c329244a4a335a6702fdeddb140499",
+    "train.py": "85850bff009fba8eda6e4885095b60bc3d41c3e0e16682b28ca3e8fab626f332",
+    "verify_consensus_cnl.py": "4008c950bad73dc446f299a377555276c3dcf852849a1fc95084d1d3f5556c15",
+    "verification_shared_cnl_consensus_local.json": "6c768fce336e776c55fe8dacf60a7e957cfd5894782e70f0264f8fc30bddda96",
+    "README_UPLOAD.md": "2454c4efd99295bca3ae8efec9205a6ca7e2018654d2c1badd48710a13572955",
+    "FUSED_CONSENSUS_CNL_20261022.md": "bad8000dc3896c0d9683eb4e8102cc96407b9646376b965e4caf3fd5f5748fd5",
+    "configs/night600_shared_cnl_consensus.yml": "a9dfc347e808f1e499ccc7b30aa1a4818001c80954736fb51eed4e7ec32a8391",
+    "processor/processor_mldc.py": "6e13e860fdb89b1a95df666d44dd3cfad76aaabef8354b81b43346d3effc5a9e",
+    "model/make_model_mldc.py": "22081514baf7c0e15849e59a8e59a1d3df7aab0ffde81cb469cf245ee50cdaaa"
+  },
+  "verification_passed": true,
+  "server_unit_checks": 35,
+  "local_full_vit_forward_backward": true
+}

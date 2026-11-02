@@ -1,0 +1,37 @@
+{
+  "all_passed": true,
+  "device": "NVIDIA GeForce RTX 4090",
+  "seed": 1234,
+  "real_batch": 64,
+  "optimizer_steps": 0,
+  "training_started": false,
+  "teacher_weights": "pretrain_model/convnext_tiny_1k_224_ema.pth",
+  "teacher_frozen": true,
+  "teacher_in_optimizer": false,
+  "full_AMP_joint_backward_finite": true,
+  "original_loss": 7.764233112335205,
+  "cnl_loss": 1.2670817375183105,
+  "kd_raw": 0.5486498475074768,
+  "kd_weighted": 0.05486498400568962,
+  "patch_statistics": {
+    "images": 64,
+    "patches": 128,
+    "ordered_pairs_per_image": 16256,
+    "teacher_relation_std": 0.032869212329387665,
+    "student_relation_std": 0.1949514001607895,
+    "relation_mae": 0.716310977935791
+  },
+  "cnl_statistics": {
+    "anchors": 64,
+    "active_anchors": 1,
+    "empty_positive_sets": 63,
+    "anchors_with_crosscam_positive": 52,
+    "selected_positives": 1,
+    "available_positives": 100,
+    "candidate_images": 64,
+    "memory_images": 0
+  },
+  "gpu_peak_allocated_gib": 4.787117004394531,
+  "gpu_peak_reserved_gib": 5.234375,
+  "gpu_total_gib": 23.5164794921875
+}

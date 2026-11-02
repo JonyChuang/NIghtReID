@@ -1,0 +1,16 @@
+{
+  "all_passed": true,
+  "gpu_batch": 64,
+  "real_training_images": true,
+  "training_images": 14462,
+  "amp_attempts": 3,
+  "finite_gradients": true,
+  "peak_allocated_bytes": 7168754688,
+  "peak_reserved_bytes": 8701083648,
+  "estimated_sgd_momentum_bytes": 355019568,
+  "free_before_bytes": 24876220416,
+  "capacity_with_margin": true,
+  "loss": 7.806446552276611,
+  "optimizer_steps": 0,
+  "training_started": false
+}

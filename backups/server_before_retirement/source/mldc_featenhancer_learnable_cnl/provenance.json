@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/khurramHashmi/FeatEnHancer",
+  "commit": "33da74366d95ebb9b9a94ca85db99ea94f844308",
+  "path": "low-light-object-detection-detectron2/queryrcnn/featenhancer/feat_enhancer.py",
+  "source_url": "https://raw.githubusercontent.com/khurramHashmi/FeatEnHancer/33da74366d95ebb9b9a94ca85db99ea94f844308/low-light-object-detection-detectron2/queryrcnn/featenhancer/feat_enhancer.py",
+  "adaptations": [
+    "Remove constructor .to('cuda'); use parent model device"
+  ],
+  "initialization": "Author detector Conv2d weight normal_(0,0.02); keep default biases",
+  "license_source": "https://raw.githubusercontent.com/khurramHashmi/FeatEnHancer/33da74366d95ebb9b9a94ca85db99ea94f844308/LICENSE",
+  "active_scheme": "A: original normalized RGB input enhancer before ViT",
+  "source_package": "mldc_learnable_global_cnl after 2026-10-22 schedule alignment"
+}

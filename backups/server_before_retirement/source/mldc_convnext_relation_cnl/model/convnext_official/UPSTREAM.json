@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/facebookresearch/ConvNeXt",
+  "revision": "048efcea897d999aed302f2639b6270aedf8d4c8",
+  "source": "https://raw.githubusercontent.com/facebookresearch/ConvNeXt/048efcea897d999aed302f2639b6270aedf8d4c8/models/convnext.py",
+  "adaptation": "Only replace timm utility imports with local compatible utilities; model computation/state keys unchanged.",
+  "weights_downloaded": false,
+  "weights_url": "https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth"
+}

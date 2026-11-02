@@ -1,0 +1,94 @@
+{
+  "phase": "completed",
+  "worker_pid": 457,
+  "time_utc": "2026-10-24T11:14:01Z",
+  "training_started": true,
+  "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+  "predecessor": {
+    "pid": 648,
+    "start_ticks": "776266221",
+    "epochs": 120,
+    "output": "/root/log/transreid/night600/transreid_ssl_cnl/global_cnl01_original_config_120"
+  },
+  "deferred_queue": {
+    "pid": 4440,
+    "start_ticks": "775915101",
+    "package": "/root/TransReID-SSL-main/transreid_pytorch/mldc_featenhancer_learnable_cnl",
+    "previous_phase": "waiting_for_gpu"
+  },
+  "predecessor_training": {
+    "epoch": "120",
+    "global_id": "0.09349621975115527",
+    "global_triplet": "0.026289598521977164",
+    "cnl": "2.2338887453079224",
+    "loss": "0.34317469562047",
+    "global_accuracy": "0.993793808411215",
+    "batches": "214",
+    "optimizer_updates": "214",
+    "amp_skipped_steps": "0",
+    "seconds": "20.936683640815318",
+    "cnl_active_fraction": "0.8701080607476636",
+    "cnl_empty_fraction": "0.12989193925233644",
+    "cnl_positive_coverage": "0.2918090532624066",
+    "memory_images": "14462"
+  },
+  "predecessor_completed": true,
+  "gpu": {
+    "free_mib": 17679,
+    "compute_pids": [
+      35998
+    ]
+  },
+  "pid": 458,
+  "monitor_pid": 457,
+  "console": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule.console_20261024.log",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/configs/nightreid.yml",
+  "epochs": 120,
+  "batch": 64,
+  "seed": 1234,
+  "live_terminal": true,
+  "latest_training": {
+    "epoch": "120",
+    "global_id": "0.03217793055279017",
+    "global_triplet": "0.027652623483159562",
+    "cnl": "1.8490079636113685",
+    "loss": "0.24473135304032712",
+    "global_accuracy": "0.9957510964912281",
+    "batches": "228",
+    "optimizer_updates": "228",
+    "amp_skipped_steps": "0",
+    "seconds": "23.924365112558007",
+    "cnl_active_fraction": "0.8788377192982456",
+    "cnl_empty_fraction": "0.12116228070175439",
+    "cnl_positive_coverage": "0.27733483496904365",
+    "memory_images": "15514"
+  },
+  "latest_evaluation": {
+    "epoch": "110",
+    "mAP": "0.5180698952804",
+    "rank1": "0.6714490652084351",
+    "rank5": "0.7984218001365662",
+    "rank10": "0.8421807885169983"
+  },
+  "training_completed": true,
+  "final_metrics": {
+    "epoch": "120",
+    "mAP": "0.5164797406738569",
+    "rank1": "0.668579638004303",
+    "rank5": "0.7941176295280457",
+    "rank10": "0.8428981304168701"
+  },
+  "best_metrics": {
+    "epoch": 110,
+    "mAP": 0.5180698952804,
+    "rank1": 0.6714490652084351,
+    "rank5": 0.7984218001365662,
+    "rank10": 0.8421807885169983
+  },
+  "exit_code": 0,
+  "next_experiment": {
+    "phase": "queued_after_nightreid",
+    "worker_pid": 5357,
+    "output": "/root/log/transreid/night600/mldc_featenhancer_learnable_cnl/input_a_learnable_cnl01_matched_schedule_120"
+  }
+}

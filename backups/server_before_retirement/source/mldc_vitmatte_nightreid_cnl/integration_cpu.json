@@ -1,0 +1,57 @@
+{
+  "all_passed": true,
+  "scope": "Implementation check with eight training images; not benchmark evidence",
+  "device": "cpu",
+  "optimizer_steps": 3,
+  "model_origin": "original SSL",
+  "full_training_started": false,
+  "original_config_differences": {},
+  "train_ids": 500,
+  "train_images": 15514,
+  "query_images": 1394,
+  "gallery_images": 26111,
+  "SIE_CAMERA": false,
+  "SIE_VIEW": false,
+  "legacy_global_max_difference": 0.0,
+  "rgb_intervention_max_difference": 0.1308223009109497,
+  "rgb_first_conv_parameter_change_max": 1.7136335372924805e-07,
+  "descriptor_dim": 1024,
+  "cnl_space": "original_global_768",
+  "memory_update_after_optimizer": true,
+  "records": [
+    {
+      "step": 1,
+      "loss": 14.712287902832031,
+      "global_id": 6.1938018798828125,
+      "global_triplet": 1.498476505279541,
+      "fused_id": 6.229099273681641,
+      "fused_triplet": 0.7909097075462341,
+      "cnl": 0.0,
+      "active_cnl_anchors": 0,
+      "rgb_first_conv_gradient_norm": 0.07325630635023117
+    },
+    {
+      "step": 2,
+      "loss": 14.875521659851074,
+      "global_id": 6.196036338806152,
+      "global_triplet": 1.6409779787063599,
+      "fused_id": 6.228566646575928,
+      "fused_triplet": 0.8099406361579895,
+      "cnl": 0.0,
+      "active_cnl_anchors": 0,
+      "rgb_first_conv_gradient_norm": 0.06713646650314331
+    },
+    {
+      "step": 3,
+      "loss": 14.866605758666992,
+      "global_id": 6.190199375152588,
+      "global_triplet": 1.639930248260498,
+      "fused_id": 6.223001480102539,
+      "fused_triplet": 0.8134749531745911,
+      "cnl": 0.0,
+      "active_cnl_anchors": 0,
+      "rgb_first_conv_gradient_norm": 0.07905375957489014
+    }
+  ],
+  "seconds": 33.3120680260472
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Progressive feature enhancement network for object detection in low-light conditions",
+  "authors": ["Pan Yang", "Yunong Tian"],
+  "year": 2026,
+  "doi": "10.1007/s44443-026-00927-9",
+  "source": "https://link.springer.com/article/10.1007/s44443-026-00927-9",
+  "implementation": "Independent implementation from equations 1-18; official author implementation not located",
+  "transferred_core": ["Depthwise multiplier receptive-field generation and spatial rearrangement", "Height/width pooled attention", "Stride-k aggregation", "PFE residual increment with 1x1, depthwise 3x3 and 1x1 transforms"],
+  "equation_resolution": "Equation 1 specifies C*k^2 generated channels, while the kernel description in equation 2 only lists C filters. Implement depthwise multiplier k^2 so the spatial rearrangement has consistent element count.",
+  "vit_adaptations": ["Keep 16x8 grid and 768-D tokens", "LayerNorm and 768->192->768 projections", "Four separate adapters after blocks 2,4,6,8", "Keep CLS unchanged within each adapter", "Use only projected PFE increment with fixed 0.1 outer gain", "Small nonzero up-projection initialization", "Final CLS9-12 fixed equal mean with ID plus Triplet"],
+  "not_transferred": ["CNN pyramid downsampling and channel growth", "APFP/AMFuse detection feature pyramid", "C3k2-DCFF detection fusion", "Bounding-box heads and TADIoU"],
+  "parameter_choices": {"internal_dim": 192, "kernel": 3, "expansion": 0.5, "residual_gain": 0.1},
+  "parameter_choices_note": "ViT adaptation defaults, not claimed to match author hyperparameters or be visualization-proven optima",
+  "existing_b_files_modified": false,
+  "training_started": false
+}

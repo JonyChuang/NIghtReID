@@ -1,0 +1,62 @@
+"""Explicit training entry; importing this file never starts a run."""
+import argparse
+import json
+import os
+from pathlib import Path
+import random
+import sys
+
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+
+
+def main():
+    parser=argparse.ArgumentParser(description='ViTMatte detail capture + learned MLDC/CNL, seed1234')
+    parser.add_argument('--config_file',default=str(Path(__file__).resolve().parent/'configs/dcm_rgb.yml'))
+    parser.add_argument('opts',nargs=argparse.REMAINDER)
+    args=parser.parse_args()
+    import numpy as np
+    import torch
+    from config import cfg as original_cfg
+    from datasets import make_dataloader
+    from solver import make_optimizer
+    from utils.logger import setup_logger
+    from .model.make_model_mldc import add_mldc_config,make_model,configure_head_learning_rates
+    from .loss.make_loss_mldc import make_loss
+    from .scheduler_mldc import create_fixed_equal_scheduler,wrap_weight_scheduler
+    from .indexed_data import indexed_loader
+    from .processor.processor_mldc import do_train
+    cfg=add_mldc_config(original_cfg.clone());cfg.merge_from_file(args.config_file);cfg.merge_from_list(args.opts)
+    if cfg.SOLVER.SEED!=1234 or cfg.MODEL.PRETRAIN_CHOICE!='imagenet' or cfg.SOLVER.WARMUP_METHOD!='cosine':
+        raise ValueError('Use seed1234, original SSL initialization and matched cosine schedule')
+    if cfg.TEST.RE_RANKING or cfg.TEST.MLDC_VISUALIZE:
+        raise ValueError('Use the matched non-reranked evaluation; this entry records branch diagnostics')
+    if cfg.DATASETS.NAMES!='nightreid' or cfg.MODEL.SIE_CAMERA or cfg.MODEL.SIE_VIEW:
+        raise ValueError('This experiment uses NightReID with SIE disabled')
+    cfg.freeze();os.environ['CUDA_VISIBLE_DEVICES']=cfg.MODEL.DEVICE_ID
+    if cfg.MODEL.DEVICE!='cuda' or not torch.cuda.is_available():
+        raise RuntimeError('Full training requires a visible CUDA GPU; no training has started')
+    random.seed(1234);np.random.seed(1234);torch.manual_seed(1234);torch.cuda.manual_seed_all(1234)
+    torch.backends.cudnn.deterministic=True;torch.backends.cudnn.benchmark=True
+    output=Path(cfg.OUTPUT_DIR)
+    if output.exists() and any(output.iterdir()):raise FileExistsError('Choose a new output directory')
+    output.mkdir(parents=True,exist_ok=True)
+    logger=setup_logger('transreid',str(output),if_train=True);logger.info('Config:\n%s',cfg)
+    train,_,val,nq,nc,cameras,views=make_dataloader(cfg)
+    train,dataset=indexed_loader(train)
+    model=make_model(cfg,nc,cameras,views)
+    metadata=dict(architecture=model.architecture(),config=cfg.dump(),seed=1234,
+        initialization=cfg.MODEL.PRETRAIN_PATH,train_images=len(dataset),training_dataset_fingerprint=dataset.fingerprint,
+        loss='global ID+Triplet + 0.1*global CNL + weighted fused ID+Triplet',
+        detail_loss_weight=cfg.SOLVER.DETAIL_LOSS_WEIGHT,cnl_weight=cfg.SOLVER.CNL_WEIGHT,
+        lr_schedule='fixed_equal_group_scaled_cosine',joint_from_epoch=1,resume_supported=False,
+        parameter_count=sum(p.numel() for p in model.parameters()),
+        trainable_parameters=sum(p.numel() for p in model.parameters() if p.requires_grad))
+    (output/'run_metadata.json').write_text(json.dumps(metadata,indent=2))
+    loss_fn,center=make_loss(cfg,nc)
+    optimizer,_=make_optimizer(cfg,model,center)
+    configure_head_learning_rates(cfg,model,optimizer)
+    scheduler=wrap_weight_scheduler(cfg,model,optimizer,create_fixed_equal_scheduler(cfg,optimizer))
+    do_train(cfg,model,train,val,optimizer,scheduler,loss_fn,nq,dataset)
+
+
+if __name__=='__main__':main()

@@ -1,0 +1,200 @@
+{
+  "seed": 1234,
+  "device": "cpu",
+  "all_passed": true,
+  "mode": "forward_and_synthetic_gradient_checks",
+  "optimizer_steps": 0,
+  "full_training_started": false,
+  "retrieval_performance_measured": false,
+  "original_checkpoint_unchanged": true,
+  "forward_parameters_unchanged": true,
+  "forward_buffers_unchanged": true,
+  "previous_dcm_initialization_exact": true,
+  "baseline_rng_preserved": true,
+  "initial_output_matches_previous_dcm": true,
+  "config_variants": [
+    "neck_all",
+    "neck_grouped",
+    "neck_all_pre_attn",
+    "dcm",
+    "baseline",
+    "dcm_mean"
+  ],
+  "all12_neck_visits": {
+    "1": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "2": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "3": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "4": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "5": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "6": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "7": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "8": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "9": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "10": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "11": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    },
+    "12": {
+      "shape": [
+        2,
+        768,
+        16,
+        8
+      ],
+      "calls": 1
+    }
+  },
+  "strict_checkpoint_roundtrip_exact": true,
+  "explicit_global_weight_import": true,
+  "identity_neck_disabled_equivalent": true,
+  "optimizer_coverage_exact": true,
+  "neck_learning_rate_matches_backbone": true,
+  "grouped_post_mlp_forward": true,
+  "descriptor_dim": 1024,
+  "neck_added_parameters": 23040000,
+  "architecture": {
+    "variant": "vitmatte_block_neck_detail_mldc_cnl_20261025",
+    "detail_enabled": true,
+    "detail_pooling": "guided",
+    "detail_dim": 256,
+    "alpha": 0.1,
+    "descriptor_dim": 1024,
+    "cnn_channels": [
+      48,
+      96,
+      192
+    ],
+    "fusion_channels": [
+      256,
+      128,
+      64,
+      32
+    ],
+    "rgb_channels": 3,
+    "conv_neck_enabled": true,
+    "conv_neck_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "conv_neck_placement": "post_mlp",
+    "conv_neck_hidden": 384,
+    "conv_neck_zero_init": true,
+    "conv_neck_cls": "patch_only",
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "cnl_space": "global_768",
+    "seed": 1234
+  },
+  "small_module_checks": {
+    "official_neck_equivalent": true,
+    "identity_initialization_exact": true,
+    "rectangular_grid_and_cls_bypass": true,
+    "pre_attn_changes_same_block_cls": true,
+    "post_mlp_cls_timing_verified": true,
+    "synthetic_neck_gradients_finite": true,
+    "zero_init_last_norm_receives_gradient": true,
+    "optimizer_steps": 0
+  },
+  "gpu_capacity_validated": false,
+  "seconds": 18.299400582909584
+}

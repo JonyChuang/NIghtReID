@@ -1,0 +1,1 @@
+Synthetic random inputs for interface verification. Not Night600 evaluation or experiment results. No training or optimizer updates.

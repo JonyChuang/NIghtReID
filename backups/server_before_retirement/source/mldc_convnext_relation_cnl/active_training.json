@@ -1,0 +1,14 @@
+{
+  "runner_pid": 1077,
+  "run_directory": "/root/log/transreid/nightreid/mldc_convnext_relation_cnl/run_20261027_200351_seed1234_matched120",
+  "student_output": "/root/log/transreid/nightreid/mldc_convnext_relation_cnl/convnext_imagenet_frozen_patch_relation_seed1234_matched120",
+  "console_log": "/root/log/transreid/nightreid/mldc_convnext_relation_cnl/run_20261027_200351_seed1234_matched120/student.console.log",
+  "status_file": "/root/log/transreid/nightreid/mldc_convnext_relation_cnl/run_20261027_200351_seed1234_matched120/status.json",
+  "seed": 1234,
+  "epochs": 120,
+  "batch": 64,
+  "teacher_frozen": true,
+  "teacher_finetune_epochs": 0,
+  "started_at": "2026-10-27T20:03:51.935903+08:00",
+  "verification_gpu_peak_allocated_gib": 4.787117004394531
+}

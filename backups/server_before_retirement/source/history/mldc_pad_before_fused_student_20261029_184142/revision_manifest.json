@@ -1,0 +1,40 @@
+{
+  "remote_target": "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl",
+  "backup": "/root/TransReID-SSL-main/transreid_pytorch/history/mldc_pad_before_fused_student_20261029_184142",
+  "changed_files": [
+    "README.md",
+    "configs/baseline_nightreid.yml",
+    "configs/pad_head_only_nightreid.yml",
+    "configs/pad_p12_nightreid.yml",
+    "configs/pad_prototype_no_distill_nightreid.yml",
+    "docs/PAD_METHOD.md",
+    "export_inference.py",
+    "model/make_model_mldc.py",
+    "model/prototype_attention.py",
+    "processor/processor_mldc.py",
+    "prototype_memory.py",
+    "train.py",
+    "verify_pad.py",
+    "verify_paper_alignment.py"
+  ],
+  "source_files_checked": 46,
+  "training_launched": false,
+  "old_results_modified": false,
+  "variant": "mldc_pad_fused_student_20261029",
+  "requested_changes": [
+    "one fused 768-d student identity",
+    "attention query from exact final descriptor",
+    "768-d prototypes and shared final BN",
+    "remove independent 256-d embedding"
+  ],
+  "retained": [
+    "MLDC/context fusion",
+    "three-layer eight-head MHCA+FFN",
+    "P12 spatial source",
+    "AMU gamma=.05",
+    "attention weight5",
+    "detached KL teacher target",
+    "five-epoch bootstrap",
+    "no ViT attention reuse"
+  ]
+}

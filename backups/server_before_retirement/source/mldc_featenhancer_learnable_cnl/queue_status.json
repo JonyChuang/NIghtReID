@@ -1,0 +1,15 @@
+{
+  "phase": "training_running",
+  "worker_pid": 5357,
+  "package": "/root/TransReID-SSL-main/transreid_pytorch/mldc_featenhancer_learnable_cnl",
+  "time_utc": "2026-10-24T11:14:23Z",
+  "pid": 5435,
+  "output": "/root/log/transreid/night600/mldc_featenhancer_learnable_cnl/input_a_learnable_cnl01_matched_schedule_120",
+  "console": "/root/log/transreid/night600/mldc_featenhancer_learnable_cnl/input_a_learnable_cnl01_matched_schedule_120.console.log",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_featenhancer_learnable_cnl/configs/night600.yml",
+  "training_started": true,
+  "epochs": 120,
+  "batch": 64,
+  "seed": 1234,
+  "successful_optimizer_update_observed": true
+}

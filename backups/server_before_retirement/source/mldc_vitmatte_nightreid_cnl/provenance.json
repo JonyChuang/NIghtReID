@@ -1,0 +1,40 @@
+{
+  "repository": "https://github.com/hustvl/ViTMatte",
+  "commit": "8cd7ef068380977c3962c4cb733cb1fe7f2241a5",
+  "paths": [
+    "modeling/decoder/detail_capture.py",
+    "LICENSE"
+  ],
+  "paper": "https://arxiv.org/abs/2305.15272",
+  "weights_downloaded": false,
+  "variant": "vitmatte_dcm_nightreid_gamma085_20261025",
+  "seed": 1234,
+  "transferred": [
+    "ConvStream [48,96,192]",
+    "all four upsample-concatenate-convolution fusion blocks [256,128,64,32]"
+  ],
+  "adaptations": [
+    "RGB 3 channels without trimap",
+    "768D last-patch map plus learned LayerNorm",
+    "official convolution stream and four progressive fusion blocks",
+    "mean pooling and 256D projection",
+    "1024D fixed cosine-equivalent concatenation",
+    "original global supervision and additional fused identity/triplet supervision"
+  ],
+  "backbone_changes": "optional last-patch return only; no attention-window or convolution-neck replacement",
+  "external_data": false,
+  "matting_weights": false,
+  "training_started": false,
+  "dataset": "NightReID: 500 training IDs; 528 query IDs, distractors included",
+  "pooling": "mean; no added global-guided attention pooling",
+  "cnl_space": "original BN-after global 768D; unchanged across controls",
+  "intervention": "RGB detail stream plus official progressive fusion; no convolution neck or window attention",
+  "controls": [
+    "original MLDC+CNL baseline",
+    "same DCM and losses with RGB stream input zeroed"
+  ],
+  "cnl_weight": 0.1,
+  "cnl_gamma": 0.85,
+  "SIE_CAMERA": false,
+  "SIE_VIEW": false
+}

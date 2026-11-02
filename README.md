@@ -44,3 +44,8 @@
 ## 备份与恢复
 
 服务器原始源码归档：`/root/experiment_organization_backup/original_source.tar.gz`；本地也保存同一份归档。`PATH_MAPPING.md` 可用于查找旧路径。备份包含源码、配置和说明，不包含数据集、预训练或大模型结果；这些文件保留在服务器原位置，包内初始化权重随代码包整体迁移。
+
+
+## Server backup before experiment retirement
+
+The current server source, including the retired experiment families 05–16, is preserved in [backups/server_before_retirement](backups/server_before_retirement/README.md). This recovery snapshot excludes model weights, datasets and feature caches.

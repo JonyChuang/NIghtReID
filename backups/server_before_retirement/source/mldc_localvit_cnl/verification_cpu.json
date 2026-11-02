@@ -1,0 +1,121 @@
+{
+  "all_passed": true,
+  "seed": 1234,
+  "dataset": "nightreid",
+  "device": "cpu",
+  "optimizer_steps": 0,
+  "full_training_started": false,
+  "training_output_created": false,
+  "retrieval_performance_measured": false,
+  "dataset_protocol": {
+    "train_ids": 500,
+    "train_images": 15514,
+    "query_images": 1394,
+    "gallery_images": 26111
+  },
+  "official_classes_ast_identical": true,
+  "official_local_ffn_forward_exact": true,
+  "cls_bypasses_complete_local_ffn": true,
+  "local_ffn_visits": {
+    "1": [
+      2,
+      768,
+      16,
+      8
+    ],
+    "2": [
+      2,
+      768,
+      16,
+      8
+    ],
+    "3": [
+      2,
+      768,
+      16,
+      8
+    ],
+    "4": [
+      2,
+      768,
+      16,
+      8
+    ]
+  },
+  "first4_only": true,
+  "unchanged_parameter_initialization_exact": true,
+  "linear_to_conv_mappings_exact": true,
+  "caller_rng_preserved": true,
+  "disabled_baseline_output_exact": true,
+  "parameter_count": 89795388,
+  "baseline_parameter_count": 89540396,
+  "net_parameter_increase": 254992,
+  "optimizer_coverage_exact": true,
+  "local_dwconv_lr_matches_backbone": true,
+  "real_image_local_ffn_backward": true,
+  "dwconv_gradient_norms": {
+    "1": 29.73081398010254,
+    "2": 16.486791610717773,
+    "3": 9.872203826904297,
+    "4": 5.438593864440918
+  },
+  "gradient_scope": "temporary freeze of unchanged backbone weights; LocalFFNs/MLDC/BN/classifier checked",
+  "model_parameters_not_updated": true,
+  "temporary_training_bn_buffers_updated": true,
+  "cnl_memory_not_updated": true,
+  "loss_terms": {
+    "identity": 6.214661121368408,
+    "triplet": 3.057187080383301,
+    "cnl": 0.00015807151794433594
+  },
+  "cnl_stats": {
+    "anchors": 4,
+    "active_anchors": 1,
+    "empty_positive_sets": 3,
+    "anchors_with_crosscam_positive": 4,
+    "selected_positives": 1,
+    "available_positives": 4,
+    "candidate_images": 4,
+    "memory_images": 0
+  },
+  "strict_checkpoint_roundtrip_exact": true,
+  "architecture": {
+    "variant": "localvit_first4_mldc_cnl_20261025",
+    "localvit_enabled": true,
+    "localvit_layers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "localvit_expansion": 4,
+    "localvit_activation": "hs+se",
+    "localvit_se_reduction": 768,
+    "localvit_se_hidden": 4,
+    "localvit_norm": "BatchNorm2d",
+    "localvit_cls": "bypass_complete_local_ffn",
+    "localvit_residual": "official_patch_residual_no_extra_droppath",
+    "ssl_ffn_mapping": "linear_weights_to_1x1; discard_replaced_bias_and_norm2",
+    "patch_grid": [
+      16,
+      8
+    ],
+    "input_size": [
+      256,
+      128
+    ],
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "mldc_temperature": 0.9,
+    "descriptor_dim": 768,
+    "cnl_space": "global_bn_after_l2_768",
+    "dataset": "nightreid",
+    "seed": 1234
+  },
+  "gpu_batch64_validated": false,
+  "seconds": 19.71462231129408
+}

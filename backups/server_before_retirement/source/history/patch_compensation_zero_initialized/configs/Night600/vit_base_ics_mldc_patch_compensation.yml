@@ -1,0 +1,101 @@
+MODEL:
+  PRETRAIN_CHOICE: self
+  PRETRAIN_PATH: /root/TransReID-SSL-main/transreid_pytorch/mldc_patch_grm/initialization/deep4_uniform_epoch120.pth
+  PRETRAIN_HW_RATIO: 2
+  METRIC_LOSS_TYPE: triplet
+  IF_LABELSMOOTH: 'off'
+  IF_WITH_CENTER: 'no'
+  NAME: transformer
+  NO_MARGIN: true
+  DEVICE_ID: ('0')
+  TRANSFORMER_TYPE: vit_base_patch16_224_TransReID
+  STRIDE_SIZE:
+  - 16
+  - 16
+  STEM_CONV: true
+  USE_DCE: false
+  QNORM_PRIOR: false
+  QNORM_GUIDE: false
+  JPM: false
+  GEM_POOLING: false
+  MLDC_READOUT: mldc
+  MLDC_TEMPERATURE: 0.9
+  MLDC_LAYERS:
+  - 9
+  - 10
+  - 11
+  - 12
+  MLDC_INIT: uniform
+  MLDC_TRAIN_FEATURE: patch_compensation
+  PATCH_BASELINE_CHECKPOINT: /root/TransReID-SSL-main/transreid_pytorch/mldc_patch_grm/initialization/deep4_uniform_epoch120.pth
+  PATCH_LAYERS:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  PATCH_HIDDEN_DIM: 192
+  PATCH_HEADS: 4
+  PATCH_USE_NULL: true
+  PATCH_ZERO_OUTPUT: true
+INPUT:
+  SIZE_TRAIN:
+  - 256
+  - 128
+  SIZE_TEST:
+  - 256
+  - 128
+  PROB: 0.5
+  RE_PROB: 0.5
+  PADDING: 10
+  PIXEL_MEAN:
+  - 0.5
+  - 0.5
+  - 0.5
+  PIXEL_STD:
+  - 0.5
+  - 0.5
+  - 0.5
+DATASETS:
+  NAMES: ('night600')
+  ROOT_DIR: ('data')
+DATALOADER:
+  SAMPLER: softmax_triplet
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 2
+SOLVER:
+  OPTIMIZER_NAME: SGD
+  MAX_EPOCHS: 120
+  BASE_LR: 0.0004
+  MLDC_HEAD_LR_FACTOR: 5.0
+  MLDC_WEIGHT_LR_FACTOR: 1.0
+  SEED: 1234
+  WARMUP_EPOCHS: 20
+  WARMUP_METHOD: cosine
+  IMS_PER_BATCH: 64
+  LARGE_FC_LR: false
+  CHECKPOINT_PERIOD: 120
+  LOG_PERIOD: 50
+  EVAL_PERIOD: 10
+  WEIGHT_DECAY: 1e-4
+  WEIGHT_DECAY_BIAS: 1e-4
+  BIAS_LR_FACTOR: 2
+TEST:
+  EVAL: true
+  IMS_PER_BATCH: 64
+  RE_RANKING: false
+  WEIGHT: ''
+  NECK_FEAT: after
+  MLDC_RETRIEVAL: mldc
+  FEAT_NORM: 'yes'
+  MLDC_VISUALIZE: true
+  MLDC_VIS_SAMPLES: 6
+  MLDC_VIS_PERIOD: 10
+OUTPUT_DIR: /root/log/transreid/night600/vit_base_ics_mldc_patch_compensation_20261016/stage1_frozen_anchor

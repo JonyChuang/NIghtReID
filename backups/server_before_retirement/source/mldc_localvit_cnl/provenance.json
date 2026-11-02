@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/ofsoundof/LocalViT",
+  "commit": "f49726087006ddbd55eb18a40cf6eebca18e2b8e",
+  "paths": [
+    "models/localvit.py",
+    "LICENSE"
+  ],
+  "upstream_hashes": {
+    "models/localvit.py": "966edd7847a63b290f806655165512e532ae2dafaa6e68ce7dbbad587fca6657",
+    "LICENSE": "70bd2adc9ae6a8b3a29dd6b4b2e14f493f7b1162419023b1870c0b19783f0c8e"
+  },
+  "paper": "https://arxiv.org/abs/2104.05707",
+  "weights_downloaded": false,
+  "variant": "localvit_first4_mldc_cnl_20261025",
+  "dataset": "nightreid",
+  "seed": 1234,
+  "localvit_layers": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "activation": "hs+se",
+  "expansion_ratio": 4,
+  "se_reduction": 768,
+  "se_hidden": 4,
+  "migration": [
+    "official LocalityFeedForward classes unchanged",
+    "replace norm2+MLP in first four Blocks; CLS bypasses their complete local FFN",
+    "preserve attention, stem, Blocks5-12, CLS9-12 MLDC, original ID/Triplet/CNL",
+    "rectangular 16x8 grid instead of original square-grid example",
+    "map pretrained fc1/fc2 weight matrices to bias-free 1x1 kernels; discard replaced biases/norm2",
+    "initialize new DWConv/BN/SE using seed1234 in forked RNG; no identity-init modification"
+  ],
+  "training_started": false,
+  "extra_training_data": false
+}

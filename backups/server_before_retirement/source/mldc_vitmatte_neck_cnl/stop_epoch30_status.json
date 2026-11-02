@@ -1,0 +1,47 @@
+{
+  "state": "stopped_after_epoch30_evaluation",
+  "monitor_pid": 21119,
+  "training_pid": 679,
+  "requested_stop_after_epoch": 30,
+  "time": "2026-10-25 16:26:38",
+  "output": "/root/log/transreid/night600/mldc_vitmatte_neck_cnl/neck_all_post_mlp_dcm_guided_alpha01_seed1234_matched_schedule_120",
+  "evaluation": {
+    "epoch": "30",
+    "mAP": "0.08867299899221766",
+    "rank1": "0.19357797503471375",
+    "rank5": "0.3403669595718384",
+    "rank10": "0.4275229275226593",
+    "corrected": "30",
+    "broken": "39",
+    "net_correct": "-9"
+  },
+  "best_metrics": {
+    "epoch": 30,
+    "mAP": 0.08867299899221766,
+    "rank1": 0.19357797503471375,
+    "rank5": 0.3403669595718384,
+    "rank10": 0.4275229275226593
+  },
+  "checkpoint30_available": true,
+  "latest_training": {
+    "epoch": "30",
+    "global_id": "0.21124367671253536",
+    "global_triplet": "0.5595273890405753",
+    "fused_id": "0.17358013733941624",
+    "fused_triplet": "0.6409567488191273",
+    "loss": "1.7716549953944247",
+    "cnl": "1.8634704631259185",
+    "global_accuracy": "0.9636150234741784",
+    "fused_accuracy": "0.9685299295774648",
+    "batches": "213",
+    "optimizer_updates": "213",
+    "amp_skipped_steps": "0",
+    "seconds": "45.652355233207345",
+    "cnl_active_fraction": "0.3611355633802817",
+    "cnl_positive_coverage": "0.032878415873631044",
+    "memory_images": "14462"
+  },
+  "training_process_alive": false,
+  "nightreid_started": false,
+  "note": "Existing process was stopped externally after evaluation and checkpoint writes completed."
+}

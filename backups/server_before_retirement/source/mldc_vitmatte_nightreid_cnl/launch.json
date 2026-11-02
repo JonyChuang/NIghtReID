@@ -1,0 +1,24 @@
+{
+  "queue": {
+    "state": "waiting_for_current_training",
+    "worker_pid": 13386,
+    "time": "2026-10-25 16:16:13",
+    "output": "/root/log/transreid/nightreid/mldc_vitmatte_nightreid_cnl/dcm_rgb_gamma085_alpha01_seed1234_schedule120",
+    "blocking_pids": [
+      679,
+      12834,
+      12897,
+      12960,
+      13023,
+      13086,
+      13149,
+      13212,
+      13275
+    ]
+  },
+  "console": "/root/TransReID-SSL-main/transreid_pytorch/mldc_vitmatte_nightreid_cnl/nightreid_dcm.console.log",
+  "tmux_session": null,
+  "training_at_launch": "queued behind existing training",
+  "no_rgb_control": "prepared, not queued",
+  "baseline": "existing complete NightReID gamma085 reference, best51.8313/67.5036"
+}

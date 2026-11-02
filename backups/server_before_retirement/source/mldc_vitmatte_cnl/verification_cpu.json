@@ -1,0 +1,106 @@
+{
+  "seed": 1234,
+  "device": "cpu",
+  "all_passed": true,
+  "mode": "inference_only",
+  "optimizer_steps": 0,
+  "full_training_started": false,
+  "retrieval_performance_measured": false,
+  "original_checkpoint_unchanged": true,
+  "model_parameters_unchanged": true,
+  "model_buffers_unchanged": true,
+  "official_rgb_capture_exact": true,
+  "config_variants": [
+    "dcm",
+    "baseline",
+    "dcm_mean"
+  ],
+  "mean_pooling_forward": true,
+  "trained_global_import_exact": true,
+  "disabled_control_exact": true,
+  "cosine_mixture_exact": true,
+  "detail_shapes": {
+    "D0": [
+      2,
+      3,
+      256,
+      128
+    ],
+    "D1": [
+      2,
+      48,
+      128,
+      64
+    ],
+    "D2": [
+      2,
+      96,
+      64,
+      32
+    ],
+    "D3": [
+      2,
+      192,
+      32,
+      16
+    ]
+  },
+  "fusion_shapes": {
+    "F3": [
+      2,
+      256,
+      32,
+      16
+    ],
+    "F2": [
+      2,
+      128,
+      64,
+      32
+    ],
+    "F1": [
+      2,
+      64,
+      128,
+      64
+    ],
+    "F0": [
+      2,
+      32,
+      256,
+      128
+    ]
+  },
+  "descriptor_dim": 1024,
+  "architecture": {
+    "variant": "vitmatte_detail_mldc_cnl_20261025",
+    "detail_enabled": true,
+    "detail_pooling": "guided",
+    "detail_dim": 256,
+    "alpha": 0.1,
+    "descriptor_dim": 1024,
+    "cnn_channels": [
+      48,
+      96,
+      192
+    ],
+    "fusion_channels": [
+      256,
+      128,
+      64,
+      32
+    ],
+    "rgb_channels": 3,
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "cnl_space": "global_768",
+    "seed": 1234
+  },
+  "added_parameters": 3294736,
+  "gpu_batch64_validated": false,
+  "seconds": 5.241952002048492
+}

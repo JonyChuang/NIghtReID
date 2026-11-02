@@ -1,0 +1,66 @@
+{
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_vitmatte_neck_cnl/configs/neck_all_nightreid.yml",
+  "changed_fields": {
+    "DATASETS.NAMES": [
+      "night600",
+      "nightreid"
+    ],
+    "OUTPUT_DIR": [
+      "/root/log/transreid/night600/mldc_vitmatte_neck_cnl/neck_all_post_mlp_dcm_guided_alpha01_seed1234_matched_schedule_120",
+      "/root/log/transreid/nightreid/mldc_vitmatte_neck_cnl/neck_all_post_mlp_dcm_guided_alpha01_gamma090_seed1234_matched_schedule_120"
+    ]
+  },
+  "architecture": {
+    "variant": "vitmatte_block_neck_detail_mldc_cnl_20261025",
+    "detail_enabled": true,
+    "detail_pooling": "guided",
+    "detail_dim": 256,
+    "alpha": 0.1,
+    "descriptor_dim": 1024,
+    "cnn_channels": [
+      48,
+      96,
+      192
+    ],
+    "fusion_channels": [
+      256,
+      128,
+      64,
+      32
+    ],
+    "rgb_channels": 3,
+    "conv_neck_enabled": true,
+    "conv_neck_layers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "conv_neck_placement": "post_mlp",
+    "conv_neck_hidden": 384,
+    "conv_neck_zero_init": true,
+    "conv_neck_cls": "patch_only",
+    "global_layers": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "cnl_space": "global_768",
+    "seed": 1234
+  },
+  "initialization": "same original SSL checkpoint, fresh training; not Night600 continuation",
+  "training_started": false,
+  "epochs": 120,
+  "seed": 1234,
+  "SIE_CAMERA": false,
+  "SIE_VIEW": false
+}

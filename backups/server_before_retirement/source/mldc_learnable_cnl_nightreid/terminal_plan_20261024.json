@@ -1,0 +1,6 @@
+{
+  "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+  "console": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule.console_20261024.log",
+  "source": "explicit user restart with visible terminal logs",
+  "start_previously_queued_featenhancer_afterwards": true
+}

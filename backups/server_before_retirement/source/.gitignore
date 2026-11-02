@@ -1,0 +1,50 @@
+# Python 缓存
+__pycache__/
+.ipynb_checkpoints/
+*.py[cod]
+*$py.class
+
+# 数据集和模型权重
+data/
+*.zip
+*.pth
+log/
+
+# 其他
+.vscode/
+.DS_Store
+
+# 本地环境、训练产物与私密配置
+pretrain_model/
+logs/
+results/
+runs/
+wandb/
+.idea/
+.venv/
+venv/
+*.pt
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.onnx
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+.aws/
+credentials.json
+
+# 接口验证生成的示例输出
+**/synthetic_interface/
+**/synthetic_interface_check/

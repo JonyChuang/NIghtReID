@@ -1,0 +1,55 @@
+{
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_vitmatte_neck_cnl/configs/neck_only_nightreid.yml",
+  "output": "/root/log/transreid/nightreid/mldc_vitmatte_neck_cnl/neck_only_post_mlp_gamma090_seed1234_matched_schedule_120",
+  "changed_config_fields": {
+    "MODEL.DETAIL_ENABLED": [
+      true,
+      false
+    ],
+    "OUTPUT_DIR": [
+      "/root/log/transreid/nightreid/mldc_vitmatte_neck_cnl/neck_all_post_mlp_dcm_guided_alpha01_gamma090_seed1234_matched_schedule_120",
+      "/root/log/transreid/nightreid/mldc_vitmatte_neck_cnl/neck_only_post_mlp_gamma090_seed1234_matched_schedule_120"
+    ]
+  },
+  "changes_to_model_or_training_math": false,
+  "training_entry": "/root/TransReID-SSL-main/transreid_pytorch/mldc_vitmatte_neck_cnl/train.py",
+  "metadata_change": "Report actual global-only loss and effective zero fusion loss weight when DCM is disabled",
+  "loss": "global ID + global Triplet + 0.1 * global CNL",
+  "descriptor_dim": 768,
+  "configured_neck_layers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "effective_neck_layers_for_CLS": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "seed": 1234,
+  "gamma": 0.9,
+  "CNL_weight": 0.1,
+  "epochs": 120,
+  "warmup_epochs": 20,
+  "batch_size": 64,
+  "SIE_CAMERA": false,
+  "SIE_VIEW": false,
+  "training_started": false
+}

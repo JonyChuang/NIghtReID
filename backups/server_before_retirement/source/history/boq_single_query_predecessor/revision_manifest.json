@@ -1,0 +1,20 @@
+{
+  "experiment": "mldc_joint_local_v1_20261016",
+  "server_package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_joint_local_20261016",
+  "files": [
+    "README.md",
+    "__init__.py",
+    "config.yml",
+    "loss.py",
+    "model.py",
+    "processor.py",
+    "test.py",
+    "train.py",
+    "verify_small.py"
+  ],
+  "training_started": false,
+  "verification": "syntax, imports, merged config, small substitute backbone gradients/BN/checkpoint/CPU bfloat16",
+  "real_vit_verified": false,
+  "cuda_verified": false,
+  "prior_experiments_modified": false
+}

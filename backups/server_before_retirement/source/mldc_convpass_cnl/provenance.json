@@ -1,0 +1,42 @@
+{
+  "repository": "https://github.com/JieShibo/PETL-ViT",
+  "commit": "026e4f12cfbe1e46bfb4d3ed5ba09f2d9f83e91e",
+  "paths": [
+    "convpass/vtab/convpass.py",
+    "convpass/vtab/train.py",
+    "convpass/README.md",
+    "LICENSE"
+  ],
+  "upstream_hashes": {
+    "convpass/vtab/convpass.py": "df13e038f7e1cb4fb5de6d45f964999c0af96c1e6ee1a1d5805a688f7fa336ec",
+    "convpass/vtab/train.py": "09aa0786af2e16d461bd6765d2417deff74440b6125c0b1cf27973c0295db526",
+    "convpass/README.md": "19cb46efb880f45544fcc62d88e4b69228a6a544727b625920a7bbda140a8709",
+    "LICENSE": "9ba6c3f4b2e349b61a30079afe5c5edbdc7b0c6f7ebf50a00142c17bf348158e"
+  },
+  "paper": "https://arxiv.org/abs/2207.07039",
+  "weights_downloaded": false,
+  "variant": "convpass_mldc_cnl_20261026",
+  "dataset": "nightreid",
+  "seed": 1234,
+  "default_layers": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "default_freeze_backbone": true,
+  "hidden_dim": 8,
+  "scale": 0.1,
+  "transfers": [
+    "parallel adapters alongside attention and FFN on their respective LN outputs",
+    "zero up-projection, Xavier down-projection, center-identity 3x3 convolution",
+    "QuickGELU and dropout0.1, CLS processed as separate 1x1 spatial image"
+  ],
+  "adaptations": [
+    "16x8 patch grid instead of fixed14x14",
+    "first4 frozen default, first4 joint control, all12 frozen paper-style placement control",
+    "keep existing MLDC/BN/ID/Triplet/CNL and SGD schedule; no VTAB hyperparameter transplant",
+    "freeze convolutional-stem BN statistics in frozen mode; keep original DropPath settings"
+  ],
+  "training_started": false
+}

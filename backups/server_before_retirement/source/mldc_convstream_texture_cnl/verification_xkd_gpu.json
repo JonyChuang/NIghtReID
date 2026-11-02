@@ -1,0 +1,85 @@
+{
+  "seed": 1234,
+  "device": "NVIDIA GeForce RTX 4090 D",
+  "real_training_batch": 64,
+  "optimizer_steps": 0,
+  "protocol_matches_baseline": true,
+  "objective": "identity_infonce",
+  "initial_descriptor_raw_and_all_CLS_errors": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "baseline_RNG_exact": true,
+  "inference_teacher_calls": 0,
+  "inference_state_keys_match_original": true,
+  "entire_active_backbone_trainable": true,
+  "InfoNCE_identity_masks_and_stop_gradient_passed": true,
+  "all_passed": true,
+  "teacher_checkpoint": "/root/log/transreid/nightreid/mldc_convstream_texture_cnl/teachers/texture_full120_seed1234/teacher_final.pth",
+  "teacher_metadata": {
+    "trained": true,
+    "bank": "texture",
+    "seed": 1234,
+    "warmstart": "/root/log/transreid/nightreid/mldc_vitmatte_neck_cnl/neck_all_post_mlp_dcm_guided_alpha01_gamma090_seed1234_matched_schedule_120/transformer_best.pth",
+    "warmstart_epoch": 40,
+    "warmstart_scope": "DCM ConvStream 48/96/192 only; no ViT or fusion parameters",
+    "stage": "convstream_identity_texture_teacher_v2",
+    "epoch": 120,
+    "num_classes": 500,
+    "grid": [
+      8,
+      4
+    ],
+    "dim": 128,
+    "optimizer_updates": 27373,
+    "training_dataset_fingerprint": "ae4a6311816ab5ab64969832450aa0db13d02dd58c2181c71d98b4f0bfb4443c",
+    "training_images": 15514,
+    "selected_by": "fixed final epoch",
+    "BN_statistics": "retained from old DCM; convolution and small heads fine-tuned",
+    "metrics": {
+      "mAP": 0.007644367573409783,
+      "rank1": 0.004304160829633474
+    },
+    "checkpoint": "/root/log/transreid/nightreid/mldc_convstream_texture_cnl/teachers/texture_full120_seed1234/teacher_final.pth"
+  },
+  "teacher_frozen_and_excluded_from_optimizer": true,
+  "final_KD_gradient_norms": {
+    "final_unit": 0.31547799706459045,
+    "BNneck": 0.013514760881662369,
+    "MLDC": 0.0007224472356028855,
+    "last_ViT_attention": 0.0598674938082695,
+    "first_ViT_attention": 0.33930543065071106,
+    "student_projection": 0.6653953790664673,
+    "teacher_projection": 0.3848240375518799
+  },
+  "original_loss": 7.882431983947754,
+  "CNL_loss": 0.1355886459350586,
+  "KD_raw_loss": 4.621432304382324,
+  "KD_weighted_loss": 0.4621432423591614,
+  "InfoNCE": {
+    "anchors": 64,
+    "active_anchors": 64,
+    "positive_pairs": 64,
+    "negative_pairs": 3840,
+    "same_identity_negatives": 0,
+    "positive_cosine": -0.015792347490787506,
+    "negative_cosine": 0.000917612633202225,
+    "teacher_embedding_variance": 0.003802403574809432
+  },
+  "CNL": {
+    "anchors": 64,
+    "active_anchors": 1,
+    "empty_positive_sets": 63,
+    "anchors_with_crosscam_positive": 52,
+    "selected_positives": 1,
+    "available_positives": 100,
+    "candidate_images": 64,
+    "memory_images": 0
+  },
+  "gpu_peak_allocated_gib": 5.207533359527588,
+  "gpu_total_gib": 23.5164794921875,
+  "full_batch_AMP_backward_passed": true,
+  "all_gradients_finite": true,
+  "projection_LR_factor": 5.0
+}

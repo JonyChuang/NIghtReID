@@ -1,0 +1,20 @@
+{
+  "action": "start",
+  "started_at": "2026-10-29T15:55:46.521640+08:00",
+  "pid": 418,
+  "command": [
+    "/root/miniconda3/envs/QREID/bin/python",
+    "-u",
+    "-m",
+    "mldc_convstream_texture_cnl.train",
+    "--config_file",
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/configs/pad_p12_nightreid.yml"
+  ],
+  "output": "/root/log/transreid/nightreid/mldc_convstream_texture_cnl/pad/pad_p12_singleproto_seed1234_120",
+  "stdout": "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/pad_training_stdout.log",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/configs/pad_p12_nightreid.yml",
+  "seed": 1234,
+  "epochs": 120,
+  "initialization": "original SSL, not a resumed ConvStream or frozen baseline run",
+  "source_revision": "mldc_pad_p12_20261029"
+}

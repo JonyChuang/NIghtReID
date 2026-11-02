@@ -1,0 +1,55 @@
+{
+  "deployment": {
+    "backup": "/root/TransReID-SSL-main/transreid_pytorch/_code_backups/mldc_before_extend150_20261022_412e0916b6",
+    "updated": [
+      "verify_continuation.py",
+      "CONTINUE_150_20261022.md",
+      "verification_continuation_local.json",
+      "extend_training.py",
+      "processor/processor_mldc.py"
+    ],
+    "source_checkpoint": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_warmup30_120/transformer_120.pth",
+    "new_output": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_warmup30_120_extend150",
+    "gpu": "0, 24564, 17679, 0\n",
+    "disk_free_bytes": 4031770624,
+    "training_started": false
+  },
+  "validation": {
+    "unit_checks": 49,
+    "all_passed": true,
+    "actual_checkpoint_restore": {
+      "source_epoch": 120,
+      "first_epoch": 121,
+      "final_epoch": 150,
+      "source_metrics": {
+        "mAP": 0.10622771256237327,
+        "rank1": 0.2174311876296997,
+        "rank5": 0.3825688064098358,
+        "rank10": 0.4788990914821625
+      },
+      "learning_rates": [
+        8e-07
+      ],
+      "memory_images": 14462,
+      "dataset_fingerprint_matches": true,
+      "optimizer_state_restored": false,
+      "cnl_effective_weight": 0.1,
+      "optimizer_steps": 0,
+      "training_started": false,
+      "output_created": false
+    }
+  },
+  "launch": {
+    "pid": 28813,
+    "source_checkpoint": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_warmup30_120/transformer_120.pth",
+    "output": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_warmup30_120_extend150",
+    "console": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_warmup30_120_extend150.console.log",
+    "pidfile": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_cnl_fused09_support3_uncertain08_warmup30_120_extend150.pid",
+    "first_epoch": 121,
+    "final_epoch": 150,
+    "learning_rate": 8e-07,
+    "cnl_weight": 0.1,
+    "other_processes_untouched": true,
+    "training_started": true
+  }
+}

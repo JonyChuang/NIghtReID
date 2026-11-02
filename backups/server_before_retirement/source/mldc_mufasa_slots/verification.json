@@ -1,0 +1,25 @@
+{
+  "device": "cpu",
+  "checks": {
+    "exact_mask_assignment_128_tokens": true,
+    "permutation_invariant_readout_and_zero_residual": true,
+    "query_diagnostics_same_camera_exclusion": true,
+    "real_PK_batch_backward_all_new_modules": true,
+    "original_parameters_buffers_and_eval_mode_unchanged": true,
+    "deterministic_retrieval_and_training_only_decoder": true,
+    "zero_residual_recovers_original_normalized_descriptor": true,
+    "increment_checkpoint_roundtrip": true,
+    "resume_configuration_and_partial_log_archive": true,
+    "single_layer_no_matching_and_mean_fusion_controls": true,
+    "complete_evaluation_CSV_and_fixed_pair_visualization": true
+  },
+  "losses": {
+    "identity": 5.703056335449219,
+    "triplet": 0.4223029315471649,
+    "reconstruction": 0.10142234712839127
+  },
+  "trainable_parameters": 21733121,
+  "num_query": 2180,
+  "num_gallery": 14351,
+  "full_retrieval_evaluation": "Deferred to CUDA training preflight; this script does not train epochs."
+}

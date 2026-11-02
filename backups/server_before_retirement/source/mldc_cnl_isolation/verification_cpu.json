@@ -1,0 +1,44 @@
+{
+  "all_passed": true,
+  "optimizer_steps": 0,
+  "training_started": false,
+  "paired_configuration_differences": {
+    "SOLVER.CNL_WEIGHT": {
+      "no_cnl": 0.0,
+      "cnl": 0.1
+    },
+    "OUTPUT_DIR": {
+      "no_cnl": "/root/log/transreid/night600/mldc_cnl_isolation/last_cls_no_cnl_matched_schedule_120",
+      "cnl": "/root/log/transreid/night600/mldc_cnl_isolation/last_cls_cnl01_matched_schedule_120"
+    }
+  },
+  "removal_from_full_differences": {
+    "MODEL.MLDC_READOUT": {
+      "full": "mldc",
+      "last_cls": "last_cls"
+    },
+    "OUTPUT_DIR": {
+      "full": "/root/log/transreid/night600/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+      "last_cls": "/root/log/transreid/night600/mldc_cnl_isolation/last_cls_cnl01_matched_schedule_120"
+    }
+  },
+  "paired_initial_state_identical": true,
+  "paired_initial_descriptor_identical": true,
+  "no_active_multilayer_fusion": true,
+  "readout": "last transformer block CLS before final LayerNorm",
+  "retrieval_and_cnl": "BN-after; L2 normalization for CNL and retrieval distance",
+  "cnl_loss": 0.693145751953125,
+  "cnl_only_patch_projection_gradient_norm": 2.1368603706359863,
+  "cnl_stats": {
+    "anchors": 4,
+    "active_anchors": 1,
+    "empty_positive_sets": 3,
+    "anchors_with_crosscam_positive": 4,
+    "selected_positives": 1,
+    "available_positives": 6,
+    "candidate_images": 6,
+    "memory_images": 2
+  },
+  "full_aligned_schedule_verified": true,
+  "schedule_positions": 121
+}

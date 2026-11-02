@@ -1,0 +1,39 @@
+{
+  "repository": "https://github.com/hustvl/ViTMatte",
+  "commit": "8cd7ef068380977c3962c4cb733cb1fe7f2241a5",
+  "paths": [
+    "modeling/decoder/detail_capture.py",
+    "LICENSE",
+    "modeling/backbone/vit.py"
+  ],
+  "paper": "https://arxiv.org/abs/2305.15272",
+  "weights_downloaded": false,
+  "variant": "vitmatte_block_neck_detail_mldc_cnl_20261025",
+  "seed": 1234,
+  "transferred": [
+    "ConvStream [48,96,192]",
+    "all four upsample-concatenate-convolution fusion blocks [256,128,64,32]",
+    "Residual convolution bottleneck: 1x1 -> 3x3 -> 1x1, LN/GELU, dim//2, zero final norm"
+  ],
+  "adaptations": [
+    "RGB 3 channels, no trimap",
+    "768-channel SSL ViT last-patch map with learned LayerNorm",
+    "replace matting head with global-guided attention pooling and 256D identity descriptor",
+    "fixed 0.9/0.1 cosine-equivalent unit-vector concatenation, 1024D retrieval",
+    "retain original global ID/Triplet/CNL; add ID/Triplet on fused descriptor",
+    "patch-only HxW grid; CLS bypasses convolution",
+    "all 12 Blocks post-MLP by default, retaining original Block order while increasing insertion density",
+    "optional all-block pre-attention ablation; grouped post-MLP control"
+  ],
+  "backbone_changes": "patch-only residual bottleneck AFTER MLP inside each of 12 Blocks by default; grouped post-MLP and all-block pre-attention controls; original global attention retained",
+  "external_data": false,
+  "matting_weights": false,
+  "training_started": false,
+  "neck_source": "modeling/backbone/vit.py",
+  "neck_source_sha256": "6e944b749059720cb2ffade64e76d0fb2e564d96ff52f643ec5006f2b993115a",
+  "neck_bottleneck_channels": 384,
+  "neck_parameters_all12": 23040000,
+  "neck_placement_is_adaptation": false,
+  "neck_density_is_adaptation": true,
+  "default_neck_placement": "post_mlp"
+}

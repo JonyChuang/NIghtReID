@@ -1,0 +1,28 @@
+{
+  "installed": "/root/TransReID-SSL-main/transreid_pytorch/mldc_convnext_relation_cnl",
+  "files": 26,
+  "training_started": false,
+  "optimizer_steps": 0,
+  "weights_downloaded": false,
+  "student_protocol_matches_previous": true,
+  "unchanged_core_files": {
+    "model/base_model.py": true,
+    "model/backbones/vit_pytorch_mldc.py": true,
+    "model/mldc.py": true,
+    "global_cnl.py": true,
+    "loss/make_loss_mldc.py": true,
+    "scheduler_mldc.py": true,
+    "indexed_data.py": true
+  },
+  "seed": 1234,
+  "epochs": 120,
+  "batch": 64,
+  "warmup_epochs": 20,
+  "base_lr": 0.0004,
+  "code_import_and_relation_gradient_check_passed": true,
+  "cuda_available": false,
+  "torch_version": "2.4.1+cu121",
+  "weights_url": "https://dl.fbaipublicfiles.com/convnext/convnext_tiny_1k_224_ema.pth",
+  "expected_weights_path": "/root/TransReID-SSL-main/transreid_pytorch/pretrain_model/convnext_tiny_1k_224_ema.pth",
+  "expected_weights_present": false
+}

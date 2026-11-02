@@ -1,0 +1,23 @@
+{
+  "expected_path": "/root/TransReID-SSL-main/transreid_pytorch/pretrain_model/convnext_tiny_1k_224_ema.pth",
+  "exists": true,
+  "training_started": false,
+  "cuda_available": true,
+  "optimizer_steps": 0,
+  "bytes": 114414741,
+  "device": "NVIDIA GeForce RTX 4090",
+  "gpu_free_gib": 23.130615234375,
+  "gpu_total_gib": 23.5164794921875,
+  "host_memory": {
+    "MemTotal": "1056471748 kB",
+    "MemAvailable": "858259656 kB"
+  },
+  "cgroup_limits": {
+    "/sys/fs/cgroup/memory.max": "107374182400",
+    "/sys/fs/cgroup/memory.current": "1220788224"
+  },
+  "student_pretrain": {
+    "exists": true,
+    "bytes": 353599419
+  }
+}

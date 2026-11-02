@@ -1,0 +1,55 @@
+{
+  "phase": "completed",
+  "monitor_pid": 5333,
+  "time_utc": "2026-10-25T03:38:42Z",
+  "pid": 5334,
+  "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl03_gamma090_fixed_equal_schedule",
+  "console": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl03_gamma090_fixed_equal_schedule.console_20261025.log",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/configs/nightreid_cnl03_gamma090.yml",
+  "runtime": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/control_cnl03_gamma090_20261025",
+  "epochs": 120,
+  "batch": 64,
+  "seed": 1234,
+  "cnl_weight": 0.3,
+  "cnl_gamma": 0.9,
+  "training_started": true,
+  "latest_training": {
+    "epoch": "120",
+    "global_id": "0.028317643801289562",
+    "global_triplet": "0.0240013438334133",
+    "cnl": "2.0194977537581793",
+    "loss": "0.658168338239193",
+    "global_accuracy": "0.9965734649122807",
+    "batches": "228",
+    "optimizer_updates": "228",
+    "amp_skipped_steps": "0",
+    "seconds": "22.790817467030138",
+    "cnl_active_fraction": "0.9296875",
+    "cnl_empty_fraction": "0.0703125",
+    "cnl_positive_coverage": "0.35668317274173655",
+    "memory_images": "15514"
+  },
+  "latest_evaluation": {
+    "epoch": "110",
+    "mAP": "0.5132538055954844",
+    "rank1": "0.6700143218040466",
+    "rank5": "0.7883787751197815",
+    "rank10": "0.8472023010253906"
+  },
+  "training_completed": true,
+  "final_metrics": {
+    "epoch": "120",
+    "mAP": "0.5108515378931192",
+    "rank1": "0.6664275527000427",
+    "rank5": "0.7919655442237854",
+    "rank10": "0.8436154723167419"
+  },
+  "best_metrics": {
+    "epoch": 110,
+    "mAP": 0.5132538055954844,
+    "rank1": 0.6700143218040466,
+    "rank5": 0.7883787751197815,
+    "rank10": 0.8472023010253906
+  },
+  "exit_code": 0
+}

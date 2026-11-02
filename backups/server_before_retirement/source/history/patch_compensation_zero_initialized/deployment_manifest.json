@@ -1,0 +1,36 @@
+{
+  "experiment": "mldc_patch_compensation_20261016",
+  "stage": "frozen_anchor",
+  "source_package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_deep4_random",
+  "target_package": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_patch_compensation_20261016",
+  "baseline_checkpoint": "/root/log/transreid/night600/vit_base_ics_a3pfn_mldc/deep4_uniform_start_120/transformer_120.pth",
+  "initialization_copy": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_patch_compensation_20261016/initialization/deep4_uniform_epoch120.pth",
+  "configuration": "/root/TransReID-SSL-main/transreid_pytorch/a3pfn_mldc_patch_compensation_20261016/configs/Night600/vit_base_ics_mldc_patch_compensation.yml",
+  "output_directory": "/root/log/transreid/night600/vit_base_ics_mldc_patch_compensation_20261016/stage1_frozen_anchor",
+  "source_unchanged": true,
+  "baseline_unchanged": true,
+  "source_file_digests": {
+    "README.md": "744868a9427f8b5ab6dbfc317f3fef07a0ccfe8e4102640e8098257b180bb1a0",
+    "train.py": "08d05b343a2ad9537d04234d4271bcfebfdf5b6776cb3f564790dc194ee27bf2",
+    "scheduler_mldc.py": "56aeb1a1eca3836ea12bd38f2d68c29a777107a871e9db8c0b2fe6c096d12314",
+    "__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test.py": "4d247a5ce578d4a25203a3be08f9b44beb69ba82aee579262d743d613772e087",
+    "configs/Night600/vit_base_ics_mldc_deep4_random.yml": "be72688f487cebec4389557b4540301bed192aefb4ba5e84f8236adefa969c77",
+    "configs/Night600/vit_base_ics_mldc_deep4_uniform.yml": "3f3ff3ff8bd7036c9dcd09d36ba9794961dccad6a3c8efe542e43782137d2995",
+    "processor/processor_mldc.py": "ed04950fb8cf6138848e1703877c90385a5024b100e274ff09d196690007bc4e",
+    "processor/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "processor/visualization.py": "a1a2ac694048c43f77435362aa5b43ca5203152f9fdd3e46a22a5d6cdf23bfd2",
+    "loss/make_loss_mldc.py": "a9d63b5703dd475b13ca91b0b5b5a457eb1224d2faf284f93c93940c3f1eaa66",
+    "loss/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model/make_model_mldc.py": "7cd437414174889650733887776d4dd3e96e935331e96f6d5e2f8490b2195ce1",
+    "model/mldc.py": "79de439c89b0c46542af6c9d662f5ad46502a1e41ffc5306a1020c5adef2eeb7",
+    "model/backbones/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "model/backbones/vit_pytorch_mldc.py": "981f077fb9cab7ad283900cb1d17143c449705f5f79dac9057d1ad9b4688b01c"
+  },
+  "baseline_stat": [
+    357625161,
+    1791980288158712354
+  ],
+  "training_started": false
+}

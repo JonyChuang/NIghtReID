@@ -1,0 +1,23 @@
+{
+  "all_passed": true,
+  "capacity_with_margin": true,
+  "device": "cuda",
+  "batch": 64,
+  "optimizer_steps": 0,
+  "training_started": false,
+  "free_before": 24876220416,
+  "total_memory": 25250627584,
+  "peak_reserved_bytes": 5486149632,
+  "estimated_momentum_bytes": 355076368,
+  "loss": 8.07841968536377,
+  "cnl_stats": {
+    "anchors": 64,
+    "active_anchors": 9,
+    "empty_positive_sets": 55,
+    "anchors_with_crosscam_positive": 64,
+    "selected_positives": 9,
+    "available_positives": 1386,
+    "candidate_images": 15514,
+    "memory_images": 15514
+  }
+}

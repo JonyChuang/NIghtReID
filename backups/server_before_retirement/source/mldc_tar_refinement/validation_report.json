@@ -1,0 +1,23 @@
+{
+  "fft": false,
+  "optimizer_steps": 0,
+  "training_entrypoint_called": false,
+  "checks": {
+    "no_frequency_operations": true,
+    "author_pyramid_equivalence_N1": true,
+    "author_pyramid_equivalence_N3": true,
+    "identical_initial_mldc_backbone_and_head": true,
+    "optimizer_parameter_groups": true,
+    "four_id_plus_global_triplet_forward_backward": true,
+    "no_parameter_update": true,
+    "singleton_cls_query_key_zero_gradient_expected": true,
+    "lpam_autocast_forward_backward_cpu": true,
+    "joint_descriptor_and_before_after_bn_semantics": true,
+    "real_night600_fixed_pair_png_npz": true,
+    "all_nine_retrieval_streams_and_csv_json_plot": true,
+    "strict_state_dictionary_load": true,
+    "normalized_spatial_share_png": true
+  },
+  "synthetic_loss_not_dataset_result": 6.349494457244873,
+  "validation_output": "/tmp/codex_lpam_no_fft_validation_20261009"
+}

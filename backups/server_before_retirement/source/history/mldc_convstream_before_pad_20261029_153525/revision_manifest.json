@@ -1,0 +1,32 @@
+{
+  "remote_target": "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl",
+  "backup": "/root/TransReID-SSL-main/transreid_pytorch/history/mldc_convstream_before_pad_20261029_153525",
+  "changed_files": [
+    "README.md",
+    "configs/baseline_nightreid.yml",
+    "configs/pad_head_only_nightreid.yml",
+    "configs/pad_p12_nightreid.yml",
+    "configs/pad_prototype_no_distill_nightreid.yml",
+    "docs/PAD_METHOD.md",
+    "export_inference.py",
+    "model/backbones/vit_pytorch_mldc.py",
+    "model/make_model_mldc.py",
+    "model/prototype_attention.py",
+    "pipeline_runner_20261026.py",
+    "pipeline_runner_full_20261026.py",
+    "processor/processor_mldc.py",
+    "prototype_memory.py",
+    "test.py",
+    "train.py",
+    "train_teacher.py",
+    "training_updates.py",
+    "verify.py",
+    "verify_pad.py"
+  ],
+  "source_files_checked": 45,
+  "all_uploaded_files_verified": true,
+  "training_launched": false,
+  "optimizer_steps": 0,
+  "old_results_modified": false,
+  "before_snapshot": "C:\\Users\\Larmes\\Documents\\ChatGPT\\NIghtReID\\pad_convstream_revision_20261029\\before\\mldc_convstream_texture_cnl"
+}

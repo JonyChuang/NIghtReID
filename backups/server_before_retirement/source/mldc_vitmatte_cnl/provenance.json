@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/hustvl/ViTMatte",
+  "commit": "8cd7ef068380977c3962c4cb733cb1fe7f2241a5",
+  "paths": [
+    "modeling/decoder/detail_capture.py",
+    "LICENSE"
+  ],
+  "paper": "https://arxiv.org/abs/2305.15272",
+  "weights_downloaded": false,
+  "variant": "vitmatte_detail_mldc_cnl_20261025",
+  "seed": 1234,
+  "transferred": [
+    "ConvStream [48,96,192]",
+    "all four upsample-concatenate-convolution fusion blocks [256,128,64,32]"
+  ],
+  "adaptations": [
+    "RGB 3 channels, no trimap",
+    "768-channel SSL ViT last-patch map with learned LayerNorm",
+    "replace matting head with global-guided attention pooling and 256D identity descriptor",
+    "fixed 0.9/0.1 cosine-equivalent unit-vector concatenation, 1024D retrieval",
+    "retain original global ID/Triplet/CNL; add ID/Triplet on fused descriptor"
+  ],
+  "backbone_changes": "optional last-patch return only; no attention-window or convolution-neck replacement",
+  "external_data": false,
+  "matting_weights": false,
+  "training_started": false
+}

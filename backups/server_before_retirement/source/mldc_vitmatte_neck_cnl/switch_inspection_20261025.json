@@ -1,0 +1,118 @@
+{
+  "cancelled_queue_pids": [
+    13386
+  ],
+  "queue_state": "cancelled_by_user",
+  "training_main_processes": [
+    {
+      "pid": 679,
+      "ppid": 448,
+      "args": [
+        "python",
+        "-u",
+        "-m",
+        "mldc_vitmatte_neck_cnl.train",
+        "--config_file",
+        "mldc_vitmatte_neck_cnl/configs/neck_all.yml"
+      ]
+    }
+  ],
+  "config": "MODEL:\n  CONV_NECK_ENABLED: True\n  CONV_NECK_LAYERS: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]\n  CONV_NECK_PLACEMENT: 'post_mlp'\n  PRETRAIN_CHOICE: 'imagenet'\n  PRETRAIN_PATH: 'pretrain_model/vit_base_ics_cfs_lup.pth'\n  PRETRAIN_HW_RATIO: 2\n  METRIC_LOSS_TYPE: 'triplet'\n  IF_LABELSMOOTH: 'off'\n  IF_WITH_CENTER: 'no'\n  NAME: 'transformer'\n  NO_MARGIN: True\n  DEVICE_ID: ('0')\n  TRANSFORMER_TYPE: 'vit_base_patch16_224_TransReID'\n  STRIDE_SIZE: [16, 16]\n  STEM_CONV: True\n  USE_DCE: False\n  QNORM_PRIOR: False\n  QNORM_GUIDE: False\n  JPM: False\n  GEM_POOLING: False\n  MLDC_READOUT: 'mldc'\n  MLDC_TEMPERATURE: 0.9\n  MLDC_LAYERS: [9, 10, 11, 12]\n  MLDC_INIT: 'uniform'\n  MLDC_TRAIN_FEATURE: 'mldc'\n\nINPUT:\n  SIZE_TRAIN: [256, 128]\n  SIZE_TEST: [256, 128]\n  PROB: 0.5\n  RE_PROB: 0.5\n  PADDING: 10\n  PIXEL_MEAN: [0.5, 0.5, 0.5]\n  PIXEL_STD: [0.5, 0.5, 0.5]\n\nDATASETS:\n  NAMES: ('night600')\n  ROOT_DIR: ('data')\n\nDATALOADER:\n  SAMPLER: 'softmax_triplet'\n  NUM_INSTANCE: 4\n  NUM_WORKERS: 8\n\nSOLVER:\n  OPTIMIZER_NAME: 'SGD'\n  MAX_EPOCHS: 120\n  BASE_LR: 0.0004\n  MLDC_HEAD_LR_FACTOR: 5.0\n  MLDC_WEIGHT_LR_FACTOR: 1.0\n  CNL_WEIGHT: 0.1\n  CNL_GAMMA: 0.9\n  CNL_TEMPERATURE: 0.05\n  CNL_MOMENTUM: 0.2\n  SEED: 1234\n  WARMUP_EPOCHS: 20\n  WARMUP_METHOD: 'cosine'\n  IMS_PER_BATCH: 64\n  LARGE_FC_LR: False\n  CHECKPOINT_PERIOD: 120\n  LOG_PERIOD: 50\n  EVAL_PERIOD: 10\n  WEIGHT_DECAY: 1e-4\n  WEIGHT_DECAY_BIAS: 1e-4\n  BIAS_LR_FACTOR: 2\n\nTEST:\n  EVAL: True\n  IMS_PER_BATCH: 256\n  RE_RANKING: False\n  WEIGHT: ''\n  NECK_FEAT: 'after'\n  MLDC_RETRIEVAL: 'mldc'\n  FEAT_NORM: 'yes'\n  MLDC_VISUALIZE: False\n  MLDC_VIS_SAMPLES: 6\n  MLDC_VIS_PERIOD: 10\n\nOUTPUT_DIR: '/root/log/transreid/night600/mldc_vitmatte_neck_cnl/neck_all_post_mlp_dcm_guided_alpha01_seed1234_matched_schedule_120'\n",
+  "metadata": {
+    "architecture": {
+      "variant": "vitmatte_block_neck_detail_mldc_cnl_20261025",
+      "detail_enabled": true,
+      "detail_pooling": "guided",
+      "detail_dim": 256,
+      "alpha": 0.1,
+      "descriptor_dim": 1024,
+      "cnn_channels": [
+        48,
+        96,
+        192
+      ],
+      "fusion_channels": [
+        256,
+        128,
+        64,
+        32
+      ],
+      "rgb_channels": 3,
+      "conv_neck_enabled": true,
+      "conv_neck_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "conv_neck_placement": "post_mlp",
+      "conv_neck_hidden": 384,
+      "conv_neck_zero_init": true,
+      "conv_neck_cls": "patch_only",
+      "global_layers": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "cnl_space": "global_768",
+      "seed": 1234
+    },
+    "config": "DATALOADER:\n  NUM_INSTANCE: 4\n  NUM_WORKERS: 8\n  REMOVE_TAIL: 0\n  SAMPLER: softmax_triplet\nDATASETS:\n  NAMES: night600\n  ROOT_DIR: data\n  ROOT_TRAIN_DIR: ../data\n  ROOT_VAL_DIR: ../data\nINPUT:\n  PADDING: 10\n  PIXEL_MEAN:\n  - 0.5\n  - 0.5\n  - 0.5\n  PIXEL_STD:\n  - 0.5\n  - 0.5\n  - 0.5\n  PROB: 0.5\n  RE_PROB: 0.5\n  SIZE_TEST:\n  - 256\n  - 128\n  SIZE_TRAIN:\n  - 256\n  - 128\nMODEL:\n  ATT_DROP_RATE: 0.0\n  CONV_NECK_ENABLED: true\n  CONV_NECK_LAYERS:\n  - 1\n  - 2\n  - 3\n  - 4\n  - 5\n  - 6\n  - 7\n  - 8\n  - 9\n  - 10\n  - 11\n  - 12\n  CONV_NECK_PLACEMENT: post_mlp\n  COS_LAYER: false\n  DCE_PATH: ''\n  DETAIL_ALPHA: 0.1\n  DETAIL_DIM: 256\n  DETAIL_ENABLED: true\n  DETAIL_POOLING: guided\n  DEVICE: cuda\n  DEVICE_ID: '0'\n  DEVIDE_LENGTH: 4\n  DIST_TRAIN: false\n  DROPOUT_RATE: 0.0\n  DROP_OUT: 0.0\n  DROP_PATH: 0.1\n  FEAT_DIM: 512\n  FREEZE_DCE: true\n  GEM_POOLING: false\n  ID_LOSS_TYPE: softmax\n  ID_LOSS_WEIGHT: 1.0\n  IF_LABELSMOOTH: 'off'\n  IF_WITH_CENTER: 'no'\n  JPM: false\n  LAST_STRIDE: 1\n  METRIC_LOSS_TYPE: triplet\n  MLDC_DEEP_INIT_MASS: 0.75\n  MLDC_INIT: uniform\n  MLDC_LAYERS:\n  - 9\n  - 10\n  - 11\n  - 12\n  MLDC_READOUT: mldc\n  MLDC_TEMPERATURE: 0.9\n  MLDC_TRAIN_FEATURE: mldc\n  NAME: transformer\n  NECK: bnneck\n  NO_MARGIN: true\n  PRETRAIN_CHOICE: imagenet\n  PRETRAIN_HW_RATIO: 2\n  PRETRAIN_PATH: pretrain_model/vit_base_ics_cfs_lup.pth\n  QNORM_CONTEXT_TOKENS: 4\n  QNORM_CROSS_ATTN_HEADS: 12\n  QNORM_FUSION_ALPHA: 0.1\n  QNORM_GATE_MIN: 0.5\n  QNORM_GATE_TEMPERATURE: 1.0\n  QNORM_GUIDE: false\n  QNORM_LEARNABLE_ALPHA: false\n  QNORM_PREFIX_TOKENS: 1\n  QNORM_PRIOR: false\n  QNORM_TEMPERATURE: 1.0\n  REDUCE_FEAT_DIM: false\n  RE_ARRANGE: true\n  SHIFT_NUM: 5\n  SHUFFLE_GROUP: 2\n  SIE_CAMERA: false\n  SIE_COE: 3.0\n  SIE_VIEW: false\n  STEM_CONV: true\n  STRIDE_SIZE:\n  - 16\n  - 16\n  TEACHER_PATH: ''\n  TEACHER_WEIGHT: ''\n  TRANSFORMER_TYPE: vit_base_patch16_224_TransReID\n  TRIPLET_LOSS_WEIGHT: 1.0\n  USE_DCE: false\nOUTPUT_DIR: /root/log/transreid/night600/mldc_vitmatte_neck_cnl/neck_all_post_mlp_dcm_guided_alpha01_seed1234_matched_schedule_120\nQCAT_RANK:\n  ENABLED: false\n  HIGH_RATIO: 0.2\n  IMS_PER_BATCH: 64\n  LOSS_WEIGHT: 1.0\n  LOW_RATIO: 0.5\n  MARGIN: 0.2\nSOLVER:\n  BASE_LR: 0.0004\n  BIAS_LR_FACTOR: 2\n  CENTER_LOSS_WEIGHT: 0.0005\n  CENTER_LR: 0.5\n  CHECKPOINT_PERIOD: 120\n  CNL_GAMMA: 0.9\n  CNL_MOMENTUM: 0.2\n  CNL_TEMPERATURE: 0.05\n  CNL_WEIGHT: 0.1\n  COSINE_MARGIN: 0.5\n  COSINE_SCALE: 30\n  DETAIL_LOSS_WEIGHT: 1.0\n  DETAIL_LR_FACTOR: 1.0\n  EVAL_PERIOD: 10\n  GAMMA: 0.1\n  IMS_PER_BATCH: 64\n  LARGE_FC_LR: false\n  LOG_PERIOD: 50\n  MARGIN: 0.3\n  MAX_EPOCHS: 120\n  MLDC_HEAD_LR_FACTOR: 5.0\n  MLDC_WEIGHT_LR_FACTOR: 1.0\n  MOMENTUM: 0.9\n  OPTIMIZER_NAME: SGD\n  QCAT_LOSS_WEIGHT: 1.0\n  SEED: 1234\n  STEPS:\n  - 40\n  - 70\n  TRP_L2: false\n  WARMUP_EPOCHS: 20\n  WARMUP_FACTOR: 0.01\n  WARMUP_METHOD: cosine\n  WEIGHT_DECAY: 0.0001\n  WEIGHT_DECAY_BIAS: 0.0001\nTEST:\n  DIST_MAT: dist_mat.npy\n  EVAL: true\n  FEAT_NORM: 'yes'\n  IMS_PER_BATCH: 256\n  MLDC_RETRIEVAL: mldc\n  MLDC_VISUALIZE: false\n  MLDC_VIS_PERIOD: 10\n  MLDC_VIS_SAMPLES: 6\n  NECK_FEAT: after\n  RE_RANKING: false\n  WEIGHT: ''\n",
+    "seed": 1234,
+    "initialization": "pretrain_model/vit_base_ics_cfs_lup.pth",
+    "train_images": 14462,
+    "training_dataset_fingerprint": "de67073e801eb4a6c2551ceab115f8032ba8255fbedf349f83ada01c50b062a9",
+    "loss": "global ID+Triplet + 0.1*global CNL + weighted fused ID+Triplet",
+    "detail_loss_weight": 1.0,
+    "cnl_weight": 0.1,
+    "lr_schedule": "fixed_equal_group_scaled_cosine",
+    "joint_from_epoch": 1,
+    "resume_supported": false,
+    "parameter_count": 115721532,
+    "trainable_parameters": 114948948
+  },
+  "latest_training": {
+    "epoch": "29",
+    "global_id": "0.23315786239756664",
+    "global_triplet": "0.5822014289562691",
+    "fused_id": "0.19004805600314353",
+    "fused_triplet": "0.6472763385571224",
+    "loss": "1.8409042503912125",
+    "cnl": "1.8822056860990928",
+    "global_accuracy": "0.9592136150234741",
+    "fused_accuracy": "0.9647153755868545",
+    "batches": "213",
+    "optimizer_updates": "213",
+    "amp_skipped_steps": "0",
+    "seconds": "46.41574718803167",
+    "cnl_active_fraction": "0.34330985915492956",
+    "cnl_positive_coverage": "0.030127506724319908",
+    "memory_images": "14462"
+  },
+  "latest_evaluation": {
+    "epoch": "20",
+    "mAP": "0.07600845328768649",
+    "rank1": "0.1651376187801361",
+    "rank5": "0.2839449644088745",
+    "rank10": "0.35779815912246704",
+    "corrected": "21",
+    "broken": "38",
+    "net_correct": "-17"
+  },
+  "checkpoint_files": [
+    {
+      "name": "transformer_best.pth",
+      "bytes": 507722393
+    }
+  ],
+  "package_instructions": {}
+}
