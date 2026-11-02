@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "scheme": "MVI Cross",
+  "backup": {
+    "commit": "094c274d8e4191a0216c7f0e3ca0d811bbe8c03b",
+    "url": "https://github.com/JonyChuang/NIghtReID/tree/094c274d8e4191a0216c7f0e3ca0d811bbe8c03b/backups/server_before_retirement",
+    "remote_verified": true
+  },
+  "deleted_entries": 93,
+  "removed_directories": 16,
+  "freed_allocated_bytes_estimate": 2121728,
+  "remaining_packages": [
+    "mldc_batchformerv2_cnl",
+    "mldc_cls_readout",
+    "mldc_cnl_isolation",
+    "mldc_convstream_texture_cnl",
+    "mldc_deep4_readout",
+    "mldc_information_preservation",
+    "mldc_learnable_cnl_nightreid",
+    "mldc_learnable_global_cnl",
+    "transreid_ssl_cnl"
+  ],
+  "retained_import_checks_passed": 12,
+  "protected_unchanged": 193,
+  "active_models_present": 2,
+  "server_journal": "/root/experiment_organization_backup/retire_mvi_cross_20261102.json"
+}
