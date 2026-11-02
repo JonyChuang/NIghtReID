@@ -11,3 +11,7 @@ The snapshot excludes datasets, pretrained/trained weights, image features, cach
 Selected families: Patch+GRM, BoQ, TAR, MUFASA/Slot Attention, LocAt, Patch/CNN enhancement, input FeatEnHancer, LocalViT, Convpass, ViTMatte, texture teachers/distillation, and ConvNeXt relation distillation.
 
 Other families (MLDC/CNL, PAD, NFC, PEM, BatchFormer, BatchFormerV2, MVI, etc.) remain outside the retirement scope. Shared runtime code must be retained where still required.
+
+## Retirement completed
+
+The selected server experiments have been removed after remote confirmation of the backup. See [retirement_result.json](retirement_result.json) for the completion record and remaining packages. Source recovery is supported by this backup; deleted trained weights are not included.
