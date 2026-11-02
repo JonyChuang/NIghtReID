@@ -1,0 +1,14 @@
+{
+  "pid": 5334,
+  "monitor_pid": 5333,
+  "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl03_gamma090_fixed_equal_schedule",
+  "console": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl03_gamma090_fixed_equal_schedule.console_20261025.log",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/configs/nightreid_cnl03_gamma090.yml",
+  "runtime": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/control_cnl03_gamma090_20261025",
+  "epochs": 120,
+  "batch": 64,
+  "seed": 1234,
+  "cnl_weight": 0.3,
+  "cnl_gamma": 0.9,
+  "training_started": true
+}

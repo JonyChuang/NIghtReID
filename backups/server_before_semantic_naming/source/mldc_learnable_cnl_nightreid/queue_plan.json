@@ -1,0 +1,20 @@
+{
+  "predecessor": {
+    "pid": 648,
+    "start_ticks": "776266221",
+    "epochs": 120,
+    "output": "/root/log/transreid/night600/transreid_ssl_cnl/global_cnl01_original_config_120"
+  },
+  "deferred_queue": {
+    "pid": 4440,
+    "start_ticks": "775915101",
+    "package": "/root/TransReID-SSL-main/transreid_pytorch/mldc_featenhancer_learnable_cnl",
+    "previous_phase": "waiting_for_gpu"
+  },
+  "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+  "priority": "TransReID+CNL -> aligned learned MLDC+CNL on NightReID -> earlier FeatEnHancer queue",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/configs/nightreid.yml",
+  "epochs": 120,
+  "batch": 64,
+  "seed": 1234
+}

@@ -1,0 +1,26 @@
+{
+  "unit_checks": 9,
+  "all_passed": true,
+  "training_loop_started": false,
+  "optimizer_steps": 0,
+  "cuda_available": false,
+  "full_vit_forward_backward": true,
+  "image_shape": [
+    4,
+    3,
+    256,
+    128
+  ],
+  "descriptor_dim": 768,
+  "preservation_only_fusion_gradient": [
+    9.256958719561226e-07,
+    0.0006430162466131151,
+    0.0023098934907466173,
+    -0.002953835530206561
+  ],
+  "preservation": 0.45332348346710205,
+  "total": 2.4152464866638184,
+  "memory_unchanged_by_forward_and_backward": true,
+  "checkpoint_schema_checked": true,
+  "validation_scope": "Generated CPU images, SSL loading skipped, controlled memory keys; no retrieval evaluation"
+}

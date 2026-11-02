@@ -1,0 +1,11 @@
+{
+  "terminal": "/dev/pts/3",
+  "training_pid": 51096,
+  "follower_pid": 54541,
+  "log": "/root/TransReID-SSL-main/transreid_pytorch/mldc_nfc_batchformer/training_console.log",
+  "live": true,
+  "reused": false,
+  "training_restarted": false,
+  "log_file_preserved": true,
+  "stops_when_training_exits": true
+}

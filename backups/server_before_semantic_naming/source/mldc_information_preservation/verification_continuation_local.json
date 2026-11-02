@@ -1,0 +1,9 @@
+{
+  "all_passed": true,
+  "unit_checks": 6,
+  "first_epoch": 121,
+  "final_epoch": 150,
+  "learning_rate": 8e-07,
+  "optimizer_steps": 0,
+  "training_started": false
+}

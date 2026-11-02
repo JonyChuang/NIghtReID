@@ -1,0 +1,48 @@
+{
+  "project": "/root/TransReID-SSL-main/transreid_pytorch",
+  "target": "/root/TransReID-SSL-main/transreid_pytorch/mldc_information_preservation",
+  "backup": "/root/TransReID-SSL-main/transreid_pytorch/_code_backups/mldc_before_retrieval_cnl_20261021_723d736d07",
+  "updated": [
+    "shared_cnl.py",
+    "verify_shared_cnl.py",
+    "train.py",
+    "SHARED_CNL_20261021.md",
+    "verification_shared_cnl_retrieval_local.json",
+    "README_UPLOAD.md",
+    "configs/night600_shared_cnl.yml",
+    "processor/processor_mldc.py",
+    "model/make_model_mldc.py",
+    "model/reference_space.py"
+  ],
+  "existing_processes_retained": [
+    "1155",
+    "5351",
+    "5414",
+    "5477",
+    "5541",
+    "5604",
+    "5667",
+    "5730",
+    "5793"
+  ],
+  "old_run_variant": "mldc_shared_layer_cnl_20261021",
+  "new_output": "/root/TransReID-SSL-main/transreid_pytorch/output/mldc_information_preservation/deep4_uniform_shared_cnl_retrieval09_120",
+  "training_started": false,
+  "optimizer_steps": 0,
+  "source_matches_local": true,
+  "source_hashes": {
+    "shared_cnl.py": "83339f58d4f3add1e164a6c334fb13203c47c53080628c9884fadb05164ee91f",
+    "verify_shared_cnl.py": "7e48bf18a055f208986731402ba86f85c4da508d6ddbff2538ba8f5edd70a90b",
+    "train.py": "ea1e6ca85f7dd958481a6631ff84c0793a862576ddd4fd3db1485ef51461883d",
+    "SHARED_CNL_20261021.md": "4ce8e95b3fbef7b73acf4b337517deecd85327e4875ceda0275dad14ec796f67",
+    "verification_shared_cnl_retrieval_local.json": "aa8f79389ecc569fae8526f72605fa3c12cf6fe61cb181ceb2989a80b8f4ea5d",
+    "README_UPLOAD.md": "2e970d9f75fad78785ecb0a15f4dfadb53138d74f739a0e90a2732fcb82a3d5d",
+    "configs/night600_shared_cnl.yml": "a167052cb4fab5b45378411420ae2cc8be019ef8d622b712f961860c721fef61",
+    "processor/processor_mldc.py": "5230d1fdea7517ea2d4347123ae0d1ab0e166c756b776bb610080af0749415f5",
+    "model/make_model_mldc.py": "e43127946a2d83e698f498593bfbbbd660afcce1749782bc8d6eb362decebc18",
+    "model/reference_space.py": "320f1edc3ca440fb0c8bdc5746c6556eeb8291640a05dc3133b2fb7bde166715"
+  },
+  "verification_passed": true,
+  "server_unit_checks": 25,
+  "local_full_vit_forward_backward": true
+}

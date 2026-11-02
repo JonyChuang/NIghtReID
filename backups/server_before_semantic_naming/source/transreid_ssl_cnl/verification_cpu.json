@@ -1,0 +1,53 @@
+{
+  "all_passed": true,
+  "device": "cpu",
+  "optimizer_steps": 0,
+  "training_started": false,
+  "original_model_state_identical": true,
+  "original_global_output_max_abs_difference": 0,
+  "original_final_layernorm_active": true,
+  "original_identity_triplet_identical": true,
+  "original_optimizer_groups": true,
+  "original_scheduler_phases_checked": 121,
+  "cnl_feature": "L2-normalized before-BN original global descriptor",
+  "cnl_loss": 1.6350364685058594,
+  "cnl_stats": {
+    "anchors": 4,
+    "active_anchors": 4,
+    "empty_positive_sets": 0,
+    "anchors_with_crosscam_positive": 4,
+    "selected_positives": 8,
+    "available_positives": 8,
+    "candidate_images": 8,
+    "memory_images": 4
+  },
+  "cnl_gradient_norms": {
+    "final_layernorm": 0.00831411499530077,
+    "patch_projection": 0.893118143081665
+  },
+  "checkpoint_and_memory_roundtrip": true,
+  "training_images": 14462,
+  "training_dataset_fingerprint": "de67073e801eb4a6c2551ceab115f8032ba8255fbedf349f83ada01c50b062a9",
+  "classes": 300,
+  "queries": 2180,
+  "real_dataset_wiring": true,
+  "evaluation_wiring": true,
+  "lr_phase_0": [
+    4.000000000000001e-06,
+    4.000000000000001e-06,
+    4.000000000000001e-06,
+    4.000000000000001e-06
+  ],
+  "lr_phase_20": [
+    0.000373258670595374,
+    0.0007464637513522618,
+    0.000373258670595374,
+    0.000373258670595374
+  ],
+  "lr_phase_120": [
+    8.000000000000001e-07,
+    8.000000000000001e-07,
+    8.000000000000001e-07,
+    8.000000000000001e-07
+  ]
+}

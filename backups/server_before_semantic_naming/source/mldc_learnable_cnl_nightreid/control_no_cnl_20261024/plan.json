@@ -1,0 +1,39 @@
+{
+  "project": "/root/TransReID-SSL-main/transreid_pytorch",
+  "entrypoint": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/train.py",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/configs/nightreid_no_cnl.yml",
+  "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_no_cnl_fixed_equal_schedule",
+  "console": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_no_cnl_fixed_equal_schedule.console_20261024.log",
+  "reference_output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+  "expected_training_fingerprint": "ae4a6311816ab5ab64969832450aa0db13d02dd58c2181c71d98b4f0bfb4443c",
+  "config_differences": [
+    {
+      "field": "OUTPUT_DIR",
+      "before": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+      "after": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_no_cnl_fixed_equal_schedule"
+    },
+    {
+      "field": "SOLVER.CNL_WEIGHT",
+      "before": 0.1,
+      "after": 0.0
+    }
+  ],
+  "cnl_memory_enabled": false,
+  "source_hashes": {
+    "train.py": "35eac734bc1d93d2e72374316f8f6ff3dc151ccb96260c4db937f39f996cba74",
+    "global_cnl.py": "49bc2342e6b82476fdaf6d5024a9cfa0f7e8bc805cc75cb6a8f674cfeba3adc7",
+    "indexed_data.py": "8f62f337e643a63dab0c01ede183dda4cc85c61c29ccf213208cc487bad321fa",
+    "scheduler_mldc.py": "b8d05392ef6b713e1d9919c3d14a86021810eab5dcaba7008649d5b620f9cb3b",
+    "verify.py": "37f5c3dff224617a73e57acc760e6fac44fb5d74d28645cec2a859ad2067de78",
+    "model/make_model_mldc.py": "d9648e74f768809676cb290fefbc662a97450224d1a9febf4981968312f08e68",
+    "model/mldc.py": "cd051a70aba3aba1557448f451a82be6ee8339161375f2e6256f7191d0879ec8",
+    "model/backbones/vit_pytorch_mldc.py": "54fb0a19488d6e4b5b58efd319eef93a84c3090f7ad3545ca9b7cb3090bd8f89",
+    "loss/make_loss_mldc.py": "3ad5d16fd8a36da5776f58a6f39c9953612305df6ce9988c92752939eb7ebf2c",
+    "processor/processor_mldc.py": "400a4e1f73b7db334375db857ac976b7b6c8548f966d03f963060b72dd7d9831",
+    "configs/nightreid.yml": "365d03e5862d6797ae5f157f005b70db1724761b7653a94db313e7cabcd948b6"
+  },
+  "free_gpu_bytes": 24876220416,
+  "disk_free_bytes": 3451883520,
+  "reference_output_bytes": 851074316,
+  "initialization": "fresh original SSL pretrained checkpoint"
+}

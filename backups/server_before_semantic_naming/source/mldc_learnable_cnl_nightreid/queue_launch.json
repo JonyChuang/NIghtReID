@@ -1,0 +1,41 @@
+{
+  "queue_worker_pid": 29483,
+  "queue": {
+    "phase": "waiting_for_predecessor",
+    "worker_pid": 29483,
+    "time_utc": "2026-10-22T09:23:30Z",
+    "training_started": false,
+    "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+    "predecessor": {
+      "pid": 648,
+      "start_ticks": "776266221",
+      "epochs": 120,
+      "output": "/root/log/transreid/night600/transreid_ssl_cnl/global_cnl01_original_config_120"
+    },
+    "deferred_queue": {
+      "pid": 4440,
+      "start_ticks": "775915101",
+      "package": "/root/TransReID-SSL-main/transreid_pytorch/mldc_featenhancer_learnable_cnl",
+      "previous_phase": "waiting_for_gpu"
+    },
+    "predecessor_training": {
+      "epoch": "44",
+      "global_id": "0.6948446333408356",
+      "global_triplet": "0.5078385404058706",
+      "cnl": "9.072664710962885",
+      "loss": "2.109949657293124",
+      "global_accuracy": "0.8928154205607477",
+      "batches": "214",
+      "optimizer_updates": "214",
+      "amp_skipped_steps": "0",
+      "seconds": "21.126590855419636",
+      "cnl_active_fraction": "1.0",
+      "cnl_empty_fraction": "0.0",
+      "cnl_positive_coverage": "1.0",
+      "memory_images": "14462"
+    }
+  },
+  "older_queue_deferred": true,
+  "older_queue_pid": 4440,
+  "current_training_untouched": true
+}

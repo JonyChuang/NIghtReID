@@ -1,0 +1,40 @@
+{
+  "package": "transreid_ssl_cnl",
+  "path": "/root/TransReID-SSL-main/transreid_pytorch/transreid_ssl_cnl",
+  "variant": "transreid_ssl_cnl_20261022",
+  "original_configuration": true,
+  "reference_hashes": {
+    "config/defaults.py": "9c0af1820d850052d81769d05e9d8f9e17af369f0d59424f28d1c5410a4f58a7",
+    "model/make_model.py": "9482ca0da7e5386f5516e5423ce2ab8e70fdada2e77e3a2adf2c21534321bd2c",
+    "model/backbones/vit_pytorch.py": "3b01ed02dfb152412a9b387a7012380caa8d68ade82090a0c63c60a059f534cd",
+    "solver/make_optimizer.py": "51a3f9f4584e5ed3d8a692f03949bb6ff40531911f8fef7dac4a4fae4c135d04",
+    "solver/scheduler_factory.py": "1416226155da54dad05c444982296f7fbfae68df793e666561b4e4a68658ab08",
+    "solver/cosine_lr.py": "d3db6e30c1666c5af71200086f33c644d476310b6c5dc7ed98097cc989bdad4d",
+    "solver/scheduler.py": "b7517bb0f79a3334e2a3ac5ecb14bdcf69cb28c62dd3c734c4e3d212d0955228",
+    "loss/make_loss.py": "02638adcdf9bc1c3b234432e495f8184358d866ee26bb5338ccdfdea6505ae49",
+    "loss/triplet_loss.py": "b7a24cc44321a756623d9ee795ab5cfb182d3149bf2d5a559a3cf36beec63b04",
+    "mldc_learnable_global_cnl/global_cnl.py": "49bc2342e6b82476fdaf6d5024a9cfa0f7e8bc805cc75cb6a8f674cfeba3adc7",
+    "mldc_learnable_global_cnl/indexed_data.py": "8f62f337e643a63dab0c01ede183dda4cc85c61c29ccf213208cc487bad321fa",
+    "datasets/make_dataloader.py": "e4ff172b3354288ed9f446f1819695f3d703cfd83dfba3ce80fd775fd9b5812f",
+    "utils/metrics.py": "8715f845a369688577773afbb974a660e2324961583e0f5ba066e2f93484b7f1"
+  },
+  "source_hashes": {
+    "backbone.py": "dd388776e6ac3e6662a6d7aa44681c893015b6f861b4bb5689d9910738c43c08",
+    "global_cnl.py": "49bc2342e6b82476fdaf6d5024a9cfa0f7e8bc805cc75cb6a8f674cfeba3adc7",
+    "indexed_data.py": "8f62f337e643a63dab0c01ede183dda4cc85c61c29ccf213208cc487bad321fa",
+    "loss.py": "7ff5c56c925473916d75e37cff9f71d3cff9d1afa949042cc8eedbaa514247fe",
+    "model.py": "0b352de94820d0ef43bcc4dd84e8bab4bb71760ed4927e9263bb88e8d6d00769",
+    "processor.py": "36959b48d7c8d8d72315ce21528db885af37da8ae2f70a0c09f2040854a1d74b",
+    "query_diagnostics.py": "b2d31c002b86b946238413678d70a75a72a665e1b3a901f3929fce8ee0c802d0",
+    "test.py": "d40e94ab8798482cb1730fdd232d14b6489c0d5ffc336e7cdf78f063de071823",
+    "train.py": "9c225f7e5930a4743c594ff9881aff2ffb7d54ce1d6c2c5e5c299767865beedd",
+    "verify.py": "15e8e3a791764b70ccaabe83f52ba12471cc414bd1da3b6fadaa26ca9d4a7371",
+    "__init__.py": "a8886a3d92bcbf8c63bba2de497a71cc49e6ef62147edb43a2f83c3d22e7cc7d",
+    "configs/night600.yml": "7b28dd9dd67d53d49488842b7efe851c932da9db483bed30d1c7c741b14e88c5",
+    "README.md": "f67309123087c428ffad637cd388d9e9361d5377d273ce35e2395827bc10c4d5",
+    "verification_cpu.json": "759945c4d4f6d0509945c33085ded6caf2012b4399f3f2bb5c85562ccc38f9f4"
+  },
+  "verification_passed": true,
+  "training_started": false,
+  "original_sources_unchanged": true
+}

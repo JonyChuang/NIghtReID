@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "updated_at": "2026-11-02T05:04:16.798511+00:00",
+  "output": "/root/log/transreid/night600/mldc_nfc_batchformer/cached_reciprocal_k32_n8/from_ssl_seed1234_120",
+  "comparison": {
+    "predecessor_best": {
+      "epoch": 120,
+      "mAP": 0.11877661073152405,
+      "rank1": 0.2435779869556427,
+      "rank5": 0.4096330404281616,
+      "rank10": 0.5064220428466797
+    },
+    "neighbor_best": {
+      "epoch": 120,
+      "mAP": 0.12337649647245827,
+      "rank1": 0.24816513061523438,
+      "rank5": 0.4275229275226593,
+      "rank10": 0.5220183730125427
+    },
+    "best_map_delta_points": 0.4599885740934215,
+    "rank1_at_best_map_delta_points": 0.4587143659591675,
+    "predecessor_final": {
+      "epoch": "120",
+      "mAP": "0.11877661073152405",
+      "rank1": "0.2435779869556427",
+      "rank5": "0.4096330404281616",
+      "rank10": "0.5064220428466797"
+    },
+    "neighbor_final": {
+      "epoch": "120",
+      "mAP": "0.12337649647245827",
+      "rank1": "0.24816513061523438",
+      "rank5": "0.4275229275226593",
+      "rank10": "0.5220183730125427"
+    },
+    "final_map_delta_points": 0.4599885740934215,
+    "final_rank1_delta_points": 0.4587143659591675,
+    "evaluation": "independent single-image retrieval; no neighbor lookup at test time"
+  }
+}

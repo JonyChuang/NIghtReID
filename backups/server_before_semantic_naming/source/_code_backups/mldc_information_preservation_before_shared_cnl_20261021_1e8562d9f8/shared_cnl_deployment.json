@@ -1,0 +1,35 @@
+{
+  "project": "/root/TransReID-SSL-main/transreid_pytorch",
+  "target": "/root/TransReID-SSL-main/transreid_pytorch/mldc_information_preservation",
+  "backup": "/root/TransReID-SSL-main/transreid_pytorch/_code_backups/mldc_information_preservation_before_shared_cnl_20261021_1e8562d9f8",
+  "updated": [
+    "shared_cnl.py",
+    "verify_shared_cnl.py",
+    "train.py",
+    "SHARED_CNL_20261021.md",
+    "verification_shared_cnl_local.json",
+    "README_UPLOAD.md",
+    "configs/night600_shared_cnl.yml",
+    "processor/processor_mldc.py",
+    "model/make_model_mldc.py",
+    "model/reference_space.py"
+  ],
+  "training_started": false,
+  "source_matches_local": true,
+  "source_hashes": {
+    "shared_cnl.py": "6ab31e56a010cbbafff3f5c7159ed9fd3b9a5059905fa949b0634b05d771d65e",
+    "verify_shared_cnl.py": "807c29c8f10a9e4664834bed403408043959a1be8fe0f664d12b3119c059bce4",
+    "train.py": "a2b44c86fe4344423d9ecd9bc876d629aaf155a066b520806d94425d48e693ae",
+    "SHARED_CNL_20261021.md": "325479cd805a4ccf83f978852621c7b7c9f13d9b875979f92434ba42107e8ee0",
+    "verification_shared_cnl_local.json": "496bfc44284ebc1255db82d51e9df05c9d0707205d143e73053ff2368014275c",
+    "README_UPLOAD.md": "d42a2644f16407b31c875a82a07154dd82adbca76adfda8276dd35f5fa6f9097",
+    "configs/night600_shared_cnl.yml": "2c1258121daf4a80fb15cab69fd31512c7bf763a7b6221d9210d7f187697b0cc",
+    "processor/processor_mldc.py": "91e962236da53c64dfd33dd0524074762b0ba653201dd31bde9717413e4d925d",
+    "model/make_model_mldc.py": "106c609f509a4295a60d72317a84817d9f20a743a39db08483fe4a95666cfd28",
+    "model/reference_space.py": "1b42b35a539fcbc294e955935ae8f955781ac2311990476a408878503b31a760"
+  },
+  "verification_passed": true,
+  "server_unit_checks": 23,
+  "local_full_vit_forward_backward": true,
+  "optimizer_steps": 0
+}

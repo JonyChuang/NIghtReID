@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "optimizer_steps": 0,
+  "training_launched": false,
+  "real_training_images": [
+    "0001R1C001.jpg",
+    "0001R2C007.jpg",
+    "0014R1C001.jpg",
+    "0014R2C006.jpg"
+  ],
+  "initial_baseline_max_abs_error": 0.0,
+  "p12_source_exact": true,
+  "one_fused_student_identity": true,
+  "identity_dimension": 768,
+  "attention_internal_dimension": 256,
+  "independent_256_identity_embedding_removed": true,
+  "student_attention_queries_exact_final_cnl_tensor": true,
+  "student_prototype_ce_uses_exact_final_descriptor": true,
+  "prototype_shape": [
+    500,
+    768
+  ],
+  "shared_layer_calls_training": [
+    3,
+    3,
+    3
+  ],
+  "normal_inference_only_constructs_fusion": true,
+  "final_fusion_kl_gradient_norm": 0.005221625789999962,
+  "final_descriptor_kl_gradient_norm": 0.022700442001223564,
+  "kl_teacher_target_detached": true,
+  "kl_student_shared_layers_and_fusion_receive_gradient": true,
+  "teacher_identity_gradient_norm": 5.224369114403826e-12,
+  "gradient_norms": {
+    "spatial_projection": 0.233276214086011,
+    "fusion_query": 0.8371942553627358,
+    "student_query": 0.2691053107423489,
+    "prototype_query": 2.6128706936631353e-12,
+    "layers.0": 0.2538489563601702,
+    "layers.1": 0.26008518197742453,
+    "layers.2": 0.2568403358208802,
+    "residual_projection": 1.9224421586957783
+  },
+  "shared_final_bn_updated_for_student_and_teacher": true,
+  "forward_does_not_write_memory": true,
+  "amp_skip_does_not_write_memories": true,
+  "teacher_refined_features_feed_amu": true,
+  "backbone_weights_and_buffers_unchanged": true,
+  "inference_rejects_prototypes": true,
+  "low_precision_finite": true,
+  "checkpoint_roundtrip_exact": true,
+  "inference_export_retains_fusion": true,
+  "paper_alignment": {
+    "amu_negative_selected_by_prototype": true,
+    "amu_not_selected_by_current_sample": true,
+    "amu_mu": 0.7114226818084717,
+    "amu_low_quality_mu": 0.030091365799307823,
+    "amu_exact_formula": true,
+    "duplicate_augmentations_coalesced": true,
+    "distinct_images_updated_sequentially": true,
+    "bootstrap_without_valid_negative": true,
+    "constant_attention_weight": 5.0,
+    "shipped_configurations": {
+      "pad_p12_nightreid.yml": {
+        "weight": 5.0,
+        "update": "adaptive",
+        "norm": "batchnorm"
+      },
+      "pad_prototype_no_distill_nightreid.yml": {
+        "weight": 0.0,
+        "update": "adaptive",
+        "norm": "batchnorm"
+      },
+      "pad_head_only_nightreid.yml": {
+        "weight": 0.0,
+        "update": "adaptive",
+        "norm": "batchnorm"
+      },
+      "baseline_nightreid.yml": {
+        "weight": 5.0,
+        "update": "adaptive",
+        "norm": "batchnorm"
+      }
+    }
+  },
+  "verification_note": "Real training images, frozen backbone; nonzero context projection fixture for gradient checks. No optimizer steps."
+}

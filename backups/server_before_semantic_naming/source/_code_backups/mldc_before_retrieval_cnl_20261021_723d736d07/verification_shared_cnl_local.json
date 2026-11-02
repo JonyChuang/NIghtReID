@@ -1,0 +1,27 @@
+{
+  "all_passed": true,
+  "unit_checks": 9,
+  "optimizer_steps": 0,
+  "training_started": false,
+  "full_vit_forward_backward": true,
+  "image_shape": [
+    4,
+    3,
+    256,
+    128
+  ],
+  "descriptor_dim": 768,
+  "layer_query_gradient_norms": [
+    0.0030410478357225657,
+    8.088996401056647e-05,
+    8.318962500197813e-05,
+    0.0003635098983068019
+  ],
+  "learnable_fusion_retained": true,
+  "fusion_logits_supervised_by_original_id_triplet": true,
+  "bn_updates_per_training_forward": 1,
+  "shared_cnl_checkpoint_roundtrip": true,
+  "memory_unchanged_by_forward_backward": true,
+  "ssl_loaded": false,
+  "dataset_evaluated": false
+}

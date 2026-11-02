@@ -1,0 +1,12 @@
+{
+  "pid": 458,
+  "monitor_pid": 457,
+  "output": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule",
+  "console": "/root/log/transreid/nightreid/mldc_learnable_global_cnl/deep_four_uniform_cross_camera_cnl_fixed_equal_schedule.console_20261024.log",
+  "config": "/root/TransReID-SSL-main/transreid_pytorch/mldc_learnable_cnl_nightreid/configs/nightreid.yml",
+  "epochs": 120,
+  "batch": 64,
+  "seed": 1234,
+  "training_started": true,
+  "live_terminal": true
+}

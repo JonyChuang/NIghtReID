@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "device": "cuda:0",
+  "synthetic_images": true,
+  "dataset_access": false,
+  "warmup_and_active_amp_steps": true,
+  "cnl_and_neighbor_memories": true,
+  "single_image_inference": true
+}

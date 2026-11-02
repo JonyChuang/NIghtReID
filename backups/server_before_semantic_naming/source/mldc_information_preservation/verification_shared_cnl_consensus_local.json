@@ -1,0 +1,39 @@
+{
+  "all_passed": true,
+  "unit_checks": 10,
+  "optimizer_steps": 0,
+  "training_started": false,
+  "full_vit_forward_backward": true,
+  "image_shape": [
+    4,
+    3,
+    256,
+    128
+  ],
+  "descriptor_dim": 768,
+  "selection": "fused_consensus",
+  "min_support": 3,
+  "uncertain_gamma": 0.8,
+  "cnl_fusion_logit_gradient": [
+    -1.4888645409882884e-06,
+    4.956241195230859e-09,
+    -7.848077530070441e-07,
+    2.268715888931183e-06
+  ],
+  "cnl_bn_gradient_norm": 7.209676823549671e-06,
+  "cnl_block9_12_gradient_norms": [
+    0.00011764759983634576,
+    8.816270565148443e-05,
+    5.7469871535431594e-05,
+    2.8072603527107276e-05
+  ],
+  "learnable_fusion_retained": true,
+  "cnl_directly_supervises_final_retrieval": true,
+  "mining_references_detached": true,
+  "out_of_batch_positives": 1,
+  "bn_updates_per_training_forward": 1,
+  "shared_cnl_checkpoint_roundtrip": true,
+  "memory_unchanged_by_forward_backward": true,
+  "ssl_loaded": false,
+  "dataset_evaluated": false
+}

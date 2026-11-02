@@ -1,0 +1,10 @@
+{
+  "predecessor_pid": 37114,
+  "predecessor_start_ticks": "579459559",
+  "predecessor_started_unix": 1793588884.59,
+  "predecessor_output": "/root/log/transreid/night600/mldc_convstream_texture_cnl/batchformer_single2_aug1/from_ssl_seed1234_120",
+  "predecessor_epochs": 120,
+  "python": "/root/miniconda3/envs/QREID/bin/python",
+  "project_root": "/root/TransReID-SSL-main/transreid_pytorch",
+  "output_dir": "/root/log/transreid/night600/mldc_nfc_batchformer/cached_reciprocal_k32_n8/from_ssl_seed1234_120"
+}
