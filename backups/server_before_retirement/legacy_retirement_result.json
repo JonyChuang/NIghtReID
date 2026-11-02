@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "families": [
+    "early Patch-to-CLS",
+    "GLTrans",
+    "QNorm/QCAT/DCE",
+    "LPAM old result summaries"
+  ],
+  "source_backup": {
+    "commit": "84ffbc142604cb91facf2e36c29c032e400b5be5",
+    "url": "https://github.com/JonyChuang/NIghtReID/tree/84ffbc142604cb91facf2e36c29c032e400b5be5/backups/server_before_retirement",
+    "remote_verified": true
+  },
+  "deleted_entries": 828,
+  "removed_directories": 243,
+  "freed_allocated_bytes_estimate": 811458560,
+  "remaining_packages": [
+    "mldc_batchformerv2_cnl",
+    "mldc_cls_readout",
+    "mldc_cnl_isolation",
+    "mldc_convstream_texture_cnl",
+    "mldc_deep4_readout",
+    "mldc_information_preservation",
+    "mldc_learnable_cnl_nightreid",
+    "mldc_learnable_global_cnl",
+    "mldc_mvi_cross_cnl",
+    "transreid_ssl_cnl"
+  ],
+  "retained_import_checks_passed": 14,
+  "protected_unchanged": 193,
+  "active_model_paths_preserved": 2,
+  "disk": "Filesystem       1B-blocks        Used  Available Use% Mounted on\noverlay        31526391808 26004373504 3894628352  87% /\n",
+  "server_journal": "/root/experiment_organization_backup/retire_legacy_experiments_20261102.json",
+  "deleted_weights_not_in_backup": true,
+  "shared_files_retained": [
+    "model/make_model.py",
+    "model/backbones/vit_pytorch.py",
+    "processor/processor.py"
+  ]
+}
