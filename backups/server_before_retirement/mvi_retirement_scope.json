@@ -1,0 +1,16 @@
+{
+  "scheme": "MVI Cross",
+  "roots": [
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_mvi_cross_cnl",
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/.mvi_cross_epoch1_backup_20261101_091543_utc",
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/.mvi_cross_source_backup_20261101_091000_utc",
+    "/root/log/transreid/nightreid/mldc_mvi_cross_cnl",
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/.batchformer_restore_backup_20261101_101950_046065_utc/before__configs__mvi_cross_nightreid.yml",
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/.batchformer_restore_backup_20261101_101950_046065_utc/before__train_mvi_cross.py",
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/.batchformer_restore_backup_20261101_101950_046065_utc/removed__configs__mvi_cross_nightreid.yml",
+    "/root/TransReID-SSL-main/transreid_pytorch/mldc_convstream_texture_cnl/.batchformer_restore_backup_20261101_101950_046065_utc/removed__train_mvi_cross.py"
+  ],
+  "planned_entries": 93,
+  "source_verified_against_backup": true,
+  "trained_weights_present": false
+}
